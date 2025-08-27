@@ -1,0 +1,11 @@
+{
+  "theme": "dark",
+  "auto_refresh": true,
+  "notifications": true,
+  "price_threshold": 1000,
+  "window_position": [
+    -1901,
+    809
+  ],
+  "always_on_top": true
+}
