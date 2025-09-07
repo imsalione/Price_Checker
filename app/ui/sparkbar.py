@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 Theme-aware SparkBar (stateful) — adaptive bar count (10..30) by canvas width.
+Now DI-enabled (optional): resolves ThemeService and EventBus from the DI container
+if no explicit theme dict is provided.
 
 Summary
 -------
@@ -12,14 +14,17 @@ Summary
 - Draws positive (UP), negative (DOWN), and zero (ZERO) bars centered around a baseline.
 - Tooltips show "HH:MM  |  ±Δ تومان" (or just time when Δ=0 / first bar).
 - History length is NOT managed here; caller should keep ≥ SPARK_BAR_MAX_COUNT data points.
+- If `theme` is not provided, the widget resolves it via DI:
+    container.resolve("theme").tokens()  # ThemeService API
 
 Public API
 ----------
-    SparkBar(canvas, theme, tooltip=None)
+    SparkBar(canvas, theme=None, tooltip=None)
     set_data(series, times)
     append_point(value, time_label)
     update_theme(theme)
     refresh()
+    destroy()        # optional cleanup (unsubscribes from bus)
 
 Optional legacy wrapper:
     render_bars(...) -> convenience one-shot wrapper using SparkBar internally.
@@ -60,6 +65,12 @@ try:
     from app.ui.tooltip import Tooltip  # noqa: F401
 except Exception:  # pragma: no cover
     class Tooltip: ...  # type: ignore
+
+# --- DI (optional) ---
+try:
+    from app.core.di import container  # DI container
+except Exception:  # pragma: no cover
+    container = None  # allow running without DI during tests
 
 
 # -------------- helpers --------------
@@ -131,14 +142,61 @@ class SparkBar:
     -----
     - Effective bar count K is recomputed at each `refresh()` from current canvas width.
     - Legacy `SPARK_BAR_COUNT` is intentionally ignored; only MIN/MAX/IDEAL/GAP control behavior.
+    - If `theme` is None, the widget tries to resolve ThemeService from DI and use tokens().
     """
 
-    def __init__(self, canvas, theme: Dict[str, Any], *, tooltip: Optional[Tooltip] = None) -> None:
+    def __init__(self, canvas, theme: Optional[Dict[str, Any]] = None, *, tooltip: Optional[Tooltip] = None) -> None:
         self.canvas = canvas
-        self.t = dict(theme or {})
         self.tooltip = tooltip
+
+        # Data
         self._values: List[Optional[int]] = []
         self._labels: List[str] = []
+
+        # DI wiring (optional)
+        self._theme_service = None
+        self._bus = None
+        self._bus_unsub = None
+
+        # 1) explicit theme wins
+        if theme is not None:
+            self.t = dict(theme)
+        else:
+            # 2) resolve from DI if available
+            self.t = {}
+            if container is not None:
+                try:
+                    self._theme_service = container.resolve("theme")
+                except Exception:
+                    self._theme_service = None
+                try:
+                    self._bus = container.resolve("bus")
+                except Exception:
+                    self._bus = None
+
+            if self._theme_service is not None:
+                # ThemeService API: tokens()
+                try:
+                    self.t = dict(self._theme_service.tokens())  # ← correct API
+                except Exception:
+                    self.t = {}
+            # fallback if DI unavailable or tokens() failed
+            if not self.t:
+                self.t = {
+                    "SURFACE": "#1a1a22",
+                    "BG": "#0a0a0f",
+                    "SPARK_ACCENT_UP": "#22d67e",
+                    "SPARK_ACCENT_DOWN": "#ff6b6b",
+                    "ON_SURFACE_VARIANT": "#9aa0a6",
+                }
+
+            # subscribe to theme changes (best-effort)
+            if self._bus is not None:
+                try:
+                    self._bus_unsub = self._bus.subscribe("ThemeToggled", self._on_theme_toggled)
+                except Exception:
+                    self._bus_unsub = None
+
         self._apply_bg()
 
     # ---- API ----
@@ -229,7 +287,7 @@ class SparkBar:
             except Exception:
                 pass
 
-        # Draw bars
+        # Draw bars (as thick lines with round caps to keep edges smooth)
         for i, d in enumerate(diffs):
             h = max(1, int(round((abs(d) / max_mag) * (H // 2))))
             y1 = baseline_y - h if d > 0 else baseline_y
@@ -259,19 +317,35 @@ class SparkBar:
 
             x += bar_w + gap
 
+    def destroy(self) -> None:
+        """Unsubscribe from DI bus (if subscribed)."""
+        if self._bus_unsub:
+            try:
+                self._bus_unsub()
+            except Exception:
+                pass
+            self._bus_unsub = None
+
     # -------------- internals --------------
     def _apply_bg(self) -> None:
-        """Apply background to canvas (and parent if possible)."""
+        """Apply background to canvas only (do not touch parent)."""
         bg = _resolve_bg(self.t)
         try:
             self.canvas.configure(bg=bg, highlightthickness=0, bd=0)
         except Exception:
             pass
+        # DO NOT touch canvas.master here; Rows controls row backgrounds.
+
+    def _on_theme_toggled(self, *_args, **_kwargs) -> None:
+        """DI bus callback: pull fresh tokens() from ThemeService and re-apply."""
+        if self._theme_service is None:
+            return
         try:
-            parent = self.canvas.master
-            if hasattr(parent, "configure"):
-                parent.configure(bg=bg)
+            fresh = dict(self._theme_service.tokens())  # ThemeService API
+            self.update_theme(fresh)
+            self.refresh()
         except Exception:
+            # stay with old theme on failure
             pass
 
 
@@ -281,13 +355,14 @@ def render_bars(
     *,
     series: Sequence[Optional[int | float]],
     times: Sequence[Optional[str]],
-    theme: Dict[str, Any],
+    theme: Optional[Dict[str, Any]] = None,
     tooltip=None,
     tip_builder: Optional[Callable[[Optional[int], Optional[str], int, int], str]] = None,
     on_click: Optional[Callable[[], None]] = None,
 ) -> None:
     """
     Stateless convenience wrapper (for legacy call sites).
+    If `theme` is None, DI will be used inside SparkBar to resolve tokens().
     """
     lbls = [str(t) if t is not None else "" for t in (times or [])]
     sb = SparkBar(canvas, theme, tooltip=tooltip)

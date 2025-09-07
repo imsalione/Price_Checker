@@ -2,10 +2,10 @@
   "theme": "light",
   "ui_scale": 0.9090909090909091,
   "window_alpha": 1.0,
-  "always_on_top": false,
+  "always_on_top": true,
   "window_position": [
-    -1905,
-    781
+    -1909,
+    785
   ],
   "window_size": [
     350,

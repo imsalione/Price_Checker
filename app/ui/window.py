@@ -12,6 +12,14 @@ This window:
         • ThemeToggled(name)     -> re-apply theme and refresh UI
   - Persists geometry, theme, alpha, always-on-top, and news visibility via SettingsManager.
 
+DI theming alignment
+--------------------
+- Rows is DI-only for theming. We don't pass a `theme` argument:
+      self.rows = Rows(self.rows_wrap, tooltip=self.tooltip, on_pin_toggle=...)
+- When fonts/scale change, we call rows.apply_theme(self.t) so only font/size
+  keys override the DI tokens, keeping colors 100% DI-driven.
+- FooterBar/NewsBar still receive theme tokens here for backward compatibility.
+
 Constructor:
     MiniRatesWindow(bus: EventBus, settings: SettingsManager)
 """
@@ -57,7 +65,7 @@ from app.utils.numbers import to_persian_digits
 
 # --- Spark roll (upstream roll-10 lock) ---
 try:
-    # استفاده از همان utility که در SparkBar برای پنجره ثابت استفاده می‌شود
+    # همان utility که SparkBar برای پنجرهٔ ثابت استفاده می‌کند
     from app.ui.sparkbar import roll_fixed_window
 except Exception:  # pragma: no cover
     def roll_fixed_window(series, times, *, k=10, new_value=None, new_time=None):
@@ -90,7 +98,6 @@ class MiniRatesWindow(tk.Tk):
         # ---- ThemeService (Optional) + Theme tokens ----
         self.theme_svc = None
         try:
-            from app.core.di import container
             self.theme_svc = container.try_resolve("theme")
         except Exception:
             self.theme_svc = None
@@ -254,8 +261,8 @@ class MiniRatesWindow(tk.Tk):
         self.rows_wrap.pack(fill=tk.BOTH, expand=True, side=tk.TOP, anchor="n")
         self.rows_wrap.pack_propagate(False)
 
-        self.rows = Rows(self.rows_wrap, theme=self.t, tooltip=self.tooltip,
-                 on_pin_toggle=self._on_row_pin_toggle)
+        # --- Rows (DI-only theming; no theme passed) ---
+        self.rows = Rows(self.rows_wrap, tooltip=self.tooltip, on_pin_toggle=self._on_row_pin_toggle)
         self.rows.pack(side=tk.TOP, anchor="n", fill=tk.X)
 
         # Footer: pass callbacks; refresh now only publishes events
@@ -275,14 +282,14 @@ class MiniRatesWindow(tk.Tk):
             params = inspect.signature(FooterBar.__init__).parameters
             if "on_brightness_change" in params or "get_brightness" in params:
                 footer_kwargs.update(
-                    on_brightness_change=lambda level: (self.attributes("-alpha", level),self.settings.set_window_alpha(level)),
+                    on_brightness_change=lambda level: (self.attributes("-alpha", level), self.settings.set_window_alpha(level)),
                     get_brightness=lambda: float(self.attributes("-alpha") or 1.0),
                 )
             elif "on_brightness_wheel" in params:
                 footer_kwargs.update(on_brightness_wheel=None)
         except Exception:
             pass
-        
+
         self.footer = FooterBar(self.root_frame, **footer_kwargs)
         self.footer.pack(fill=tk.X, side=tk.BOTTOM)
 
@@ -386,9 +393,10 @@ class MiniRatesWindow(tk.Tk):
         except Exception:
             pass
 
-        # Rows
+        # Rows (DI-only apply with font/size overrides merged)
         try:
             if hasattr(self.rows, "apply_theme"):
+                # IMPORTANT: pass `self.t` so Rows can merge only font/size keys into DI tokens
                 self.rows.apply_theme(self.t)
             if hasattr(self.rows, "set_scale"):
                 self.rows.set_scale(s)
@@ -506,7 +514,6 @@ class MiniRatesWindow(tk.Tk):
         except Exception:
             pass
         try:
-            from app.core.di import container
             tray = container.try_resolve("tray")
             if tray and not tray.is_running():
                 tray.start()
@@ -524,7 +531,6 @@ class MiniRatesWindow(tk.Tk):
     def _quit_app(self) -> None:
         self._cancel_refresh()
         try:
-            from app.core.di import container
             tray = container.try_resolve("tray")
             if tray and tray.is_running():
                 tray.stop()
@@ -544,18 +550,8 @@ class MiniRatesWindow(tk.Tk):
             except Exception: pass
         self._in_rows_scroll_after_id = self.after(120, self._clear_rows_scrolling)
 
-
     def _on_row_pin_toggle(self, item_id: Optional[str], new_state: bool) -> None:
-        """Handle pin/unpin requests coming from Rows/RateRow.
-
-        This forwards the request to catalog.pin_item / unpin_item (which persist into Settings)
-        and then rebuilds the display lists and refreshes the rows view so pinned items float
-        to the top immediately.
-
-        Args:
-            item_id: stable item id (preferred) or fallback key.
-            new_state: True => pin, False => unpin.
-        """
+        """Handle pin/unpin requests coming from Rows/RateRow."""
         if not item_id:
             return
         changed = False
@@ -572,7 +568,6 @@ class MiniRatesWindow(tk.Tk):
 
         # Rebuild display lists and refresh rows (pinned items first)
         try:
-            # prefer cached catalog if available
             catalog_data = None
             try:
                 catalog_data = getattr(self, '_catalog_cache', None) or self._get_catalog_cached()
@@ -580,43 +575,32 @@ class MiniRatesWindow(tk.Tk):
                 catalog_data = None
 
             if catalog_data is None:
-                # fallback: ask service (best-effort)
                 catalog_data = self._fetch_catalog_data()
 
             view = build_display_lists(catalog_data or {}, self.settings)
             items = []
-            # pinned group first (if present)
             pinned_list = view.get('pinned') or []
             items.extend(pinned_list)
-            # then ordered categories (preserve existing ordering logic)
             other_groups = view.get('groups') or view.get('others') or {}
-            # If groups is dict of category->list, iterate stable order
             for cat in ("fx", "gold", "crypto"):
                 items.extend(other_groups.get(cat, []) or [])
-            # last-resort flatten any remaining lists
             if not items and isinstance(view, dict):
                 for k, v in view.items():
                     if isinstance(v, list):
                         items.extend(v)
-
-            # Enrich with deltas/history if helper exists
             try:
                 items = self._enrich_with_deltas(items)
             except Exception:
                 pass
-
             try:
                 self.rows.update(items)
             except Exception:
                 pass
-
             try:
                 self._update_rows_viewport()
             except Exception:
                 pass
-
         except Exception:
-            # swallow; UI should not crash on pin toggles
             pass
 
         try:
@@ -733,13 +717,12 @@ class MiniRatesWindow(tk.Tk):
         if not hasattr(self, "_time_hist"):
             self._time_hist = {}
 
-        # Use max configured spark bar count so that wide windows can show up to 30 bars
         try:
             from app.config import constants as C
             K = int(getattr(C, "SPARK_BAR_MAX_COUNT", 30))
         except Exception:
             K = 30
-        K = 10 if K <= 10 else min(64, K)  # keep a sane range; at least 10
+        K = 10 if K <= 10 else min(64, K)
 
         for it in (items or []):
             try:
@@ -788,7 +771,6 @@ class MiniRatesWindow(tk.Tk):
                         from app.ui.sparkbar import roll_fixed_window
                         vals, times = roll_fixed_window(prev_vals, prev_times, k=K, new_value=price, new_time=time_label)
                     except Exception:
-                        # Local minimal fallback if helper not available
                         s = list(prev_vals or [])
                         t = list(prev_times or [])
                         while len(s) < K: s.insert(0, None)
