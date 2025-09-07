@@ -1,0 +1,4004 @@
+Folder PATH listing
+Volume serial number is 3A10-CC11
+C:.
+|   .env
+|   .gitignore
+|   alanchand_catalog_cache.json
+|   LICENSE
+|   minirates_settings.json
+|   mini_rate_widget.py
+|   pyproject.toml
+|   requirements.txt
+|   structure.txt
+|   x_tweets_cache.json
+|   
++---.vscode
+|       settings.json
+|       
++---app
+|   |   main.py
+|   |   __init__.py
+|   |   
+|   +---config
+|   |       constants.py
+|   |       settings.py
+|   |       themes.py
+|   |       __init__.py
+|   |       
+|   +---core
+|   |       commands.py
+|   |       di.py
+|   |       errors.py
+|   |       events.py
+|   |       logging.py
+|   |       utils.py
+|   |       __init__.py
+|   |       
+|   +---domain
+|   |       models.py
+|   |       policies.py
+|   |       value_objects.py
+|   |       __init__.py
+|   |       
+|   +---infra
+|   |       alanchand_adapter.py
+|   |       persistence.py
+|   |       tray.py
+|   |       tweeter_adapter.py
+|   |       __init__.py
+|   |       
+|   +---presentation
+|   |       mappers.py
+|   |       view_models.py
+|   |       __init__.py
+|   |       
+|   +---services
+|   |       baselines.json
+|   |       baselines.py
+|   |       brightness_service.py
+|   |       cache.py
+|   |       catalog.py
+|   |       motify.py
+|   |       news_service.py
+|   |       price_service.py
+|   |       sched.py
+|   |       theme_service.py
+|   |       tray.py
+|   |       __init__.py
+|   |       
+|   +---ui
+|   |   |   brightness.py
+|   |   |   footer.py
+|   |   |   news_bar.py
+|   |   |   rows.py
+|   |   |   scroll.py
+|   |   |   sparkbar.py
+|   |   |   tooltip.py
+|   |   |   window.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---styles
+|   |           tokens.py
+|   |           __init__.py
+|   |           
+|   \---utils
+|           delta_format.py
+|           formatting.py
+|           net.py
+|           numbers.py
+|           __init__.py
+|           
++---build
+|   \---MiniRates
+|       |   Analysis-00.toc
+|       |   base_library.zip
+|       |   EXE-00.toc
+|       |   MiniRates.pkg
+|       |   PKG-00.toc
+|       |   PYZ-00.pyz
+|       |   PYZ-00.toc
+|       |   warn-MiniRates.txt
+|       |   xref-MiniRates.html
+|       |   
+|       \---localpycs
+|               pyimod01_archive.pyc
+|               pyimod02_importers.pyc
+|               pyimod03_ctypes.pyc
+|               pyimod04_pywin32.pyc
+|               struct.pyc
+|               
++---dist
+|       MiniRates.exe
+|       minirates_settings.json
+|       
++---Price_Checker
+|       LICENSE
+|       
++---scripts
+|       build_exe.ps1
+|       MiniRates.spec
+|       
++---tests
+|       test_formatting.py
+|       test_scraper.py
+|       
+\---venv
+    |   .gitignore
+    |   pyvenv.cfg
+    |   
+    +---Include
+    +---Lib
+    |   \---site-packages
+    |       |   distutils-precedence.pth
+    |       |   pefile.py
+    |       |   peutils.py
+    |       |   six.py
+    |       |   typing_extensions.py
+    |       |   _cffi_backend.cp313-win_amd64.pyd
+    |       |   
+    |       +---altgraph
+    |       |       Dot.py
+    |       |       Graph.py
+    |       |       GraphAlgo.py
+    |       |       GraphStat.py
+    |       |       GraphUtil.py
+    |       |       ObjectGraph.py
+    |       |       __init__.py
+    |       |       
+    |       +---altgraph-0.17.4.dist-info
+    |       |       INSTALLER
+    |       |       LICENSE
+    |       |       METADATA
+    |       |       RECORD
+    |       |       top_level.txt
+    |       |       WHEEL
+    |       |       zip-safe
+    |       |       
+    |       +---beautifulsoup4-4.13.5.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   REQUESTED
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           AUTHORS
+    |       |           LICENSE
+    |       |           
+    |       +---bs4
+    |       |   |   css.py
+    |       |   |   dammit.py
+    |       |   |   diagnose.py
+    |       |   |   element.py
+    |       |   |   exceptions.py
+    |       |   |   filter.py
+    |       |   |   formatter.py
+    |       |   |   py.typed
+    |       |   |   _deprecation.py
+    |       |   |   _typing.py
+    |       |   |   _warnings.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---builder
+    |       |           _html5lib.py
+    |       |           _htmlparser.py
+    |       |           _lxml.py
+    |       |           __init__.py
+    |       |           
+    |       +---cairocffi
+    |       |       constants.py
+    |       |       context.py
+    |       |       ffi.py
+    |       |       fonts.py
+    |       |       matrix.py
+    |       |       patterns.py
+    |       |       pixbuf.py
+    |       |       surfaces.py
+    |       |       test_cairo.py
+    |       |       test_numpy.py
+    |       |       test_pixbuf.py
+    |       |       test_xcb.py
+    |       |       xcb.py
+    |       |       __init__.py
+    |       |       
+    |       +---cairocffi-1.7.1.dist-info
+    |       |       INSTALLER
+    |       |       LICENSE
+    |       |       METADATA
+    |       |       RECORD
+    |       |       WHEEL
+    |       |       
+    |       +---cairosvg
+    |       |       bounding_box.py
+    |       |       colors.py
+    |       |       css.py
+    |       |       defs.py
+    |       |       features.py
+    |       |       helpers.py
+    |       |       image.py
+    |       |       parser.py
+    |       |       path.py
+    |       |       shapes.py
+    |       |       surface.py
+    |       |       svg.py
+    |       |       test_api.py
+    |       |       text.py
+    |       |       url.py
+    |       |       VERSION
+    |       |       __init__.py
+    |       |       __main__.py
+    |       |       
+    |       +---cairosvg-2.8.2.dist-info
+    |       |   |   entry_points.txt
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   REQUESTED
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---certifi
+    |       |       cacert.pem
+    |       |       core.py
+    |       |       py.typed
+    |       |       __init__.py
+    |       |       __main__.py
+    |       |       
+    |       +---certifi-2025.8.3.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---cffi
+    |       |       api.py
+    |       |       backend_ctypes.py
+    |       |       cffi_opcode.py
+    |       |       commontypes.py
+    |       |       cparser.py
+    |       |       error.py
+    |       |       ffiplatform.py
+    |       |       lock.py
+    |       |       model.py
+    |       |       parse_c_type.h
+    |       |       pkgconfig.py
+    |       |       recompiler.py
+    |       |       setuptools_ext.py
+    |       |       vengine_cpy.py
+    |       |       vengine_gen.py
+    |       |       verifier.py
+    |       |       _cffi_errors.h
+    |       |       _cffi_include.h
+    |       |       _embedding.h
+    |       |       _imp_emulation.py
+    |       |       _shimmed_dist_utils.py
+    |       |       __init__.py
+    |       |       
+    |       +---cffi-1.17.1.dist-info
+    |       |       entry_points.txt
+    |       |       INSTALLER
+    |       |       LICENSE
+    |       |       METADATA
+    |       |       RECORD
+    |       |       top_level.txt
+    |       |       WHEEL
+    |       |       
+    |       +---charset_normalizer
+    |       |   |   api.py
+    |       |   |   cd.py
+    |       |   |   constant.py
+    |       |   |   legacy.py
+    |       |   |   md.cp313-win_amd64.pyd
+    |       |   |   md.py
+    |       |   |   md__mypyc.cp313-win_amd64.pyd
+    |       |   |   models.py
+    |       |   |   py.typed
+    |       |   |   utils.py
+    |       |   |   version.py
+    |       |   |   __init__.py
+    |       |   |   __main__.py
+    |       |   |   
+    |       |   \---cli
+    |       |           __init__.py
+    |       |           __main__.py
+    |       |           
+    |       +---charset_normalizer-3.4.3.dist-info
+    |       |   |   entry_points.txt
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---cssselect2
+    |       |       compiler.py
+    |       |       parser.py
+    |       |       tree.py
+    |       |       __init__.py
+    |       |       
+    |       +---cssselect2-0.8.0.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---defusedxml
+    |       |       cElementTree.py
+    |       |       common.py
+    |       |       ElementTree.py
+    |       |       expatbuilder.py
+    |       |       expatreader.py
+    |       |       lxml.py
+    |       |       minidom.py
+    |       |       pulldom.py
+    |       |       sax.py
+    |       |       xmlrpc.py
+    |       |       __init__.py
+    |       |       
+    |       +---defusedxml-0.7.1.dist-info
+    |       |       INSTALLER
+    |       |       LICENSE
+    |       |       METADATA
+    |       |       RECORD
+    |       |       top_level.txt
+    |       |       WHEEL
+    |       |       
+    |       +---dotenv
+    |       |       cli.py
+    |       |       ipython.py
+    |       |       main.py
+    |       |       parser.py
+    |       |       py.typed
+    |       |       variables.py
+    |       |       version.py
+    |       |       __init__.py
+    |       |       __main__.py
+    |       |       
+    |       +---idna
+    |       |       codec.py
+    |       |       compat.py
+    |       |       core.py
+    |       |       idnadata.py
+    |       |       intranges.py
+    |       |       package_data.py
+    |       |       py.typed
+    |       |       uts46data.py
+    |       |       __init__.py
+    |       |       
+    |       +---idna-3.10.dist-info
+    |       |       INSTALLER
+    |       |       LICENSE.md
+    |       |       METADATA
+    |       |       RECORD
+    |       |       WHEEL
+    |       |       
+    |       +---lxml
+    |       |   |   apihelpers.pxi
+    |       |   |   builder.cp313-win_amd64.pyd
+    |       |   |   builder.py
+    |       |   |   classlookup.pxi
+    |       |   |   cleanup.pxi
+    |       |   |   cssselect.py
+    |       |   |   debug.pxi
+    |       |   |   docloader.pxi
+    |       |   |   doctestcompare.py
+    |       |   |   dtd.pxi
+    |       |   |   ElementInclude.py
+    |       |   |   etree.cp313-win_amd64.pyd
+    |       |   |   etree.h
+    |       |   |   etree.pyx
+    |       |   |   etree_api.h
+    |       |   |   extensions.pxi
+    |       |   |   iterparse.pxi
+    |       |   |   lxml.etree.h
+    |       |   |   lxml.etree_api.h
+    |       |   |   nsclasses.pxi
+    |       |   |   objectify.cp313-win_amd64.pyd
+    |       |   |   objectify.pyx
+    |       |   |   objectpath.pxi
+    |       |   |   parser.pxi
+    |       |   |   parsertarget.pxi
+    |       |   |   proxy.pxi
+    |       |   |   public-api.pxi
+    |       |   |   pyclasslookup.py
+    |       |   |   readonlytree.pxi
+    |       |   |   relaxng.pxi
+    |       |   |   sax.cp313-win_amd64.pyd
+    |       |   |   sax.py
+    |       |   |   saxparser.pxi
+    |       |   |   schematron.pxi
+    |       |   |   serializer.pxi
+    |       |   |   usedoctest.py
+    |       |   |   xinclude.pxi
+    |       |   |   xmlerror.pxi
+    |       |   |   xmlid.pxi
+    |       |   |   xmlschema.pxi
+    |       |   |   xpath.pxi
+    |       |   |   xslt.pxi
+    |       |   |   xsltext.pxi
+    |       |   |   _elementpath.cp313-win_amd64.pyd
+    |       |   |   _elementpath.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   +---html
+    |       |   |       builder.py
+    |       |   |       clean.py
+    |       |   |       defs.py
+    |       |   |       diff.cp313-win_amd64.pyd
+    |       |   |       diff.py
+    |       |   |       ElementSoup.py
+    |       |   |       formfill.py
+    |       |   |       html5parser.py
+    |       |   |       soupparser.py
+    |       |   |       usedoctest.py
+    |       |   |       _diffcommand.py
+    |       |   |       _difflib.cp313-win_amd64.pyd
+    |       |   |       _difflib.py
+    |       |   |       _html5builder.py
+    |       |   |       _setmixin.py
+    |       |   |       __init__.py
+    |       |   |       
+    |       |   +---includes
+    |       |   |   |   c14n.pxd
+    |       |   |   |   config.pxd
+    |       |   |   |   dtdvalid.pxd
+    |       |   |   |   etreepublic.pxd
+    |       |   |   |   etree_defs.h
+    |       |   |   |   htmlparser.pxd
+    |       |   |   |   lxml-version.h
+    |       |   |   |   relaxng.pxd
+    |       |   |   |   schematron.pxd
+    |       |   |   |   tree.pxd
+    |       |   |   |   uri.pxd
+    |       |   |   |   xinclude.pxd
+    |       |   |   |   xmlerror.pxd
+    |       |   |   |   xmlparser.pxd
+    |       |   |   |   xmlschema.pxd
+    |       |   |   |   xpath.pxd
+    |       |   |   |   xslt.pxd
+    |       |   |   |   __init__.pxd
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---extlibs
+    |       |   |   |       zconf.h
+    |       |   |   |       zlib.h
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   +---libexslt
+    |       |   |   |       exslt.h
+    |       |   |   |       exsltconfig.h
+    |       |   |   |       exsltexports.h
+    |       |   |   |       libexslt.h
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   +---libxml
+    |       |   |   |       c14n.h
+    |       |   |   |       catalog.h
+    |       |   |   |       chvalid.h
+    |       |   |   |       debugXML.h
+    |       |   |   |       dict.h
+    |       |   |   |       encoding.h
+    |       |   |   |       entities.h
+    |       |   |   |       globals.h
+    |       |   |   |       hash.h
+    |       |   |   |       HTMLparser.h
+    |       |   |   |       HTMLtree.h
+    |       |   |   |       list.h
+    |       |   |   |       nanoftp.h
+    |       |   |   |       nanohttp.h
+    |       |   |   |       parser.h
+    |       |   |   |       parserInternals.h
+    |       |   |   |       pattern.h
+    |       |   |   |       relaxng.h
+    |       |   |   |       SAX.h
+    |       |   |   |       SAX2.h
+    |       |   |   |       schemasInternals.h
+    |       |   |   |       schematron.h
+    |       |   |   |       threads.h
+    |       |   |   |       tree.h
+    |       |   |   |       uri.h
+    |       |   |   |       valid.h
+    |       |   |   |       xinclude.h
+    |       |   |   |       xlink.h
+    |       |   |   |       xmlautomata.h
+    |       |   |   |       xmlerror.h
+    |       |   |   |       xmlexports.h
+    |       |   |   |       xmlIO.h
+    |       |   |   |       xmlmemory.h
+    |       |   |   |       xmlmodule.h
+    |       |   |   |       xmlreader.h
+    |       |   |   |       xmlregexp.h
+    |       |   |   |       xmlsave.h
+    |       |   |   |       xmlschemas.h
+    |       |   |   |       xmlschemastypes.h
+    |       |   |   |       xmlstring.h
+    |       |   |   |       xmlunicode.h
+    |       |   |   |       xmlversion.h
+    |       |   |   |       xmlwriter.h
+    |       |   |   |       xpath.h
+    |       |   |   |       xpathInternals.h
+    |       |   |   |       xpointer.h
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   \---libxslt
+    |       |   |           attributes.h
+    |       |   |           documents.h
+    |       |   |           extensions.h
+    |       |   |           extra.h
+    |       |   |           functions.h
+    |       |   |           imports.h
+    |       |   |           keys.h
+    |       |   |           libxslt.h
+    |       |   |           namespaces.h
+    |       |   |           numbersInternals.h
+    |       |   |           preproc.h
+    |       |   |           security.h
+    |       |   |           templates.h
+    |       |   |           transform.h
+    |       |   |           trio.h
+    |       |   |           triodef.h
+    |       |   |           variables.h
+    |       |   |           win32config.h
+    |       |   |           xslt.h
+    |       |   |           xsltconfig.h
+    |       |   |           xsltexports.h
+    |       |   |           xsltInternals.h
+    |       |   |           xsltlocale.h
+    |       |   |           xsltutils.h
+    |       |   |           __init__.py
+    |       |   |           
+    |       |   \---isoschematron
+    |       |       |   __init__.py
+    |       |       |   
+    |       |       \---resources
+    |       |           +---rng
+    |       |           |       iso-schematron.rng
+    |       |           |       
+    |       |           \---xsl
+    |       |               |   RNG2Schtrn.xsl
+    |       |               |   XSD2Schtrn.xsl
+    |       |               |   
+    |       |               \---iso-schematron-xslt1
+    |       |                       iso_abstract_expand.xsl
+    |       |                       iso_dsdl_include.xsl
+    |       |                       iso_schematron_message.xsl
+    |       |                       iso_schematron_skeleton_for_xslt1.xsl
+    |       |                       iso_svrl_for_xslt1.xsl
+    |       |                       readme.txt
+    |       |                       
+    |       +---lxml-6.0.1.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   REQUESTED
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE.txt
+    |       |           LICENSES.txt
+    |       |           
+    |       +---oauthlib
+    |       |   |   common.py
+    |       |   |   signals.py
+    |       |   |   uri_validate.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   +---oauth1
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---rfc5849
+    |       |   |       |   errors.py
+    |       |   |       |   parameters.py
+    |       |   |       |   request_validator.py
+    |       |   |       |   signature.py
+    |       |   |       |   utils.py
+    |       |   |       |   __init__.py
+    |       |   |       |   
+    |       |   |       \---endpoints
+    |       |   |               access_token.py
+    |       |   |               authorization.py
+    |       |   |               base.py
+    |       |   |               pre_configured.py
+    |       |   |               request_token.py
+    |       |   |               resource.py
+    |       |   |               signature_only.py
+    |       |   |               __init__.py
+    |       |   |               
+    |       |   +---oauth2
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---rfc6749
+    |       |   |   |   |   errors.py
+    |       |   |   |   |   parameters.py
+    |       |   |   |   |   request_validator.py
+    |       |   |   |   |   tokens.py
+    |       |   |   |   |   utils.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---clients
+    |       |   |   |   |       backend_application.py
+    |       |   |   |   |       base.py
+    |       |   |   |   |       legacy_application.py
+    |       |   |   |   |       mobile_application.py
+    |       |   |   |   |       service_application.py
+    |       |   |   |   |       web_application.py
+    |       |   |   |   |       __init__.py
+    |       |   |   |   |       
+    |       |   |   |   +---endpoints
+    |       |   |   |   |       authorization.py
+    |       |   |   |   |       base.py
+    |       |   |   |   |       introspect.py
+    |       |   |   |   |       metadata.py
+    |       |   |   |   |       pre_configured.py
+    |       |   |   |   |       resource.py
+    |       |   |   |   |       revocation.py
+    |       |   |   |   |       token.py
+    |       |   |   |   |       __init__.py
+    |       |   |   |   |       
+    |       |   |   |   \---grant_types
+    |       |   |   |           authorization_code.py
+    |       |   |   |           base.py
+    |       |   |   |           client_credentials.py
+    |       |   |   |           implicit.py
+    |       |   |   |           refresh_token.py
+    |       |   |   |           resource_owner_password_credentials.py
+    |       |   |   |           __init__.py
+    |       |   |   |           
+    |       |   |   \---rfc8628
+    |       |   |       |   errors.py
+    |       |   |       |   request_validator.py
+    |       |   |       |   __init__.py
+    |       |   |       |   
+    |       |   |       +---clients
+    |       |   |       |       device.py
+    |       |   |       |       __init__.py
+    |       |   |       |       
+    |       |   |       +---endpoints
+    |       |   |       |       device_authorization.py
+    |       |   |       |       pre_configured.py
+    |       |   |       |       __init__.py
+    |       |   |       |       
+    |       |   |       \---grant_types
+    |       |   |               device_code.py
+    |       |   |               __init__.py
+    |       |   |               
+    |       |   \---openid
+    |       |       |   __init__.py
+    |       |       |   
+    |       |       \---connect
+    |       |           |   __init__.py
+    |       |           |   
+    |       |           \---core
+    |       |               |   exceptions.py
+    |       |               |   request_validator.py
+    |       |               |   tokens.py
+    |       |               |   __init__.py
+    |       |               |   
+    |       |               +---endpoints
+    |       |               |       pre_configured.py
+    |       |               |       userinfo.py
+    |       |               |       __init__.py
+    |       |               |       
+    |       |               \---grant_types
+    |       |                       authorization_code.py
+    |       |                       base.py
+    |       |                       dispatchers.py
+    |       |                       hybrid.py
+    |       |                       implicit.py
+    |       |                       refresh_token.py
+    |       |                       __init__.py
+    |       |                       
+    |       +---oauthlib-3.3.1.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---ordlookup
+    |       |       oleaut32.py
+    |       |       ws2_32.py
+    |       |       __init__.py
+    |       |       
+    |       +---packaging
+    |       |   |   markers.py
+    |       |   |   metadata.py
+    |       |   |   py.typed
+    |       |   |   requirements.py
+    |       |   |   specifiers.py
+    |       |   |   tags.py
+    |       |   |   utils.py
+    |       |   |   version.py
+    |       |   |   _elffile.py
+    |       |   |   _manylinux.py
+    |       |   |   _musllinux.py
+    |       |   |   _parser.py
+    |       |   |   _structures.py
+    |       |   |   _tokenizer.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---licenses
+    |       |           _spdx.py
+    |       |           __init__.py
+    |       |           
+    |       +---packaging-25.0.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           LICENSE.APACHE
+    |       |           LICENSE.BSD
+    |       |           
+    |       +---pefile-2023.2.7.dist-info
+    |       |       INSTALLER
+    |       |       LICENSE
+    |       |       METADATA
+    |       |       RECORD
+    |       |       top_level.txt
+    |       |       WHEEL
+    |       |       
+    |       +---PIL
+    |       |       AvifImagePlugin.py
+    |       |       BdfFontFile.py
+    |       |       BlpImagePlugin.py
+    |       |       BmpImagePlugin.py
+    |       |       BufrStubImagePlugin.py
+    |       |       ContainerIO.py
+    |       |       CurImagePlugin.py
+    |       |       DcxImagePlugin.py
+    |       |       DdsImagePlugin.py
+    |       |       EpsImagePlugin.py
+    |       |       ExifTags.py
+    |       |       features.py
+    |       |       FitsImagePlugin.py
+    |       |       FliImagePlugin.py
+    |       |       FontFile.py
+    |       |       FpxImagePlugin.py
+    |       |       FtexImagePlugin.py
+    |       |       GbrImagePlugin.py
+    |       |       GdImageFile.py
+    |       |       GifImagePlugin.py
+    |       |       GimpGradientFile.py
+    |       |       GimpPaletteFile.py
+    |       |       GribStubImagePlugin.py
+    |       |       Hdf5StubImagePlugin.py
+    |       |       IcnsImagePlugin.py
+    |       |       IcoImagePlugin.py
+    |       |       Image.py
+    |       |       ImageChops.py
+    |       |       ImageCms.py
+    |       |       ImageColor.py
+    |       |       ImageDraw.py
+    |       |       ImageDraw2.py
+    |       |       ImageEnhance.py
+    |       |       ImageFile.py
+    |       |       ImageFilter.py
+    |       |       ImageFont.py
+    |       |       ImageGrab.py
+    |       |       ImageMath.py
+    |       |       ImageMode.py
+    |       |       ImageMorph.py
+    |       |       ImageOps.py
+    |       |       ImagePalette.py
+    |       |       ImagePath.py
+    |       |       ImageQt.py
+    |       |       ImageSequence.py
+    |       |       ImageShow.py
+    |       |       ImageStat.py
+    |       |       ImageTk.py
+    |       |       ImageTransform.py
+    |       |       ImageWin.py
+    |       |       ImImagePlugin.py
+    |       |       ImtImagePlugin.py
+    |       |       IptcImagePlugin.py
+    |       |       Jpeg2KImagePlugin.py
+    |       |       JpegImagePlugin.py
+    |       |       JpegPresets.py
+    |       |       McIdasImagePlugin.py
+    |       |       MicImagePlugin.py
+    |       |       MpegImagePlugin.py
+    |       |       MpoImagePlugin.py
+    |       |       MspImagePlugin.py
+    |       |       PaletteFile.py
+    |       |       PalmImagePlugin.py
+    |       |       PcdImagePlugin.py
+    |       |       PcfFontFile.py
+    |       |       PcxImagePlugin.py
+    |       |       PdfImagePlugin.py
+    |       |       PdfParser.py
+    |       |       PixarImagePlugin.py
+    |       |       PngImagePlugin.py
+    |       |       PpmImagePlugin.py
+    |       |       PsdImagePlugin.py
+    |       |       PSDraw.py
+    |       |       py.typed
+    |       |       QoiImagePlugin.py
+    |       |       report.py
+    |       |       SgiImagePlugin.py
+    |       |       SpiderImagePlugin.py
+    |       |       SunImagePlugin.py
+    |       |       TarIO.py
+    |       |       TgaImagePlugin.py
+    |       |       TiffImagePlugin.py
+    |       |       TiffTags.py
+    |       |       WalImageFile.py
+    |       |       WebPImagePlugin.py
+    |       |       WmfImagePlugin.py
+    |       |       XbmImagePlugin.py
+    |       |       XpmImagePlugin.py
+    |       |       XVThumbImagePlugin.py
+    |       |       _avif.cp313-win_amd64.pyd
+    |       |       _avif.pyi
+    |       |       _binary.py
+    |       |       _deprecate.py
+    |       |       _imaging.cp313-win_amd64.pyd
+    |       |       _imaging.pyi
+    |       |       _imagingcms.cp313-win_amd64.pyd
+    |       |       _imagingcms.pyi
+    |       |       _imagingft.cp313-win_amd64.pyd
+    |       |       _imagingft.pyi
+    |       |       _imagingmath.cp313-win_amd64.pyd
+    |       |       _imagingmath.pyi
+    |       |       _imagingmorph.cp313-win_amd64.pyd
+    |       |       _imagingmorph.pyi
+    |       |       _imagingtk.cp313-win_amd64.pyd
+    |       |       _imagingtk.pyi
+    |       |       _tkinter_finder.py
+    |       |       _typing.py
+    |       |       _util.py
+    |       |       _version.py
+    |       |       _webp.cp313-win_amd64.pyd
+    |       |       _webp.pyi
+    |       |       __init__.py
+    |       |       __main__.py
+    |       |       
+    |       +---pillow-11.3.0.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   REQUESTED
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   zip-safe
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---pip
+    |       |   |   py.typed
+    |       |   |   __init__.py
+    |       |   |   __main__.py
+    |       |   |   __pip-runner__.py
+    |       |   |   
+    |       |   +---_internal
+    |       |   |   |   build_env.py
+    |       |   |   |   cache.py
+    |       |   |   |   configuration.py
+    |       |   |   |   exceptions.py
+    |       |   |   |   main.py
+    |       |   |   |   pyproject.py
+    |       |   |   |   self_outdated_check.py
+    |       |   |   |   wheel_builder.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---cli
+    |       |   |   |       autocompletion.py
+    |       |   |   |       base_command.py
+    |       |   |   |       cmdoptions.py
+    |       |   |   |       command_context.py
+    |       |   |   |       index_command.py
+    |       |   |   |       main.py
+    |       |   |   |       main_parser.py
+    |       |   |   |       parser.py
+    |       |   |   |       progress_bars.py
+    |       |   |   |       req_command.py
+    |       |   |   |       spinners.py
+    |       |   |   |       status_codes.py
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   +---commands
+    |       |   |   |       cache.py
+    |       |   |   |       check.py
+    |       |   |   |       completion.py
+    |       |   |   |       configuration.py
+    |       |   |   |       debug.py
+    |       |   |   |       download.py
+    |       |   |   |       freeze.py
+    |       |   |   |       hash.py
+    |       |   |   |       help.py
+    |       |   |   |       index.py
+    |       |   |   |       inspect.py
+    |       |   |   |       install.py
+    |       |   |   |       list.py
+    |       |   |   |       lock.py
+    |       |   |   |       search.py
+    |       |   |   |       show.py
+    |       |   |   |       uninstall.py
+    |       |   |   |       wheel.py
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   +---distributions
+    |       |   |   |       base.py
+    |       |   |   |       installed.py
+    |       |   |   |       sdist.py
+    |       |   |   |       wheel.py
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   +---index
+    |       |   |   |       collector.py
+    |       |   |   |       package_finder.py
+    |       |   |   |       sources.py
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   +---locations
+    |       |   |   |       base.py
+    |       |   |   |       _distutils.py
+    |       |   |   |       _sysconfig.py
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   +---metadata
+    |       |   |   |   |   base.py
+    |       |   |   |   |   pkg_resources.py
+    |       |   |   |   |   _json.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---importlib
+    |       |   |   |           _compat.py
+    |       |   |   |           _dists.py
+    |       |   |   |           _envs.py
+    |       |   |   |           __init__.py
+    |       |   |   |           
+    |       |   |   +---models
+    |       |   |   |       candidate.py
+    |       |   |   |       direct_url.py
+    |       |   |   |       format_control.py
+    |       |   |   |       index.py
+    |       |   |   |       installation_report.py
+    |       |   |   |       link.py
+    |       |   |   |       pylock.py
+    |       |   |   |       scheme.py
+    |       |   |   |       search_scope.py
+    |       |   |   |       selection_prefs.py
+    |       |   |   |       target_python.py
+    |       |   |   |       wheel.py
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   +---network
+    |       |   |   |       auth.py
+    |       |   |   |       cache.py
+    |       |   |   |       download.py
+    |       |   |   |       lazy_wheel.py
+    |       |   |   |       session.py
+    |       |   |   |       utils.py
+    |       |   |   |       xmlrpc.py
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   +---operations
+    |       |   |   |   |   check.py
+    |       |   |   |   |   freeze.py
+    |       |   |   |   |   prepare.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---build
+    |       |   |   |   |       build_tracker.py
+    |       |   |   |   |       metadata.py
+    |       |   |   |   |       metadata_editable.py
+    |       |   |   |   |       metadata_legacy.py
+    |       |   |   |   |       wheel.py
+    |       |   |   |   |       wheel_editable.py
+    |       |   |   |   |       wheel_legacy.py
+    |       |   |   |   |       __init__.py
+    |       |   |   |   |       
+    |       |   |   |   \---install
+    |       |   |   |           editable_legacy.py
+    |       |   |   |           wheel.py
+    |       |   |   |           __init__.py
+    |       |   |   |           
+    |       |   |   +---req
+    |       |   |   |       constructors.py
+    |       |   |   |       req_dependency_group.py
+    |       |   |   |       req_file.py
+    |       |   |   |       req_install.py
+    |       |   |   |       req_set.py
+    |       |   |   |       req_uninstall.py
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   +---resolution
+    |       |   |   |   |   base.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---legacy
+    |       |   |   |   |       resolver.py
+    |       |   |   |   |       __init__.py
+    |       |   |   |   |       
+    |       |   |   |   \---resolvelib
+    |       |   |   |           base.py
+    |       |   |   |           candidates.py
+    |       |   |   |           factory.py
+    |       |   |   |           found_candidates.py
+    |       |   |   |           provider.py
+    |       |   |   |           reporter.py
+    |       |   |   |           requirements.py
+    |       |   |   |           resolver.py
+    |       |   |   |           __init__.py
+    |       |   |   |           
+    |       |   |   +---utils
+    |       |   |   |       appdirs.py
+    |       |   |   |       compat.py
+    |       |   |   |       compatibility_tags.py
+    |       |   |   |       datetime.py
+    |       |   |   |       deprecation.py
+    |       |   |   |       direct_url_helpers.py
+    |       |   |   |       egg_link.py
+    |       |   |   |       entrypoints.py
+    |       |   |   |       filesystem.py
+    |       |   |   |       filetypes.py
+    |       |   |   |       glibc.py
+    |       |   |   |       hashes.py
+    |       |   |   |       logging.py
+    |       |   |   |       misc.py
+    |       |   |   |       packaging.py
+    |       |   |   |       retry.py
+    |       |   |   |       setuptools_build.py
+    |       |   |   |       subprocess.py
+    |       |   |   |       temp_dir.py
+    |       |   |   |       unpacking.py
+    |       |   |   |       urls.py
+    |       |   |   |       virtualenv.py
+    |       |   |   |       wheel.py
+    |       |   |   |       _jaraco_text.py
+    |       |   |   |       _log.py
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   \---vcs
+    |       |   |           bazaar.py
+    |       |   |           git.py
+    |       |   |           mercurial.py
+    |       |   |           subversion.py
+    |       |   |           versioncontrol.py
+    |       |   |           __init__.py
+    |       |   |           
+    |       |   \---_vendor
+    |       |       |   vendor.txt
+    |       |       |   __init__.py
+    |       |       |   
+    |       |       +---cachecontrol
+    |       |       |   |   adapter.py
+    |       |       |   |   cache.py
+    |       |       |   |   controller.py
+    |       |       |   |   filewrapper.py
+    |       |       |   |   heuristics.py
+    |       |       |   |   py.typed
+    |       |       |   |   serialize.py
+    |       |       |   |   wrapper.py
+    |       |       |   |   _cmd.py
+    |       |       |   |   __init__.py
+    |       |       |   |   
+    |       |       |   \---caches
+    |       |       |           file_cache.py
+    |       |       |           redis_cache.py
+    |       |       |           __init__.py
+    |       |       |           
+    |       |       +---certifi
+    |       |       |       cacert.pem
+    |       |       |       core.py
+    |       |       |       py.typed
+    |       |       |       __init__.py
+    |       |       |       __main__.py
+    |       |       |       
+    |       |       +---dependency_groups
+    |       |       |       py.typed
+    |       |       |       _implementation.py
+    |       |       |       _lint_dependency_groups.py
+    |       |       |       _pip_wrapper.py
+    |       |       |       _toml_compat.py
+    |       |       |       __init__.py
+    |       |       |       __main__.py
+    |       |       |       
+    |       |       +---distlib
+    |       |       |       compat.py
+    |       |       |       resources.py
+    |       |       |       scripts.py
+    |       |       |       t32.exe
+    |       |       |       t64-arm.exe
+    |       |       |       t64.exe
+    |       |       |       util.py
+    |       |       |       w32.exe
+    |       |       |       w64-arm.exe
+    |       |       |       w64.exe
+    |       |       |       __init__.py
+    |       |       |       
+    |       |       +---distro
+    |       |       |       distro.py
+    |       |       |       py.typed
+    |       |       |       __init__.py
+    |       |       |       __main__.py
+    |       |       |       
+    |       |       +---idna
+    |       |       |       codec.py
+    |       |       |       compat.py
+    |       |       |       core.py
+    |       |       |       idnadata.py
+    |       |       |       intranges.py
+    |       |       |       package_data.py
+    |       |       |       py.typed
+    |       |       |       uts46data.py
+    |       |       |       __init__.py
+    |       |       |       
+    |       |       +---msgpack
+    |       |       |       exceptions.py
+    |       |       |       ext.py
+    |       |       |       fallback.py
+    |       |       |       __init__.py
+    |       |       |       
+    |       |       +---packaging
+    |       |       |   |   markers.py
+    |       |       |   |   metadata.py
+    |       |       |   |   py.typed
+    |       |       |   |   requirements.py
+    |       |       |   |   specifiers.py
+    |       |       |   |   tags.py
+    |       |       |   |   utils.py
+    |       |       |   |   version.py
+    |       |       |   |   _elffile.py
+    |       |       |   |   _manylinux.py
+    |       |       |   |   _musllinux.py
+    |       |       |   |   _parser.py
+    |       |       |   |   _structures.py
+    |       |       |   |   _tokenizer.py
+    |       |       |   |   __init__.py
+    |       |       |   |   
+    |       |       |   \---licenses
+    |       |       |           _spdx.py
+    |       |       |           __init__.py
+    |       |       |           
+    |       |       +---pkg_resources
+    |       |       |       __init__.py
+    |       |       |       
+    |       |       +---platformdirs
+    |       |       |       android.py
+    |       |       |       api.py
+    |       |       |       macos.py
+    |       |       |       py.typed
+    |       |       |       unix.py
+    |       |       |       version.py
+    |       |       |       windows.py
+    |       |       |       __init__.py
+    |       |       |       __main__.py
+    |       |       |       
+    |       |       +---pygments
+    |       |       |   |   console.py
+    |       |       |   |   filter.py
+    |       |       |   |   formatter.py
+    |       |       |   |   lexer.py
+    |       |       |   |   modeline.py
+    |       |       |   |   plugin.py
+    |       |       |   |   regexopt.py
+    |       |       |   |   scanner.py
+    |       |       |   |   sphinxext.py
+    |       |       |   |   style.py
+    |       |       |   |   token.py
+    |       |       |   |   unistring.py
+    |       |       |   |   util.py
+    |       |       |   |   __init__.py
+    |       |       |   |   __main__.py
+    |       |       |   |   
+    |       |       |   +---filters
+    |       |       |   |       __init__.py
+    |       |       |   |       
+    |       |       |   +---formatters
+    |       |       |   |       _mapping.py
+    |       |       |   |       __init__.py
+    |       |       |   |       
+    |       |       |   +---lexers
+    |       |       |   |       python.py
+    |       |       |   |       _mapping.py
+    |       |       |   |       __init__.py
+    |       |       |   |       
+    |       |       |   \---styles
+    |       |       |           _mapping.py
+    |       |       |           __init__.py
+    |       |       |           
+    |       |       +---pyproject_hooks
+    |       |       |   |   py.typed
+    |       |       |   |   _impl.py
+    |       |       |   |   __init__.py
+    |       |       |   |   
+    |       |       |   \---_in_process
+    |       |       |           _in_process.py
+    |       |       |           __init__.py
+    |       |       |           
+    |       |       +---requests
+    |       |       |       adapters.py
+    |       |       |       api.py
+    |       |       |       auth.py
+    |       |       |       certs.py
+    |       |       |       compat.py
+    |       |       |       cookies.py
+    |       |       |       exceptions.py
+    |       |       |       help.py
+    |       |       |       hooks.py
+    |       |       |       models.py
+    |       |       |       packages.py
+    |       |       |       sessions.py
+    |       |       |       status_codes.py
+    |       |       |       structures.py
+    |       |       |       utils.py
+    |       |       |       _internal_utils.py
+    |       |       |       __init__.py
+    |       |       |       __version__.py
+    |       |       |       
+    |       |       +---resolvelib
+    |       |       |   |   providers.py
+    |       |       |   |   py.typed
+    |       |       |   |   reporters.py
+    |       |       |   |   structs.py
+    |       |       |   |   __init__.py
+    |       |       |   |   
+    |       |       |   \---resolvers
+    |       |       |           abstract.py
+    |       |       |           criterion.py
+    |       |       |           exceptions.py
+    |       |       |           resolution.py
+    |       |       |           __init__.py
+    |       |       |           
+    |       |       +---rich
+    |       |       |       abc.py
+    |       |       |       align.py
+    |       |       |       ansi.py
+    |       |       |       bar.py
+    |       |       |       box.py
+    |       |       |       cells.py
+    |       |       |       color.py
+    |       |       |       color_triplet.py
+    |       |       |       columns.py
+    |       |       |       console.py
+    |       |       |       constrain.py
+    |       |       |       containers.py
+    |       |       |       control.py
+    |       |       |       default_styles.py
+    |       |       |       diagnose.py
+    |       |       |       emoji.py
+    |       |       |       errors.py
+    |       |       |       filesize.py
+    |       |       |       file_proxy.py
+    |       |       |       highlighter.py
+    |       |       |       json.py
+    |       |       |       jupyter.py
+    |       |       |       layout.py
+    |       |       |       live.py
+    |       |       |       live_render.py
+    |       |       |       logging.py
+    |       |       |       markup.py
+    |       |       |       measure.py
+    |       |       |       padding.py
+    |       |       |       pager.py
+    |       |       |       palette.py
+    |       |       |       panel.py
+    |       |       |       pretty.py
+    |       |       |       progress.py
+    |       |       |       progress_bar.py
+    |       |       |       prompt.py
+    |       |       |       protocol.py
+    |       |       |       py.typed
+    |       |       |       region.py
+    |       |       |       repr.py
+    |       |       |       rule.py
+    |       |       |       scope.py
+    |       |       |       screen.py
+    |       |       |       segment.py
+    |       |       |       spinner.py
+    |       |       |       status.py
+    |       |       |       style.py
+    |       |       |       styled.py
+    |       |       |       syntax.py
+    |       |       |       table.py
+    |       |       |       terminal_theme.py
+    |       |       |       text.py
+    |       |       |       theme.py
+    |       |       |       themes.py
+    |       |       |       traceback.py
+    |       |       |       tree.py
+    |       |       |       _cell_widths.py
+    |       |       |       _emoji_codes.py
+    |       |       |       _emoji_replace.py
+    |       |       |       _export_format.py
+    |       |       |       _extension.py
+    |       |       |       _fileno.py
+    |       |       |       _inspect.py
+    |       |       |       _log_render.py
+    |       |       |       _loop.py
+    |       |       |       _null_file.py
+    |       |       |       _palettes.py
+    |       |       |       _pick.py
+    |       |       |       _ratio.py
+    |       |       |       _spinners.py
+    |       |       |       _stack.py
+    |       |       |       _timer.py
+    |       |       |       _win32_console.py
+    |       |       |       _windows.py
+    |       |       |       _windows_renderer.py
+    |       |       |       _wrap.py
+    |       |       |       __init__.py
+    |       |       |       __main__.py
+    |       |       |       
+    |       |       +---tomli
+    |       |       |       py.typed
+    |       |       |       _parser.py
+    |       |       |       _re.py
+    |       |       |       _types.py
+    |       |       |       __init__.py
+    |       |       |       
+    |       |       +---tomli_w
+    |       |       |       py.typed
+    |       |       |       _writer.py
+    |       |       |       __init__.py
+    |       |       |       
+    |       |       +---truststore
+    |       |       |       py.typed
+    |       |       |       _api.py
+    |       |       |       _macos.py
+    |       |       |       _openssl.py
+    |       |       |       _ssl_constants.py
+    |       |       |       _windows.py
+    |       |       |       __init__.py
+    |       |       |       
+    |       |       \---urllib3
+    |       |           |   connection.py
+    |       |           |   connectionpool.py
+    |       |           |   exceptions.py
+    |       |           |   fields.py
+    |       |           |   filepost.py
+    |       |           |   poolmanager.py
+    |       |           |   request.py
+    |       |           |   response.py
+    |       |           |   _collections.py
+    |       |           |   _version.py
+    |       |           |   __init__.py
+    |       |           |   
+    |       |           +---contrib
+    |       |           |   |   appengine.py
+    |       |           |   |   ntlmpool.py
+    |       |           |   |   pyopenssl.py
+    |       |           |   |   securetransport.py
+    |       |           |   |   socks.py
+    |       |           |   |   _appengine_environ.py
+    |       |           |   |   __init__.py
+    |       |           |   |   
+    |       |           |   \---_securetransport
+    |       |           |           bindings.py
+    |       |           |           low_level.py
+    |       |           |           __init__.py
+    |       |           |           
+    |       |           +---packages
+    |       |           |   |   six.py
+    |       |           |   |   __init__.py
+    |       |           |   |   
+    |       |           |   \---backports
+    |       |           |           makefile.py
+    |       |           |           weakref_finalize.py
+    |       |           |           __init__.py
+    |       |           |           
+    |       |           \---util
+    |       |                   connection.py
+    |       |                   proxy.py
+    |       |                   queue.py
+    |       |                   request.py
+    |       |                   response.py
+    |       |                   retry.py
+    |       |                   ssltransport.py
+    |       |                   ssl_.py
+    |       |                   ssl_match_hostname.py
+    |       |                   timeout.py
+    |       |                   url.py
+    |       |                   wait.py
+    |       |                   __init__.py
+    |       |                   
+    |       +---pip-25.2.dist-info
+    |       |   |   entry_points.txt
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   REQUESTED
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |       |   AUTHORS.txt
+    |       |       |   LICENSE.txt
+    |       |       |   
+    |       |       \---src
+    |       |           \---pip
+    |       |               \---_vendor
+    |       |                   +---cachecontrol
+    |       |                   |       LICENSE.txt
+    |       |                   |       
+    |       |                   +---certifi
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---dependency_groups
+    |       |                   |       LICENSE.txt
+    |       |                   |       
+    |       |                   +---distlib
+    |       |                   |       LICENSE.txt
+    |       |                   |       
+    |       |                   +---distro
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---idna
+    |       |                   |       LICENSE.md
+    |       |                   |       
+    |       |                   +---msgpack
+    |       |                   |       COPYING
+    |       |                   |       
+    |       |                   +---packaging
+    |       |                   |       LICENSE
+    |       |                   |       LICENSE.APACHE
+    |       |                   |       LICENSE.BSD
+    |       |                   |       
+    |       |                   +---pkg_resources
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---platformdirs
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---pygments
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---pyproject_hooks
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---requests
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---resolvelib
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---rich
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---tomli
+    |       |                   |       LICENSE
+    |       |                   |       LICENSE-HEADER
+    |       |                   |       
+    |       |                   +---tomli_w
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   +---truststore
+    |       |                   |       LICENSE
+    |       |                   |       
+    |       |                   \---urllib3
+    |       |                           LICENSE.txt
+    |       |                           
+    |       +---pkg_resources
+    |       |   |   api_tests.txt
+    |       |   |   py.typed
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---tests
+    |       |       |   test_find_distributions.py
+    |       |       |   test_integration_zope_interface.py
+    |       |       |   test_markers.py
+    |       |       |   test_pkg_resources.py
+    |       |       |   test_resources.py
+    |       |       |   test_working_set.py
+    |       |       |   __init__.py
+    |       |       |   
+    |       |       \---data
+    |       |           +---my-test-package-source
+    |       |           |       setup.cfg
+    |       |           |       setup.py
+    |       |           |       
+    |       |           +---my-test-package-zip
+    |       |           |       my-test-package.zip
+    |       |           |       
+    |       |           +---my-test-package_unpacked-egg
+    |       |           |   \---my_test_package-1.0-py3.7.egg
+    |       |           |       \---EGG-INFO
+    |       |           |               dependency_links.txt
+    |       |           |               PKG-INFO
+    |       |           |               SOURCES.txt
+    |       |           |               top_level.txt
+    |       |           |               zip-safe
+    |       |           |               
+    |       |           \---my-test-package_zipped-egg
+    |       |                   my_test_package-1.0-py3.7.egg
+    |       |                   
+    |       +---plyer
+    |       |   |   utils.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   +---facades
+    |       |   |       accelerometer.py
+    |       |   |       audio.py
+    |       |   |       barometer.py
+    |       |   |       battery.py
+    |       |   |       bluetooth.py
+    |       |   |       brightness.py
+    |       |   |       call.py
+    |       |   |       camera.py
+    |       |   |       compass.py
+    |       |   |       cpu.py
+    |       |   |       devicename.py
+    |       |   |       email.py
+    |       |   |       filechooser.py
+    |       |   |       flash.py
+    |       |   |       gps.py
+    |       |   |       gravity.py
+    |       |   |       gyroscope.py
+    |       |   |       humidity.py
+    |       |   |       irblaster.py
+    |       |   |       keystore.py
+    |       |   |       light.py
+    |       |   |       notification.py
+    |       |   |       orientation.py
+    |       |   |       processors.py
+    |       |   |       proximity.py
+    |       |   |       screenshot.py
+    |       |   |       sms.py
+    |       |   |       spatialorientation.py
+    |       |   |       storagepath.py
+    |       |   |       stt.py
+    |       |   |       temperature.py
+    |       |   |       tts.py
+    |       |   |       uniqueid.py
+    |       |   |       vibrator.py
+    |       |   |       wifi.py
+    |       |   |       __init__.py
+    |       |   |       
+    |       |   \---platforms
+    |       |       |   __init__.py
+    |       |       |   
+    |       |       +---android
+    |       |       |       accelerometer.py
+    |       |       |       audio.py
+    |       |       |       barometer.py
+    |       |       |       battery.py
+    |       |       |       bluetooth.py
+    |       |       |       brightness.py
+    |       |       |       call.py
+    |       |       |       camera.py
+    |       |       |       compass.py
+    |       |       |       devicename.py
+    |       |       |       email.py
+    |       |       |       filechooser.py
+    |       |       |       flash.py
+    |       |       |       gps.py
+    |       |       |       gravity.py
+    |       |       |       gyroscope.py
+    |       |       |       humidity.py
+    |       |       |       irblaster.py
+    |       |       |       keystore.py
+    |       |       |       light.py
+    |       |       |       notification.py
+    |       |       |       orientation.py
+    |       |       |       proximity.py
+    |       |       |       sms.py
+    |       |       |       spatialorientation.py
+    |       |       |       storagepath.py
+    |       |       |       stt.py
+    |       |       |       temperature.py
+    |       |       |       tts.py
+    |       |       |       uniqueid.py
+    |       |       |       vibrator.py
+    |       |       |       __init__.py
+    |       |       |       
+    |       |       +---ios
+    |       |       |       accelerometer.py
+    |       |       |       barometer.py
+    |       |       |       battery.py
+    |       |       |       brightness.py
+    |       |       |       call.py
+    |       |       |       camera.py
+    |       |       |       compass.py
+    |       |       |       email.py
+    |       |       |       filechooser.py
+    |       |       |       flash.py
+    |       |       |       gps.py
+    |       |       |       gravity.py
+    |       |       |       gyroscope.py
+    |       |       |       keystore.py
+    |       |       |       sms.py
+    |       |       |       spatialorientation.py
+    |       |       |       storagepath.py
+    |       |       |       tts.py
+    |       |       |       uniqueid.py
+    |       |       |       vibrator.py
+    |       |       |       __init__.py
+    |       |       |       
+    |       |       +---linux
+    |       |       |       accelerometer.py
+    |       |       |       battery.py
+    |       |       |       brightness.py
+    |       |       |       cpu.py
+    |       |       |       devicename.py
+    |       |       |       email.py
+    |       |       |       filechooser.py
+    |       |       |       keystore.py
+    |       |       |       notification.py
+    |       |       |       orientation.py
+    |       |       |       processors.py
+    |       |       |       screenshot.py
+    |       |       |       storagepath.py
+    |       |       |       tts.py
+    |       |       |       uniqueid.py
+    |       |       |       wifi.py
+    |       |       |       __init__.py
+    |       |       |       
+    |       |       +---macosx
+    |       |       |   |   accelerometer.py
+    |       |       |   |   audio.py
+    |       |       |   |   battery.py
+    |       |       |   |   bluetooth.py
+    |       |       |   |   cpu.py
+    |       |       |   |   devicename.py
+    |       |       |   |   email.py
+    |       |       |   |   filechooser.py
+    |       |       |   |   keystore.py
+    |       |       |   |   notification.py
+    |       |       |   |   screenshot.py
+    |       |       |   |   storagepath.py
+    |       |       |   |   tts.py
+    |       |       |   |   uniqueid.py
+    |       |       |   |   wifi.py
+    |       |       |   |   __init__.py
+    |       |       |   |   
+    |       |       |   \---libs
+    |       |       |           osx_motion_sensor.py
+    |       |       |           osx_paths.py
+    |       |       |           __init__.py
+    |       |       |           
+    |       |       \---win
+    |       |           |   audio.py
+    |       |           |   battery.py
+    |       |           |   cpu.py
+    |       |           |   devicename.py
+    |       |           |   email.py
+    |       |           |   filechooser.py
+    |       |           |   keystore.py
+    |       |           |   notification.py
+    |       |           |   screenshot.py
+    |       |           |   storagepath.py
+    |       |           |   tts.py
+    |       |           |   uniqueid.py
+    |       |           |   wifi.py
+    |       |           |   __init__.py
+    |       |           |   
+    |       |           \---libs
+    |       |                   balloontip.py
+    |       |                   batterystatus.py
+    |       |                   wifi_defs.py
+    |       |                   win_api_defs.py
+    |       |                   __init__.py
+    |       |                   
+    |       +---plyer-2.1.0.dist-info
+    |       |       INSTALLER
+    |       |       LICENSE
+    |       |       METADATA
+    |       |       RECORD
+    |       |       REQUESTED
+    |       |       top_level.txt
+    |       |       WHEEL
+    |       |       
+    |       +---pycparser
+    |       |   |   ast_transforms.py
+    |       |   |   c_ast.py
+    |       |   |   c_generator.py
+    |       |   |   c_lexer.py
+    |       |   |   c_parser.py
+    |       |   |   lextab.py
+    |       |   |   plyparser.py
+    |       |   |   yacctab.py
+    |       |   |   _ast_gen.py
+    |       |   |   _build_tables.py
+    |       |   |   _c_ast.cfg
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---ply
+    |       |           cpp.py
+    |       |           ctokens.py
+    |       |           lex.py
+    |       |           yacc.py
+    |       |           ygen.py
+    |       |           __init__.py
+    |       |           
+    |       +---pycparser-2.22.dist-info
+    |       |       INSTALLER
+    |       |       LICENSE
+    |       |       METADATA
+    |       |       RECORD
+    |       |       top_level.txt
+    |       |       WHEEL
+    |       |       
+    |       +---PyInstaller
+    |       |   |   compat.py
+    |       |   |   config.py
+    |       |   |   configure.py
+    |       |   |   exceptions.py
+    |       |   |   log.py
+    |       |   |   _recursion_too_deep_message.py
+    |       |   |   _shared_with_waf.py
+    |       |   |   __init__.py
+    |       |   |   __main__.py
+    |       |   |   
+    |       |   +---archive
+    |       |   |       pyz_crypto.py
+    |       |   |       readers.py
+    |       |   |       writers.py
+    |       |   |       __init__.py
+    |       |   |       
+    |       |   +---bootloader
+    |       |   |   +---images
+    |       |   |   |       icon-console.ico
+    |       |   |   |       icon-windowed.ico
+    |       |   |   |       
+    |       |   |   \---Windows-64bit-intel
+    |       |   |           run.exe
+    |       |   |           runw.exe
+    |       |   |           runw_d.exe
+    |       |   |           run_d.exe
+    |       |   |           
+    |       |   +---building
+    |       |   |       api.py
+    |       |   |       build_main.py
+    |       |   |       datastruct.py
+    |       |   |       icon.py
+    |       |   |       makespec.py
+    |       |   |       osx.py
+    |       |   |       splash.py
+    |       |   |       splash_templates.py
+    |       |   |       templates.py
+    |       |   |       utils.py
+    |       |   |       __init__.py
+    |       |   |       
+    |       |   +---depend
+    |       |   |       analysis.py
+    |       |   |       bindepend.py
+    |       |   |       bytecode.py
+    |       |   |       dylib.py
+    |       |   |       imphook.py
+    |       |   |       imphookapi.py
+    |       |   |       utils.py
+    |       |   |       __init__.py
+    |       |   |       
+    |       |   +---fake-modules
+    |       |   |   |   pyi_splash.py
+    |       |   |   |   
+    |       |   |   \---_pyi_rth_utils
+    |       |   |           qt.py
+    |       |   |           tempfile.py
+    |       |   |           _win32.py
+    |       |   |           __init__.py
+    |       |   |           
+    |       |   +---hooks
+    |       |   |   |   hook-babel.py
+    |       |   |   |   hook-difflib.py
+    |       |   |   |   hook-distutils.command.check.py
+    |       |   |   |   hook-distutils.py
+    |       |   |   |   hook-distutils.util.py
+    |       |   |   |   hook-django.contrib.sessions.py
+    |       |   |   |   hook-django.core.cache.py
+    |       |   |   |   hook-django.core.mail.py
+    |       |   |   |   hook-django.core.management.py
+    |       |   |   |   hook-django.db.backends.mysql.base.py
+    |       |   |   |   hook-django.db.backends.oracle.base.py
+    |       |   |   |   hook-django.db.backends.py
+    |       |   |   |   hook-django.py
+    |       |   |   |   hook-django.template.loaders.py
+    |       |   |   |   hook-encodings.py
+    |       |   |   |   hook-gevent.py
+    |       |   |   |   hook-gi.py
+    |       |   |   |   hook-gi.repository.Adw.py
+    |       |   |   |   hook-gi.repository.AppIndicator3.py
+    |       |   |   |   hook-gi.repository.Atk.py
+    |       |   |   |   hook-gi.repository.AyatanaAppIndicator3.py
+    |       |   |   |   hook-gi.repository.cairo.py
+    |       |   |   |   hook-gi.repository.Champlain.py
+    |       |   |   |   hook-gi.repository.Clutter.py
+    |       |   |   |   hook-gi.repository.DBus.py
+    |       |   |   |   hook-gi.repository.freetype2.py
+    |       |   |   |   hook-gi.repository.Gdk.py
+    |       |   |   |   hook-gi.repository.GdkPixbuf.py
+    |       |   |   |   hook-gi.repository.Gio.py
+    |       |   |   |   hook-gi.repository.GIRepository.py
+    |       |   |   |   hook-gi.repository.GLib.py
+    |       |   |   |   hook-gi.repository.GModule.py
+    |       |   |   |   hook-gi.repository.GObject.py
+    |       |   |   |   hook-gi.repository.Graphene.py
+    |       |   |   |   hook-gi.repository.Gsk.py
+    |       |   |   |   hook-gi.repository.Gst.py
+    |       |   |   |   hook-gi.repository.GstAllocators.py
+    |       |   |   |   hook-gi.repository.GstApp.py
+    |       |   |   |   hook-gi.repository.GstAudio.py
+    |       |   |   |   hook-gi.repository.GstBadAudio.py
+    |       |   |   |   hook-gi.repository.GstBase.py
+    |       |   |   |   hook-gi.repository.GstCheck.py
+    |       |   |   |   hook-gi.repository.GstCodecs.py
+    |       |   |   |   hook-gi.repository.GstController.py
+    |       |   |   |   hook-gi.repository.GstGL.py
+    |       |   |   |   hook-gi.repository.GstGLEGL.py
+    |       |   |   |   hook-gi.repository.GstGLWayland.py
+    |       |   |   |   hook-gi.repository.GstGLX11.py
+    |       |   |   |   hook-gi.repository.GstInsertBin.py
+    |       |   |   |   hook-gi.repository.GstMpegts.py
+    |       |   |   |   hook-gi.repository.GstNet.py
+    |       |   |   |   hook-gi.repository.GstPbutils.py
+    |       |   |   |   hook-gi.repository.GstPlay.py
+    |       |   |   |   hook-gi.repository.GstPlayer.py
+    |       |   |   |   hook-gi.repository.GstRtp.py
+    |       |   |   |   hook-gi.repository.GstRtsp.py
+    |       |   |   |   hook-gi.repository.GstRtspServer.py
+    |       |   |   |   hook-gi.repository.GstSdp.py
+    |       |   |   |   hook-gi.repository.GstTag.py
+    |       |   |   |   hook-gi.repository.GstTranscoder.py
+    |       |   |   |   hook-gi.repository.GstVideo.py
+    |       |   |   |   hook-gi.repository.GstVulkan.py
+    |       |   |   |   hook-gi.repository.GstVulkanWayland.py
+    |       |   |   |   hook-gi.repository.GstVulkanXCB.py
+    |       |   |   |   hook-gi.repository.GstWebRTC.py
+    |       |   |   |   hook-gi.repository.Gtk.py
+    |       |   |   |   hook-gi.repository.GtkChamplain.py
+    |       |   |   |   hook-gi.repository.GtkClutter.py
+    |       |   |   |   hook-gi.repository.GtkosxApplication.py
+    |       |   |   |   hook-gi.repository.GtkSource.py
+    |       |   |   |   hook-gi.repository.HarfBuzz.py
+    |       |   |   |   hook-gi.repository.Pango.py
+    |       |   |   |   hook-gi.repository.PangoCairo.py
+    |       |   |   |   hook-gi.repository.Rsvg.py
+    |       |   |   |   hook-gi.repository.xlib.py
+    |       |   |   |   hook-heapq.py
+    |       |   |   |   hook-idlelib.py
+    |       |   |   |   hook-importlib_metadata.py
+    |       |   |   |   hook-importlib_resources.py
+    |       |   |   |   hook-keyring.py
+    |       |   |   |   hook-kivy.py
+    |       |   |   |   hook-lib2to3.py
+    |       |   |   |   hook-matplotlib.backends.backend_qtagg.py
+    |       |   |   |   hook-matplotlib.backends.backend_qtcairo.py
+    |       |   |   |   hook-matplotlib.backends.py
+    |       |   |   |   hook-matplotlib.backends.qt_compat.py
+    |       |   |   |   hook-matplotlib.backend_bases.py
+    |       |   |   |   hook-matplotlib.numerix.py
+    |       |   |   |   hook-matplotlib.py
+    |       |   |   |   hook-matplotlib.pyplot.py
+    |       |   |   |   hook-multiprocessing.util.py
+    |       |   |   |   hook-numpy.py
+    |       |   |   |   hook-pandas.io.clipboard.py
+    |       |   |   |   hook-pandas.io.formats.style.py
+    |       |   |   |   hook-pandas.plotting.py
+    |       |   |   |   hook-pandas.py
+    |       |   |   |   hook-pickle.py
+    |       |   |   |   hook-PIL.Image.py
+    |       |   |   |   hook-PIL.ImageFilter.py
+    |       |   |   |   hook-PIL.py
+    |       |   |   |   hook-PIL.SpiderImagePlugin.py
+    |       |   |   |   hook-pkg_resources.py
+    |       |   |   |   hook-platform.py
+    |       |   |   |   hook-pygments.py
+    |       |   |   |   hook-PyQt5.py
+    |       |   |   |   hook-PyQt5.QAxContainer.py
+    |       |   |   |   hook-PyQt5.Qsci.py
+    |       |   |   |   hook-PyQt5.Qt.py
+    |       |   |   |   hook-PyQt5.Qt3DAnimation.py
+    |       |   |   |   hook-PyQt5.Qt3DCore.py
+    |       |   |   |   hook-PyQt5.Qt3DExtras.py
+    |       |   |   |   hook-PyQt5.Qt3DInput.py
+    |       |   |   |   hook-PyQt5.Qt3DLogic.py
+    |       |   |   |   hook-PyQt5.Qt3DRender.py
+    |       |   |   |   hook-PyQt5.QtBluetooth.py
+    |       |   |   |   hook-PyQt5.QtChart.py
+    |       |   |   |   hook-PyQt5.QtCore.py
+    |       |   |   |   hook-PyQt5.QtDataVisualization.py
+    |       |   |   |   hook-PyQt5.QtDBus.py
+    |       |   |   |   hook-PyQt5.QtDesigner.py
+    |       |   |   |   hook-PyQt5.QtGui.py
+    |       |   |   |   hook-PyQt5.QtHelp.py
+    |       |   |   |   hook-PyQt5.QtLocation.py
+    |       |   |   |   hook-PyQt5.QtMacExtras.py
+    |       |   |   |   hook-PyQt5.QtMultimedia.py
+    |       |   |   |   hook-PyQt5.QtMultimediaWidgets.py
+    |       |   |   |   hook-PyQt5.QtNetwork.py
+    |       |   |   |   hook-PyQt5.QtNetworkAuth.py
+    |       |   |   |   hook-PyQt5.QtNfc.py
+    |       |   |   |   hook-PyQt5.QtOpenGL.py
+    |       |   |   |   hook-PyQt5.QtPositioning.py
+    |       |   |   |   hook-PyQt5.QtPrintSupport.py
+    |       |   |   |   hook-PyQt5.QtPurchasing.py
+    |       |   |   |   hook-PyQt5.QtQml.py
+    |       |   |   |   hook-PyQt5.QtQuick.py
+    |       |   |   |   hook-PyQt5.QtQuick3D.py
+    |       |   |   |   hook-PyQt5.QtQuickWidgets.py
+    |       |   |   |   hook-PyQt5.QtRemoteObjects.py
+    |       |   |   |   hook-PyQt5.QtScript.py
+    |       |   |   |   hook-PyQt5.QtSensors.py
+    |       |   |   |   hook-PyQt5.QtSerialPort.py
+    |       |   |   |   hook-PyQt5.QtSql.py
+    |       |   |   |   hook-PyQt5.QtSvg.py
+    |       |   |   |   hook-PyQt5.QtTest.py
+    |       |   |   |   hook-PyQt5.QtTextToSpeech.py
+    |       |   |   |   hook-PyQt5.QtWebChannel.py
+    |       |   |   |   hook-PyQt5.QtWebEngine.py
+    |       |   |   |   hook-PyQt5.QtWebEngineCore.py
+    |       |   |   |   hook-PyQt5.QtWebEngineWidgets.py
+    |       |   |   |   hook-PyQt5.QtWebKit.py
+    |       |   |   |   hook-PyQt5.QtWebKitWidgets.py
+    |       |   |   |   hook-PyQt5.QtWebSockets.py
+    |       |   |   |   hook-PyQt5.QtWidgets.py
+    |       |   |   |   hook-PyQt5.QtWinExtras.py
+    |       |   |   |   hook-PyQt5.QtX11Extras.py
+    |       |   |   |   hook-PyQt5.QtXml.py
+    |       |   |   |   hook-PyQt5.QtXmlPatterns.py
+    |       |   |   |   hook-PyQt5.uic.py
+    |       |   |   |   hook-PyQt6.py
+    |       |   |   |   hook-PyQt6.QAxContainer.py
+    |       |   |   |   hook-PyQt6.Qsci.py
+    |       |   |   |   hook-PyQt6.Qt3DAnimation.py
+    |       |   |   |   hook-PyQt6.Qt3DCore.py
+    |       |   |   |   hook-PyQt6.Qt3DExtras.py
+    |       |   |   |   hook-PyQt6.Qt3DInput.py
+    |       |   |   |   hook-PyQt6.Qt3DLogic.py
+    |       |   |   |   hook-PyQt6.Qt3DRender.py
+    |       |   |   |   hook-PyQt6.QtBluetooth.py
+    |       |   |   |   hook-PyQt6.QtCharts.py
+    |       |   |   |   hook-PyQt6.QtCore.py
+    |       |   |   |   hook-PyQt6.QtDataVisualization.py
+    |       |   |   |   hook-PyQt6.QtDBus.py
+    |       |   |   |   hook-PyQt6.QtDesigner.py
+    |       |   |   |   hook-PyQt6.QtGraphs.py
+    |       |   |   |   hook-PyQt6.QtGraphsWidgets.py
+    |       |   |   |   hook-PyQt6.QtGui.py
+    |       |   |   |   hook-PyQt6.QtHelp.py
+    |       |   |   |   hook-PyQt6.QtMultimedia.py
+    |       |   |   |   hook-PyQt6.QtMultimediaWidgets.py
+    |       |   |   |   hook-PyQt6.QtNetwork.py
+    |       |   |   |   hook-PyQt6.QtNetworkAuth.py
+    |       |   |   |   hook-PyQt6.QtNfc.py
+    |       |   |   |   hook-PyQt6.QtOpenGL.py
+    |       |   |   |   hook-PyQt6.QtOpenGLWidgets.py
+    |       |   |   |   hook-PyQt6.QtPdf.py
+    |       |   |   |   hook-PyQt6.QtPdfWidgets.py
+    |       |   |   |   hook-PyQt6.QtPositioning.py
+    |       |   |   |   hook-PyQt6.QtPrintSupport.py
+    |       |   |   |   hook-PyQt6.QtQml.py
+    |       |   |   |   hook-PyQt6.QtQuick.py
+    |       |   |   |   hook-PyQt6.QtQuick3D.py
+    |       |   |   |   hook-PyQt6.QtQuickWidgets.py
+    |       |   |   |   hook-PyQt6.QtRemoteObjects.py
+    |       |   |   |   hook-PyQt6.QtSensors.py
+    |       |   |   |   hook-PyQt6.QtSerialPort.py
+    |       |   |   |   hook-PyQt6.QtSpatialAudio.py
+    |       |   |   |   hook-PyQt6.QtSql.py
+    |       |   |   |   hook-PyQt6.QtStateMachine.py
+    |       |   |   |   hook-PyQt6.QtSvg.py
+    |       |   |   |   hook-PyQt6.QtSvgWidgets.py
+    |       |   |   |   hook-PyQt6.QtTest.py
+    |       |   |   |   hook-PyQt6.QtTextToSpeech.py
+    |       |   |   |   hook-PyQt6.QtWebChannel.py
+    |       |   |   |   hook-PyQt6.QtWebEngineCore.py
+    |       |   |   |   hook-PyQt6.QtWebEngineQuick.py
+    |       |   |   |   hook-PyQt6.QtWebEngineWidgets.py
+    |       |   |   |   hook-PyQt6.QtWebSockets.py
+    |       |   |   |   hook-PyQt6.QtWidgets.py
+    |       |   |   |   hook-PyQt6.QtXml.py
+    |       |   |   |   hook-PyQt6.uic.py
+    |       |   |   |   hook-PySide2.py
+    |       |   |   |   hook-PySide2.Qt3DAnimation.py
+    |       |   |   |   hook-PySide2.Qt3DCore.py
+    |       |   |   |   hook-PySide2.Qt3DExtras.py
+    |       |   |   |   hook-PySide2.Qt3DInput.py
+    |       |   |   |   hook-PySide2.Qt3DLogic.py
+    |       |   |   |   hook-PySide2.Qt3DRender.py
+    |       |   |   |   hook-PySide2.QtAxContainer.py
+    |       |   |   |   hook-PySide2.QtCharts.py
+    |       |   |   |   hook-PySide2.QtConcurrent.py
+    |       |   |   |   hook-PySide2.QtCore.py
+    |       |   |   |   hook-PySide2.QtDataVisualization.py
+    |       |   |   |   hook-PySide2.QtGui.py
+    |       |   |   |   hook-PySide2.QtHelp.py
+    |       |   |   |   hook-PySide2.QtLocation.py
+    |       |   |   |   hook-PySide2.QtMacExtras.py
+    |       |   |   |   hook-PySide2.QtMultimedia.py
+    |       |   |   |   hook-PySide2.QtMultimediaWidgets.py
+    |       |   |   |   hook-PySide2.QtNetwork.py
+    |       |   |   |   hook-PySide2.QtOpenGL.py
+    |       |   |   |   hook-PySide2.QtOpenGLFunctions.py
+    |       |   |   |   hook-PySide2.QtPositioning.py
+    |       |   |   |   hook-PySide2.QtPrintSupport.py
+    |       |   |   |   hook-PySide2.QtQml.py
+    |       |   |   |   hook-PySide2.QtQuick.py
+    |       |   |   |   hook-PySide2.QtQuickControls2.py
+    |       |   |   |   hook-PySide2.QtQuickWidgets.py
+    |       |   |   |   hook-PySide2.QtRemoteObjects.py
+    |       |   |   |   hook-PySide2.QtScript.py
+    |       |   |   |   hook-PySide2.QtScriptTools.py
+    |       |   |   |   hook-PySide2.QtScxml.py
+    |       |   |   |   hook-PySide2.QtSensors.py
+    |       |   |   |   hook-PySide2.QtSerialPort.py
+    |       |   |   |   hook-PySide2.QtSql.py
+    |       |   |   |   hook-PySide2.QtSvg.py
+    |       |   |   |   hook-PySide2.QtTest.py
+    |       |   |   |   hook-PySide2.QtTextToSpeech.py
+    |       |   |   |   hook-PySide2.QtUiTools.py
+    |       |   |   |   hook-PySide2.QtWebChannel.py
+    |       |   |   |   hook-PySide2.QtWebEngine.py
+    |       |   |   |   hook-PySide2.QtWebEngineCore.py
+    |       |   |   |   hook-PySide2.QtWebEngineWidgets.py
+    |       |   |   |   hook-PySide2.QtWebKit.py
+    |       |   |   |   hook-PySide2.QtWebKitWidgets.py
+    |       |   |   |   hook-PySide2.QtWebSockets.py
+    |       |   |   |   hook-PySide2.QtWidgets.py
+    |       |   |   |   hook-PySide2.QtWinExtras.py
+    |       |   |   |   hook-PySide2.QtX11Extras.py
+    |       |   |   |   hook-PySide2.QtXml.py
+    |       |   |   |   hook-PySide2.QtXmlPatterns.py
+    |       |   |   |   hook-PySide2.Qwt5.py
+    |       |   |   |   hook-PySide6.py
+    |       |   |   |   hook-PySide6.Qt3DAnimation.py
+    |       |   |   |   hook-PySide6.Qt3DCore.py
+    |       |   |   |   hook-PySide6.Qt3DExtras.py
+    |       |   |   |   hook-PySide6.Qt3DInput.py
+    |       |   |   |   hook-PySide6.Qt3DLogic.py
+    |       |   |   |   hook-PySide6.Qt3DRender.py
+    |       |   |   |   hook-PySide6.QtAxContainer.py
+    |       |   |   |   hook-PySide6.QtBluetooth.py
+    |       |   |   |   hook-PySide6.QtCharts.py
+    |       |   |   |   hook-PySide6.QtConcurrent.py
+    |       |   |   |   hook-PySide6.QtCore.py
+    |       |   |   |   hook-PySide6.QtDataVisualization.py
+    |       |   |   |   hook-PySide6.QtDBus.py
+    |       |   |   |   hook-PySide6.QtDesigner.py
+    |       |   |   |   hook-PySide6.QtGraphs.py
+    |       |   |   |   hook-PySide6.QtGraphsWidgets.py
+    |       |   |   |   hook-PySide6.QtGui.py
+    |       |   |   |   hook-PySide6.QtHelp.py
+    |       |   |   |   hook-PySide6.QtHttpServer.py
+    |       |   |   |   hook-PySide6.QtLocation.py
+    |       |   |   |   hook-PySide6.QtMultimedia.py
+    |       |   |   |   hook-PySide6.QtMultimediaWidgets.py
+    |       |   |   |   hook-PySide6.QtNetwork.py
+    |       |   |   |   hook-PySide6.QtNetworkAuth.py
+    |       |   |   |   hook-PySide6.QtNfc.py
+    |       |   |   |   hook-PySide6.QtOpenGL.py
+    |       |   |   |   hook-PySide6.QtOpenGLWidgets.py
+    |       |   |   |   hook-PySide6.QtPdf.py
+    |       |   |   |   hook-PySide6.QtPdfWidgets.py
+    |       |   |   |   hook-PySide6.QtPositioning.py
+    |       |   |   |   hook-PySide6.QtPrintSupport.py
+    |       |   |   |   hook-PySide6.QtQml.py
+    |       |   |   |   hook-PySide6.QtQuick.py
+    |       |   |   |   hook-PySide6.QtQuick3D.py
+    |       |   |   |   hook-PySide6.QtQuickControls2.py
+    |       |   |   |   hook-PySide6.QtQuickWidgets.py
+    |       |   |   |   hook-PySide6.QtRemoteObjects.py
+    |       |   |   |   hook-PySide6.QtScxml.py
+    |       |   |   |   hook-PySide6.QtSensors.py
+    |       |   |   |   hook-PySide6.QtSerialBus.py
+    |       |   |   |   hook-PySide6.QtSerialPort.py
+    |       |   |   |   hook-PySide6.QtSpatialAudio.py
+    |       |   |   |   hook-PySide6.QtSql.py
+    |       |   |   |   hook-PySide6.QtStateMachine.py
+    |       |   |   |   hook-PySide6.QtSvg.py
+    |       |   |   |   hook-PySide6.QtSvgWidgets.py
+    |       |   |   |   hook-PySide6.QtTest.py
+    |       |   |   |   hook-PySide6.QtTextToSpeech.py
+    |       |   |   |   hook-PySide6.QtUiTools.py
+    |       |   |   |   hook-PySide6.QtWebChannel.py
+    |       |   |   |   hook-PySide6.QtWebEngineCore.py
+    |       |   |   |   hook-PySide6.QtWebEngineQuick.py
+    |       |   |   |   hook-PySide6.QtWebEngineWidgets.py
+    |       |   |   |   hook-PySide6.QtWebSockets.py
+    |       |   |   |   hook-PySide6.QtWidgets.py
+    |       |   |   |   hook-PySide6.QtXml.py
+    |       |   |   |   hook-pytz.py
+    |       |   |   |   hook-pytzdata.py
+    |       |   |   |   hook-qtawesome.py
+    |       |   |   |   hook-qtpy.py
+    |       |   |   |   hook-scapy.layers.all.py
+    |       |   |   |   hook-scipy.io.matlab.py
+    |       |   |   |   hook-scipy.linalg.py
+    |       |   |   |   hook-scipy.py
+    |       |   |   |   hook-scipy.sparse.csgraph.py
+    |       |   |   |   hook-scipy.spatial.transform.rotation.py
+    |       |   |   |   hook-scipy.spatial._ckdtree.py
+    |       |   |   |   hook-scipy.special._ellip_harm_2.py
+    |       |   |   |   hook-scipy.special._ufuncs.py
+    |       |   |   |   hook-scipy.stats._stats.py
+    |       |   |   |   hook-scrapy.py
+    |       |   |   |   hook-setuptools.py
+    |       |   |   |   hook-setuptools._vendor.importlib_metadata.py
+    |       |   |   |   hook-setuptools._vendor.jaraco.text.py
+    |       |   |   |   hook-shelve.py
+    |       |   |   |   hook-shiboken6.py
+    |       |   |   |   hook-sphinx.py
+    |       |   |   |   hook-sqlalchemy.py
+    |       |   |   |   hook-sqlite3.py
+    |       |   |   |   hook-sysconfig.py
+    |       |   |   |   hook-wcwidth.py
+    |       |   |   |   hook-win32ctypes.core.py
+    |       |   |   |   hook-xml.dom.domreg.py
+    |       |   |   |   hook-xml.etree.cElementTree.py
+    |       |   |   |   hook-xml.py
+    |       |   |   |   hook-zope.interface.py
+    |       |   |   |   hook-_ctypes.py
+    |       |   |   |   hook-_osx_support.py
+    |       |   |   |   hook-_pyi_rth_utils.py
+    |       |   |   |   hook-_tkinter.py
+    |       |   |   |   rthooks.dat
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---pre_find_module_path
+    |       |   |   |       hook-distutils.py
+    |       |   |   |       hook-pyi_splash.py
+    |       |   |   |       hook-PyQt5.uic.port_v2.py
+    |       |   |   |       hook-tkinter.py
+    |       |   |   |       hook-_pyi_rth_utils.py
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   +---pre_safe_import_module
+    |       |   |   |       hook-autocommand.py
+    |       |   |   |       hook-backports.tarfile.py
+    |       |   |   |       hook-distutils.py
+    |       |   |   |       hook-gi.overrides.py
+    |       |   |   |       hook-gi.py
+    |       |   |   |       hook-gi.repository.Adw.py
+    |       |   |   |       hook-gi.repository.AppIndicator3.py
+    |       |   |   |       hook-gi.repository.Atk.py
+    |       |   |   |       hook-gi.repository.AyatanaAppIndicator3.py
+    |       |   |   |       hook-gi.repository.cairo.py
+    |       |   |   |       hook-gi.repository.Champlain.py
+    |       |   |   |       hook-gi.repository.Clutter.py
+    |       |   |   |       hook-gi.repository.DBus.py
+    |       |   |   |       hook-gi.repository.freetype2.py
+    |       |   |   |       hook-gi.repository.Gdk.py
+    |       |   |   |       hook-gi.repository.GdkPixbuf.py
+    |       |   |   |       hook-gi.repository.Gio.py
+    |       |   |   |       hook-gi.repository.GIRepository.py
+    |       |   |   |       hook-gi.repository.GLib.py
+    |       |   |   |       hook-gi.repository.GModule.py
+    |       |   |   |       hook-gi.repository.GObject.py
+    |       |   |   |       hook-gi.repository.Graphene.py
+    |       |   |   |       hook-gi.repository.Gsk.py
+    |       |   |   |       hook-gi.repository.Gst.py
+    |       |   |   |       hook-gi.repository.GstAllocators.py
+    |       |   |   |       hook-gi.repository.GstApp.py
+    |       |   |   |       hook-gi.repository.GstAudio.py
+    |       |   |   |       hook-gi.repository.GstBadAudio.py
+    |       |   |   |       hook-gi.repository.GstBase.py
+    |       |   |   |       hook-gi.repository.GstCheck.py
+    |       |   |   |       hook-gi.repository.GstCodecs.py
+    |       |   |   |       hook-gi.repository.GstController.py
+    |       |   |   |       hook-gi.repository.GstGL.py
+    |       |   |   |       hook-gi.repository.GstGLEGL.py
+    |       |   |   |       hook-gi.repository.GstGLWayland.py
+    |       |   |   |       hook-gi.repository.GstGLX11.py
+    |       |   |   |       hook-gi.repository.GstInsertBin.py
+    |       |   |   |       hook-gi.repository.GstMpegts.py
+    |       |   |   |       hook-gi.repository.GstNet.py
+    |       |   |   |       hook-gi.repository.GstPbutils.py
+    |       |   |   |       hook-gi.repository.GstPlay.py
+    |       |   |   |       hook-gi.repository.GstPlayer.py
+    |       |   |   |       hook-gi.repository.GstRtp.py
+    |       |   |   |       hook-gi.repository.GstRtsp.py
+    |       |   |   |       hook-gi.repository.GstRtspServer.py
+    |       |   |   |       hook-gi.repository.GstSdp.py
+    |       |   |   |       hook-gi.repository.GstTag.py
+    |       |   |   |       hook-gi.repository.GstTranscoder.py
+    |       |   |   |       hook-gi.repository.GstVideo.py
+    |       |   |   |       hook-gi.repository.GstVulkan.py
+    |       |   |   |       hook-gi.repository.GstVulkanWayland.py
+    |       |   |   |       hook-gi.repository.GstVulkanXCB.py
+    |       |   |   |       hook-gi.repository.GstWebRTC.py
+    |       |   |   |       hook-gi.repository.Gtk.py
+    |       |   |   |       hook-gi.repository.GtkChamplain.py
+    |       |   |   |       hook-gi.repository.GtkClutter.py
+    |       |   |   |       hook-gi.repository.GtkosxApplication.py
+    |       |   |   |       hook-gi.repository.GtkSource.py
+    |       |   |   |       hook-gi.repository.HarfBuzz.py
+    |       |   |   |       hook-gi.repository.Pango.py
+    |       |   |   |       hook-gi.repository.PangoCairo.py
+    |       |   |   |       hook-gi.repository.Rsvg.py
+    |       |   |   |       hook-gi.repository.xlib.py
+    |       |   |   |       hook-importlib_metadata.py
+    |       |   |   |       hook-importlib_resources.py
+    |       |   |   |       hook-inflect.py
+    |       |   |   |       hook-jaraco.context.py
+    |       |   |   |       hook-jaraco.functools.py
+    |       |   |   |       hook-jaraco.text.py
+    |       |   |   |       hook-more_itertools.py
+    |       |   |   |       hook-ordered_set.py
+    |       |   |   |       hook-packaging.py
+    |       |   |   |       hook-platformdirs.py
+    |       |   |   |       hook-setuptools.extern.six.moves.py
+    |       |   |   |       hook-six.moves.py
+    |       |   |   |       hook-tomli.py
+    |       |   |   |       hook-typeguard.py
+    |       |   |   |       hook-typing_extensions.py
+    |       |   |   |       hook-urllib3.packages.six.moves.py
+    |       |   |   |       hook-wheel.py
+    |       |   |   |       hook-zipp.py
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   \---rthooks
+    |       |   |           pyi_rth_django.py
+    |       |   |           pyi_rth_gdkpixbuf.py
+    |       |   |           pyi_rth_gi.py
+    |       |   |           pyi_rth_gio.py
+    |       |   |           pyi_rth_glib.py
+    |       |   |           pyi_rth_gstreamer.py
+    |       |   |           pyi_rth_gtk.py
+    |       |   |           pyi_rth_inspect.py
+    |       |   |           pyi_rth_kivy.py
+    |       |   |           pyi_rth_mplconfig.py
+    |       |   |           pyi_rth_multiprocessing.py
+    |       |   |           pyi_rth_pkgres.py
+    |       |   |           pyi_rth_pkgutil.py
+    |       |   |           pyi_rth_pyqt5.py
+    |       |   |           pyi_rth_pyqt6.py
+    |       |   |           pyi_rth_pyside2.py
+    |       |   |           pyi_rth_pyside6.py
+    |       |   |           pyi_rth_setuptools.py
+    |       |   |           pyi_rth__tkinter.py
+    |       |   |           __init__.py
+    |       |   |           
+    |       |   +---isolated
+    |       |   |       _child.py
+    |       |   |       _parent.py
+    |       |   |       __init__.py
+    |       |   |       
+    |       |   +---lib
+    |       |   |   |   README.rst
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---modulegraph
+    |       |   |           find_modules.py
+    |       |   |           modulegraph.py
+    |       |   |           util.py
+    |       |   |           __init__.py
+    |       |   |           __main__.py
+    |       |   |           
+    |       |   +---loader
+    |       |   |       pyiboot01_bootstrap.py
+    |       |   |       pyimod01_archive.py
+    |       |   |       pyimod02_importers.py
+    |       |   |       pyimod03_ctypes.py
+    |       |   |       pyimod04_pywin32.py
+    |       |   |       __init__.py
+    |       |   |       
+    |       |   \---utils
+    |       |       |   conftest.py
+    |       |       |   misc.py
+    |       |       |   osx.py
+    |       |       |   run_tests.py
+    |       |       |   tests.py
+    |       |       |   __init__.py
+    |       |       |   
+    |       |       +---cliutils
+    |       |       |       archive_viewer.py
+    |       |       |       bindepend.py
+    |       |       |       grab_version.py
+    |       |       |       makespec.py
+    |       |       |       set_version.py
+    |       |       |       __init__.py
+    |       |       |       
+    |       |       +---hooks
+    |       |       |   |   conda.py
+    |       |       |   |   django.py
+    |       |       |   |   gi.py
+    |       |       |   |   setuptools.py
+    |       |       |   |   tcl_tk.py
+    |       |       |   |   __init__.py
+    |       |       |   |   
+    |       |       |   \---qt
+    |       |       |           _modules_info.py
+    |       |       |           __init__.py
+    |       |       |           
+    |       |       \---win32
+    |       |               icon.py
+    |       |               versioninfo.py
+    |       |               winmanifest.py
+    |       |               winresource.py
+    |       |               winutils.py
+    |       |               __init__.py
+    |       |               
+    |       +---pyinstaller-6.15.0.dist-info
+    |       |       COPYING.txt
+    |       |       entry_points.txt
+    |       |       INSTALLER
+    |       |       METADATA
+    |       |       RECORD
+    |       |       REQUESTED
+    |       |       top_level.txt
+    |       |       WHEEL
+    |       |       
+    |       +---pyinstaller_hooks_contrib-2025.8.dist-info
+    |       |   |   entry_points.txt
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---pystray
+    |       |   |   _appindicator.py
+    |       |   |   _base.py
+    |       |   |   _darwin.py
+    |       |   |   _dummy.py
+    |       |   |   _gtk.py
+    |       |   |   _info.py
+    |       |   |   _win32.py
+    |       |   |   _xorg.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---_util
+    |       |           gtk.py
+    |       |           notify_dbus.py
+    |       |           win32.py
+    |       |           __init__.py
+    |       |           
+    |       +---pystray-0.19.5.dist-info
+    |       |       COPYING
+    |       |       COPYING.LGPL
+    |       |       INSTALLER
+    |       |       METADATA
+    |       |       RECORD
+    |       |       REQUESTED
+    |       |       top_level.txt
+    |       |       WHEEL
+    |       |       zip-safe
+    |       |       
+    |       +---python_dotenv-1.1.1.dist-info
+    |       |   |   entry_points.txt
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   REQUESTED
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---pywin32_ctypes-0.2.3.dist-info
+    |       |       INSTALLER
+    |       |       LICENSE.txt
+    |       |       METADATA
+    |       |       RECORD
+    |       |       top_level.txt
+    |       |       WHEEL
+    |       |       
+    |       +---requests
+    |       |       adapters.py
+    |       |       api.py
+    |       |       auth.py
+    |       |       certs.py
+    |       |       compat.py
+    |       |       cookies.py
+    |       |       exceptions.py
+    |       |       help.py
+    |       |       hooks.py
+    |       |       models.py
+    |       |       packages.py
+    |       |       sessions.py
+    |       |       status_codes.py
+    |       |       structures.py
+    |       |       utils.py
+    |       |       _internal_utils.py
+    |       |       __init__.py
+    |       |       __version__.py
+    |       |       
+    |       +---requests-2.32.5.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   REQUESTED
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---requests_oauthlib
+    |       |   |   oauth1_auth.py
+    |       |   |   oauth1_session.py
+    |       |   |   oauth2_auth.py
+    |       |   |   oauth2_session.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---compliance_fixes
+    |       |           douban.py
+    |       |           ebay.py
+    |       |           facebook.py
+    |       |           fitbit.py
+    |       |           instagram.py
+    |       |           mailchimp.py
+    |       |           plentymarkets.py
+    |       |           slack.py
+    |       |           weibo.py
+    |       |           __init__.py
+    |       |           
+    |       +---requests_oauthlib-2.0.0.dist-info
+    |       |       INSTALLER
+    |       |       LICENSE
+    |       |       METADATA
+    |       |       RECORD
+    |       |       top_level.txt
+    |       |       WHEEL
+    |       |       
+    |       +---setuptools
+    |       |   |   archive_util.py
+    |       |   |   build_meta.py
+    |       |   |   cli-32.exe
+    |       |   |   cli-64.exe
+    |       |   |   cli-arm64.exe
+    |       |   |   cli.exe
+    |       |   |   depends.py
+    |       |   |   discovery.py
+    |       |   |   dist.py
+    |       |   |   errors.py
+    |       |   |   extension.py
+    |       |   |   glob.py
+    |       |   |   gui-32.exe
+    |       |   |   gui-64.exe
+    |       |   |   gui-arm64.exe
+    |       |   |   gui.exe
+    |       |   |   installer.py
+    |       |   |   launch.py
+    |       |   |   logging.py
+    |       |   |   modified.py
+    |       |   |   monkey.py
+    |       |   |   msvc.py
+    |       |   |   namespaces.py
+    |       |   |   script (dev).tmpl
+    |       |   |   script.tmpl
+    |       |   |   unicode_utils.py
+    |       |   |   version.py
+    |       |   |   warnings.py
+    |       |   |   wheel.py
+    |       |   |   windows_support.py
+    |       |   |   _core_metadata.py
+    |       |   |   _discovery.py
+    |       |   |   _entry_points.py
+    |       |   |   _imp.py
+    |       |   |   _importlib.py
+    |       |   |   _itertools.py
+    |       |   |   _normalization.py
+    |       |   |   _path.py
+    |       |   |   _reqs.py
+    |       |   |   _scripts.py
+    |       |   |   _shutil.py
+    |       |   |   _static.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   +---command
+    |       |   |       alias.py
+    |       |   |       bdist_egg.py
+    |       |   |       bdist_rpm.py
+    |       |   |       bdist_wheel.py
+    |       |   |       build.py
+    |       |   |       build_clib.py
+    |       |   |       build_ext.py
+    |       |   |       build_py.py
+    |       |   |       develop.py
+    |       |   |       dist_info.py
+    |       |   |       easy_install.py
+    |       |   |       editable_wheel.py
+    |       |   |       egg_info.py
+    |       |   |       install.py
+    |       |   |       install_egg_info.py
+    |       |   |       install_lib.py
+    |       |   |       install_scripts.py
+    |       |   |       launcher manifest.xml
+    |       |   |       rotate.py
+    |       |   |       saveopts.py
+    |       |   |       sdist.py
+    |       |   |       setopt.py
+    |       |   |       test.py
+    |       |   |       _requirestxt.py
+    |       |   |       __init__.py
+    |       |   |       
+    |       |   +---compat
+    |       |   |       py310.py
+    |       |   |       py311.py
+    |       |   |       py312.py
+    |       |   |       py39.py
+    |       |   |       __init__.py
+    |       |   |       
+    |       |   +---config
+    |       |   |   |   distutils.schema.json
+    |       |   |   |   expand.py
+    |       |   |   |   NOTICE
+    |       |   |   |   pyprojecttoml.py
+    |       |   |   |   setupcfg.py
+    |       |   |   |   setuptools.schema.json
+    |       |   |   |   _apply_pyprojecttoml.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---_validate_pyproject
+    |       |   |           error_reporting.py
+    |       |   |           extra_validations.py
+    |       |   |           fastjsonschema_exceptions.py
+    |       |   |           fastjsonschema_validations.py
+    |       |   |           formats.py
+    |       |   |           NOTICE
+    |       |   |           __init__.py
+    |       |   |           
+    |       |   +---tests
+    |       |   |   |   contexts.py
+    |       |   |   |   environment.py
+    |       |   |   |   fixtures.py
+    |       |   |   |   mod_with_constant.py
+    |       |   |   |   namespaces.py
+    |       |   |   |   script-with-bom.py
+    |       |   |   |   test_archive_util.py
+    |       |   |   |   test_bdist_deprecations.py
+    |       |   |   |   test_bdist_egg.py
+    |       |   |   |   test_bdist_wheel.py
+    |       |   |   |   test_build.py
+    |       |   |   |   test_build_clib.py
+    |       |   |   |   test_build_ext.py
+    |       |   |   |   test_build_meta.py
+    |       |   |   |   test_build_py.py
+    |       |   |   |   test_config_discovery.py
+    |       |   |   |   test_core_metadata.py
+    |       |   |   |   test_depends.py
+    |       |   |   |   test_develop.py
+    |       |   |   |   test_dist.py
+    |       |   |   |   test_distutils_adoption.py
+    |       |   |   |   test_dist_info.py
+    |       |   |   |   test_editable_install.py
+    |       |   |   |   test_egg_info.py
+    |       |   |   |   test_extern.py
+    |       |   |   |   test_find_packages.py
+    |       |   |   |   test_find_py_modules.py
+    |       |   |   |   test_glob.py
+    |       |   |   |   test_install_scripts.py
+    |       |   |   |   test_logging.py
+    |       |   |   |   test_manifest.py
+    |       |   |   |   test_namespaces.py
+    |       |   |   |   test_scripts.py
+    |       |   |   |   test_sdist.py
+    |       |   |   |   test_setopt.py
+    |       |   |   |   test_setuptools.py
+    |       |   |   |   test_shutil_wrapper.py
+    |       |   |   |   test_unicode_utils.py
+    |       |   |   |   test_virtualenv.py
+    |       |   |   |   test_warnings.py
+    |       |   |   |   test_wheel.py
+    |       |   |   |   test_windows_wrappers.py
+    |       |   |   |   text.py
+    |       |   |   |   textwrap.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---compat
+    |       |   |   |       py39.py
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   +---config
+    |       |   |   |   |   setupcfg_examples.txt
+    |       |   |   |   |   test_apply_pyprojecttoml.py
+    |       |   |   |   |   test_expand.py
+    |       |   |   |   |   test_pyprojecttoml.py
+    |       |   |   |   |   test_pyprojecttoml_dynamic_deps.py
+    |       |   |   |   |   test_setupcfg.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---downloads
+    |       |   |   |           preload.py
+    |       |   |   |           __init__.py
+    |       |   |   |           
+    |       |   |   +---indexes
+    |       |   |   |   \---test_links_priority
+    |       |   |   |       |   external.html
+    |       |   |   |       |   
+    |       |   |   |       \---simple
+    |       |   |   |           \---foobar
+    |       |   |   |                   index.html
+    |       |   |   |                   
+    |       |   |   \---integration
+    |       |   |           helpers.py
+    |       |   |           test_pbr.py
+    |       |   |           test_pip_install_sdist.py
+    |       |   |           __init__.py
+    |       |   |           
+    |       |   +---_distutils
+    |       |   |   |   archive_util.py
+    |       |   |   |   ccompiler.py
+    |       |   |   |   cmd.py
+    |       |   |   |   core.py
+    |       |   |   |   cygwinccompiler.py
+    |       |   |   |   debug.py
+    |       |   |   |   dep_util.py
+    |       |   |   |   dir_util.py
+    |       |   |   |   dist.py
+    |       |   |   |   errors.py
+    |       |   |   |   extension.py
+    |       |   |   |   fancy_getopt.py
+    |       |   |   |   filelist.py
+    |       |   |   |   file_util.py
+    |       |   |   |   log.py
+    |       |   |   |   spawn.py
+    |       |   |   |   sysconfig.py
+    |       |   |   |   text_file.py
+    |       |   |   |   unixccompiler.py
+    |       |   |   |   util.py
+    |       |   |   |   version.py
+    |       |   |   |   versionpredicate.py
+    |       |   |   |   zosccompiler.py
+    |       |   |   |   _log.py
+    |       |   |   |   _macos_compat.py
+    |       |   |   |   _modified.py
+    |       |   |   |   _msvccompiler.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---command
+    |       |   |   |       bdist.py
+    |       |   |   |       bdist_dumb.py
+    |       |   |   |       bdist_rpm.py
+    |       |   |   |       build.py
+    |       |   |   |       build_clib.py
+    |       |   |   |       build_ext.py
+    |       |   |   |       build_py.py
+    |       |   |   |       build_scripts.py
+    |       |   |   |       check.py
+    |       |   |   |       clean.py
+    |       |   |   |       config.py
+    |       |   |   |       install.py
+    |       |   |   |       install_data.py
+    |       |   |   |       install_egg_info.py
+    |       |   |   |       install_headers.py
+    |       |   |   |       install_lib.py
+    |       |   |   |       install_scripts.py
+    |       |   |   |       sdist.py
+    |       |   |   |       _framework_compat.py
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   +---compat
+    |       |   |   |       numpy.py
+    |       |   |   |       py39.py
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   +---compilers
+    |       |   |   |   \---C
+    |       |   |   |       |   base.py
+    |       |   |   |       |   cygwin.py
+    |       |   |   |       |   errors.py
+    |       |   |   |       |   msvc.py
+    |       |   |   |       |   unix.py
+    |       |   |   |       |   zos.py
+    |       |   |   |       |   
+    |       |   |   |       \---tests
+    |       |   |   |               test_base.py
+    |       |   |   |               test_cygwin.py
+    |       |   |   |               test_mingw.py
+    |       |   |   |               test_msvc.py
+    |       |   |   |               test_unix.py
+    |       |   |   |               
+    |       |   |   \---tests
+    |       |   |       |   support.py
+    |       |   |       |   test_archive_util.py
+    |       |   |       |   test_bdist.py
+    |       |   |       |   test_bdist_dumb.py
+    |       |   |       |   test_bdist_rpm.py
+    |       |   |       |   test_build.py
+    |       |   |       |   test_build_clib.py
+    |       |   |       |   test_build_ext.py
+    |       |   |       |   test_build_py.py
+    |       |   |       |   test_build_scripts.py
+    |       |   |       |   test_check.py
+    |       |   |       |   test_clean.py
+    |       |   |       |   test_cmd.py
+    |       |   |       |   test_config_cmd.py
+    |       |   |       |   test_core.py
+    |       |   |       |   test_dir_util.py
+    |       |   |       |   test_dist.py
+    |       |   |       |   test_extension.py
+    |       |   |       |   test_filelist.py
+    |       |   |       |   test_file_util.py
+    |       |   |       |   test_install.py
+    |       |   |       |   test_install_data.py
+    |       |   |       |   test_install_headers.py
+    |       |   |       |   test_install_lib.py
+    |       |   |       |   test_install_scripts.py
+    |       |   |       |   test_log.py
+    |       |   |       |   test_modified.py
+    |       |   |       |   test_sdist.py
+    |       |   |       |   test_spawn.py
+    |       |   |       |   test_sysconfig.py
+    |       |   |       |   test_text_file.py
+    |       |   |       |   test_util.py
+    |       |   |       |   test_version.py
+    |       |   |       |   test_versionpredicate.py
+    |       |   |       |   unix_compat.py
+    |       |   |       |   __init__.py
+    |       |   |       |   
+    |       |   |       \---compat
+    |       |   |               py39.py
+    |       |   |               __init__.py
+    |       |   |               
+    |       |   \---_vendor
+    |       |       |   typing_extensions.py
+    |       |       |   
+    |       |       +---autocommand
+    |       |       |       autoasync.py
+    |       |       |       autocommand.py
+    |       |       |       automain.py
+    |       |       |       autoparse.py
+    |       |       |       errors.py
+    |       |       |       __init__.py
+    |       |       |       
+    |       |       +---autocommand-2.2.2.dist-info
+    |       |       |       INSTALLER
+    |       |       |       LICENSE
+    |       |       |       METADATA
+    |       |       |       RECORD
+    |       |       |       top_level.txt
+    |       |       |       WHEEL
+    |       |       |       
+    |       |       +---backports
+    |       |       |   |   __init__.py
+    |       |       |   |   
+    |       |       |   \---tarfile
+    |       |       |       |   __init__.py
+    |       |       |       |   __main__.py
+    |       |       |       |   
+    |       |       |       \---compat
+    |       |       |               py38.py
+    |       |       |               __init__.py
+    |       |       |               
+    |       |       +---backports.tarfile-1.2.0.dist-info
+    |       |       |       INSTALLER
+    |       |       |       LICENSE
+    |       |       |       METADATA
+    |       |       |       RECORD
+    |       |       |       REQUESTED
+    |       |       |       top_level.txt
+    |       |       |       WHEEL
+    |       |       |       
+    |       |       +---importlib_metadata
+    |       |       |   |   diagnose.py
+    |       |       |   |   py.typed
+    |       |       |   |   _adapters.py
+    |       |       |   |   _collections.py
+    |       |       |   |   _compat.py
+    |       |       |   |   _functools.py
+    |       |       |   |   _itertools.py
+    |       |       |   |   _meta.py
+    |       |       |   |   _text.py
+    |       |       |   |   __init__.py
+    |       |       |   |   
+    |       |       |   \---compat
+    |       |       |           py311.py
+    |       |       |           py39.py
+    |       |       |           __init__.py
+    |       |       |           
+    |       |       +---importlib_metadata-8.0.0.dist-info
+    |       |       |       INSTALLER
+    |       |       |       LICENSE
+    |       |       |       METADATA
+    |       |       |       RECORD
+    |       |       |       REQUESTED
+    |       |       |       top_level.txt
+    |       |       |       WHEEL
+    |       |       |       
+    |       |       +---inflect
+    |       |       |   |   py.typed
+    |       |       |   |   __init__.py
+    |       |       |   |   
+    |       |       |   \---compat
+    |       |       |           py38.py
+    |       |       |           __init__.py
+    |       |       |           
+    |       |       +---inflect-7.3.1.dist-info
+    |       |       |       INSTALLER
+    |       |       |       LICENSE
+    |       |       |       METADATA
+    |       |       |       RECORD
+    |       |       |       top_level.txt
+    |       |       |       WHEEL
+    |       |       |       
+    |       |       +---jaraco
+    |       |       |   |   context.py
+    |       |       |   |   
+    |       |       |   +---collections
+    |       |       |   |       py.typed
+    |       |       |   |       __init__.py
+    |       |       |   |       
+    |       |       |   +---functools
+    |       |       |   |       py.typed
+    |       |       |   |       __init__.py
+    |       |       |   |       __init__.pyi
+    |       |       |   |       
+    |       |       |   \---text
+    |       |       |           layouts.py
+    |       |       |           Lorem ipsum.txt
+    |       |       |           show-newlines.py
+    |       |       |           strip-prefix.py
+    |       |       |           to-dvorak.py
+    |       |       |           to-qwerty.py
+    |       |       |           __init__.py
+    |       |       |           
+    |       |       +---jaraco.collections-5.1.0.dist-info
+    |       |       |       INSTALLER
+    |       |       |       LICENSE
+    |       |       |       METADATA
+    |       |       |       RECORD
+    |       |       |       REQUESTED
+    |       |       |       top_level.txt
+    |       |       |       WHEEL
+    |       |       |       
+    |       |       +---jaraco.context-5.3.0.dist-info
+    |       |       |       INSTALLER
+    |       |       |       LICENSE
+    |       |       |       METADATA
+    |       |       |       RECORD
+    |       |       |       top_level.txt
+    |       |       |       WHEEL
+    |       |       |       
+    |       |       +---jaraco.functools-4.0.1.dist-info
+    |       |       |       INSTALLER
+    |       |       |       LICENSE
+    |       |       |       METADATA
+    |       |       |       RECORD
+    |       |       |       top_level.txt
+    |       |       |       WHEEL
+    |       |       |       
+    |       |       +---jaraco.text-3.12.1.dist-info
+    |       |       |       INSTALLER
+    |       |       |       LICENSE
+    |       |       |       METADATA
+    |       |       |       RECORD
+    |       |       |       REQUESTED
+    |       |       |       top_level.txt
+    |       |       |       WHEEL
+    |       |       |       
+    |       |       +---more_itertools
+    |       |       |       more.py
+    |       |       |       more.pyi
+    |       |       |       py.typed
+    |       |       |       recipes.py
+    |       |       |       recipes.pyi
+    |       |       |       __init__.py
+    |       |       |       __init__.pyi
+    |       |       |       
+    |       |       +---more_itertools-10.3.0.dist-info
+    |       |       |       INSTALLER
+    |       |       |       LICENSE
+    |       |       |       METADATA
+    |       |       |       RECORD
+    |       |       |       REQUESTED
+    |       |       |       WHEEL
+    |       |       |       
+    |       |       +---packaging
+    |       |       |   |   markers.py
+    |       |       |   |   metadata.py
+    |       |       |   |   py.typed
+    |       |       |   |   requirements.py
+    |       |       |   |   specifiers.py
+    |       |       |   |   tags.py
+    |       |       |   |   utils.py
+    |       |       |   |   version.py
+    |       |       |   |   _elffile.py
+    |       |       |   |   _manylinux.py
+    |       |       |   |   _musllinux.py
+    |       |       |   |   _parser.py
+    |       |       |   |   _structures.py
+    |       |       |   |   _tokenizer.py
+    |       |       |   |   __init__.py
+    |       |       |   |   
+    |       |       |   \---licenses
+    |       |       |           _spdx.py
+    |       |       |           __init__.py
+    |       |       |           
+    |       |       +---packaging-24.2.dist-info
+    |       |       |       INSTALLER
+    |       |       |       LICENSE
+    |       |       |       LICENSE.APACHE
+    |       |       |       LICENSE.BSD
+    |       |       |       METADATA
+    |       |       |       RECORD
+    |       |       |       REQUESTED
+    |       |       |       WHEEL
+    |       |       |       
+    |       |       +---platformdirs
+    |       |       |       android.py
+    |       |       |       api.py
+    |       |       |       macos.py
+    |       |       |       py.typed
+    |       |       |       unix.py
+    |       |       |       version.py
+    |       |       |       windows.py
+    |       |       |       __init__.py
+    |       |       |       __main__.py
+    |       |       |       
+    |       |       +---platformdirs-4.2.2.dist-info
+    |       |       |   |   INSTALLER
+    |       |       |   |   METADATA
+    |       |       |   |   RECORD
+    |       |       |   |   REQUESTED
+    |       |       |   |   WHEEL
+    |       |       |   |   
+    |       |       |   \---licenses
+    |       |       |           LICENSE
+    |       |       |           
+    |       |       +---tomli
+    |       |       |       py.typed
+    |       |       |       _parser.py
+    |       |       |       _re.py
+    |       |       |       _types.py
+    |       |       |       __init__.py
+    |       |       |       
+    |       |       +---tomli-2.0.1.dist-info
+    |       |       |       INSTALLER
+    |       |       |       LICENSE
+    |       |       |       METADATA
+    |       |       |       RECORD
+    |       |       |       REQUESTED
+    |       |       |       WHEEL
+    |       |       |       
+    |       |       +---typeguard
+    |       |       |       py.typed
+    |       |       |       _checkers.py
+    |       |       |       _config.py
+    |       |       |       _decorators.py
+    |       |       |       _exceptions.py
+    |       |       |       _functions.py
+    |       |       |       _importhook.py
+    |       |       |       _memo.py
+    |       |       |       _pytest_plugin.py
+    |       |       |       _suppression.py
+    |       |       |       _transformer.py
+    |       |       |       _union_transformer.py
+    |       |       |       _utils.py
+    |       |       |       __init__.py
+    |       |       |       
+    |       |       +---typeguard-4.3.0.dist-info
+    |       |       |       entry_points.txt
+    |       |       |       INSTALLER
+    |       |       |       LICENSE
+    |       |       |       METADATA
+    |       |       |       RECORD
+    |       |       |       top_level.txt
+    |       |       |       WHEEL
+    |       |       |       
+    |       |       +---typing_extensions-4.12.2.dist-info
+    |       |       |       INSTALLER
+    |       |       |       LICENSE
+    |       |       |       METADATA
+    |       |       |       RECORD
+    |       |       |       WHEEL
+    |       |       |       
+    |       |       +---wheel
+    |       |       |   |   bdist_wheel.py
+    |       |       |   |   macosx_libfile.py
+    |       |       |   |   metadata.py
+    |       |       |   |   util.py
+    |       |       |   |   wheelfile.py
+    |       |       |   |   _bdist_wheel.py
+    |       |       |   |   _setuptools_logging.py
+    |       |       |   |   __init__.py
+    |       |       |   |   __main__.py
+    |       |       |   |   
+    |       |       |   +---cli
+    |       |       |   |       convert.py
+    |       |       |   |       pack.py
+    |       |       |   |       tags.py
+    |       |       |   |       unpack.py
+    |       |       |   |       __init__.py
+    |       |       |   |       
+    |       |       |   \---vendored
+    |       |       |       |   vendor.txt
+    |       |       |       |   __init__.py
+    |       |       |       |   
+    |       |       |       \---packaging
+    |       |       |               LICENSE
+    |       |       |               LICENSE.APACHE
+    |       |       |               LICENSE.BSD
+    |       |       |               markers.py
+    |       |       |               requirements.py
+    |       |       |               specifiers.py
+    |       |       |               tags.py
+    |       |       |               utils.py
+    |       |       |               version.py
+    |       |       |               _elffile.py
+    |       |       |               _manylinux.py
+    |       |       |               _musllinux.py
+    |       |       |               _parser.py
+    |       |       |               _structures.py
+    |       |       |               _tokenizer.py
+    |       |       |               __init__.py
+    |       |       |               
+    |       |       +---wheel-0.45.1.dist-info
+    |       |       |       entry_points.txt
+    |       |       |       INSTALLER
+    |       |       |       LICENSE.txt
+    |       |       |       METADATA
+    |       |       |       RECORD
+    |       |       |       REQUESTED
+    |       |       |       WHEEL
+    |       |       |       
+    |       |       +---zipp
+    |       |       |   |   glob.py
+    |       |       |   |   __init__.py
+    |       |       |   |   
+    |       |       |   \---compat
+    |       |       |           py310.py
+    |       |       |           __init__.py
+    |       |       |           
+    |       |       \---zipp-3.19.2.dist-info
+    |       |               INSTALLER
+    |       |               LICENSE
+    |       |               METADATA
+    |       |               RECORD
+    |       |               REQUESTED
+    |       |               top_level.txt
+    |       |               WHEEL
+    |       |               
+    |       +---setuptools-80.9.0.dist-info
+    |       |   |   entry_points.txt
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---six-1.17.0.dist-info
+    |       |       INSTALLER
+    |       |       LICENSE
+    |       |       METADATA
+    |       |       RECORD
+    |       |       top_level.txt
+    |       |       WHEEL
+    |       |       
+    |       +---soupsieve
+    |       |       css_match.py
+    |       |       css_parser.py
+    |       |       css_types.py
+    |       |       pretty.py
+    |       |       py.typed
+    |       |       util.py
+    |       |       __init__.py
+    |       |       __meta__.py
+    |       |       
+    |       +---soupsieve-2.7.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE.md
+    |       |           
+    |       +---tinycss2
+    |       |       ast.py
+    |       |       bytes.py
+    |       |       color3.py
+    |       |       color4.py
+    |       |       nth.py
+    |       |       parser.py
+    |       |       serializer.py
+    |       |       tokenizer.py
+    |       |       __init__.py
+    |       |       
+    |       +---tinycss2-1.4.0.dist-info
+    |       |       INSTALLER
+    |       |       LICENSE
+    |       |       METADATA
+    |       |       RECORD
+    |       |       WHEEL
+    |       |       
+    |       +---tweepy
+    |       |   |   api.py
+    |       |   |   auth.py
+    |       |   |   cache.py
+    |       |   |   client.py
+    |       |   |   cursor.py
+    |       |   |   direct_message_event.py
+    |       |   |   errors.py
+    |       |   |   list.py
+    |       |   |   media.py
+    |       |   |   mixins.py
+    |       |   |   models.py
+    |       |   |   pagination.py
+    |       |   |   parsers.py
+    |       |   |   place.py
+    |       |   |   poll.py
+    |       |   |   space.py
+    |       |   |   streaming.py
+    |       |   |   tweet.py
+    |       |   |   user.py
+    |       |   |   utils.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---asynchronous
+    |       |           client.py
+    |       |           pagination.py
+    |       |           streaming.py
+    |       |           __init__.py
+    |       |           
+    |       +---tweepy-4.16.0.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   REQUESTED
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---typing_extensions-4.15.0.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE
+    |       |           
+    |       +---urllib3
+    |       |   |   connection.py
+    |       |   |   connectionpool.py
+    |       |   |   exceptions.py
+    |       |   |   fields.py
+    |       |   |   filepost.py
+    |       |   |   poolmanager.py
+    |       |   |   py.typed
+    |       |   |   response.py
+    |       |   |   _base_connection.py
+    |       |   |   _collections.py
+    |       |   |   _request_methods.py
+    |       |   |   _version.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   +---contrib
+    |       |   |   |   pyopenssl.py
+    |       |   |   |   socks.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---emscripten
+    |       |   |           connection.py
+    |       |   |           emscripten_fetch_worker.js
+    |       |   |           fetch.py
+    |       |   |           request.py
+    |       |   |           response.py
+    |       |   |           __init__.py
+    |       |   |           
+    |       |   +---http2
+    |       |   |       connection.py
+    |       |   |       probe.py
+    |       |   |       __init__.py
+    |       |   |       
+    |       |   \---util
+    |       |           connection.py
+    |       |           proxy.py
+    |       |           request.py
+    |       |           response.py
+    |       |           retry.py
+    |       |           ssltransport.py
+    |       |           ssl_.py
+    |       |           ssl_match_hostname.py
+    |       |           timeout.py
+    |       |           url.py
+    |       |           util.py
+    |       |           wait.py
+    |       |           __init__.py
+    |       |           
+    |       +---urllib3-2.5.0.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE.txt
+    |       |           
+    |       +---webencodings
+    |       |       labels.py
+    |       |       mklabels.py
+    |       |       tests.py
+    |       |       x_user_defined.py
+    |       |       __init__.py
+    |       |       
+    |       +---webencodings-0.5.1.dist-info
+    |       |       DESCRIPTION.rst
+    |       |       INSTALLER
+    |       |       METADATA
+    |       |       metadata.json
+    |       |       RECORD
+    |       |       top_level.txt
+    |       |       WHEEL
+    |       |       
+    |       +---win32ctypes
+    |       |   |   pywintypes.py
+    |       |   |   version.py
+    |       |   |   win32api.py
+    |       |   |   win32cred.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   +---core
+    |       |   |   |   compat.py
+    |       |   |   |   _winerrors.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---cffi
+    |       |   |   |       _authentication.py
+    |       |   |   |       _common.py
+    |       |   |   |       _dll.py
+    |       |   |   |       _nl_support.py
+    |       |   |   |       _resource.py
+    |       |   |   |       _system_information.py
+    |       |   |   |       _time.py
+    |       |   |   |       _util.py
+    |       |   |   |       __init__.py
+    |       |   |   |       
+    |       |   |   \---ctypes
+    |       |   |           _authentication.py
+    |       |   |           _common.py
+    |       |   |           _dll.py
+    |       |   |           _nl_support.py
+    |       |   |           _resource.py
+    |       |   |           _system_information.py
+    |       |   |           _time.py
+    |       |   |           _util.py
+    |       |   |           __init__.py
+    |       |   |           
+    |       |   +---pywin32
+    |       |   |       pywintypes.py
+    |       |   |       win32api.py
+    |       |   |       win32cred.py
+    |       |   |       __init__.py
+    |       |   |       
+    |       |   \---tests
+    |       |           test_backends.py
+    |       |           test_win32api.py
+    |       |           test_win32cred.py
+    |       |           __init__.py
+    |       |           
+    |       +---_distutils_hack
+    |       |       override.py
+    |       |       __init__.py
+    |       |       
+    |       \---_pyinstaller_hooks_contrib
+    |           |   compat.py
+    |           |   rthooks.dat
+    |           |   __init__.py
+    |           |   
+    |           +---pre_find_module_path
+    |           |       __init__.py
+    |           |       
+    |           +---pre_safe_import_module
+    |           |       hook-tensorflow.py
+    |           |       hook-win32com.py
+    |           |       __init__.py
+    |           |       
+    |           +---rthooks
+    |           |       pyi_rth_cryptography_openssl.py
+    |           |       pyi_rth_enchant.py
+    |           |       pyi_rth_ffpyplayer.py
+    |           |       pyi_rth_findlibs.py
+    |           |       pyi_rth_nltk.py
+    |           |       pyi_rth_osgeo.py
+    |           |       pyi_rth_pygraphviz.py
+    |           |       pyi_rth_pyproj.py
+    |           |       pyi_rth_pyqtgraph_multiprocess.py
+    |           |       pyi_rth_pythoncom.py
+    |           |       pyi_rth_pywintypes.py
+    |           |       pyi_rth_tensorflow.py
+    |           |       pyi_rth_traitlets.py
+    |           |       pyi_rth_usb.py
+    |           |       __init__.py
+    |           |       
+    |           +---stdhooks
+    |           |       hook-accessible_output2.py
+    |           |       hook-adbutils.py
+    |           |       hook-adios.py
+    |           |       hook-afmformats.py
+    |           |       hook-aliyunsdkcore.py
+    |           |       hook-altair.py
+    |           |       hook-amazonproduct.py
+    |           |       hook-anyio.py
+    |           |       hook-apkutils.py
+    |           |       hook-appdirs.py
+    |           |       hook-appy.pod.py
+    |           |       hook-apscheduler.py
+    |           |       hook-argon2.py
+    |           |       hook-astor.py
+    |           |       hook-astroid.py
+    |           |       hook-astropy.py
+    |           |       hook-astropy_iers_data.py
+    |           |       hook-av.py
+    |           |       hook-avro.py
+    |           |       hook-azurerm.py
+    |           |       hook-backports.py
+    |           |       hook-backports.zoneinfo.py
+    |           |       hook-bacon.py
+    |           |       hook-bcrypt.py
+    |           |       hook-bitsandbytes.py
+    |           |       hook-black.py
+    |           |       hook-bleak.py
+    |           |       hook-blib2to3.py
+    |           |       hook-blspy.py
+    |           |       hook-bokeh.py
+    |           |       hook-boto.py
+    |           |       hook-boto3.py
+    |           |       hook-botocore.py
+    |           |       hook-branca.py
+    |           |       hook-BTrees.py
+    |           |       hook-cairocffi.py
+    |           |       hook-cairosvg.py
+    |           |       hook-capstone.py
+    |           |       hook-cassandra.py
+    |           |       hook-celpy.py
+    |           |       hook-certifi.py
+    |           |       hook-cftime.py
+    |           |       hook-cf_units.py
+    |           |       hook-charset_normalizer.py
+    |           |       hook-cloudpickle.py
+    |           |       hook-cloudscraper.py
+    |           |       hook-clr.py
+    |           |       hook-clr_loader.py
+    |           |       hook-cmocean.py
+    |           |       hook-compliance_checker.py
+    |           |       hook-comtypes.client.py
+    |           |       hook-countrycode.py
+    |           |       hook-countryinfo.py
+    |           |       hook-Crypto.py
+    |           |       hook-Cryptodome.py
+    |           |       hook-cryptography.py
+    |           |       hook-CTkMessagebox.py
+    |           |       hook-customtkinter.py
+    |           |       hook-cv2.py
+    |           |       hook-cx_Oracle.py
+    |           |       hook-cytoolz.itertoolz.py
+    |           |       hook-dash.py
+    |           |       hook-dash_bootstrap_components.py
+    |           |       hook-dash_core_components.py
+    |           |       hook-dash_html_components.py
+    |           |       hook-dash_renderer.py
+    |           |       hook-dash_table.py
+    |           |       hook-dash_uploader.py
+    |           |       hook-dask.py
+    |           |       hook-datasets.py
+    |           |       hook-dateparser.utils.strptime.py
+    |           |       hook-dateutil.py
+    |           |       hook-dbus_fast.py
+    |           |       hook-dclab.py
+    |           |       hook-detectron2.py
+    |           |       hook-discid.py
+    |           |       hook-distorm3.py
+    |           |       hook-distributed.py
+    |           |       hook-dns.rdata.py
+    |           |       hook-docutils.py
+    |           |       hook-docx.py
+    |           |       hook-docx2pdf.py
+    |           |       hook-dynaconf.py
+    |           |       hook-easyocr.py
+    |           |       hook-eccodeslib.py
+    |           |       hook-eckitlib.py
+    |           |       hook-eel.py
+    |           |       hook-emoji.py
+    |           |       hook-enchant.py
+    |           |       hook-eng_to_ipa.py
+    |           |       hook-ens.py
+    |           |       hook-enzyme.parsers.ebml.core.py
+    |           |       hook-eth_abi.py
+    |           |       hook-eth_account.py
+    |           |       hook-eth_hash.py
+    |           |       hook-eth_keyfile.py
+    |           |       hook-eth_keys.py
+    |           |       hook-eth_rlp.py
+    |           |       hook-eth_typing.py
+    |           |       hook-eth_utils.network.py
+    |           |       hook-eth_utils.py
+    |           |       hook-exchangelib.py
+    |           |       hook-fabric.py
+    |           |       hook-fairscale.py
+    |           |       hook-faker.py
+    |           |       hook-falcon.py
+    |           |       hook-fastai.py
+    |           |       hook-fastparquet.py
+    |           |       hook-fckitlib.py
+    |           |       hook-ffpyplayer.py
+    |           |       hook-fiona.py
+    |           |       hook-flask_compress.py
+    |           |       hook-flask_restx.py
+    |           |       hook-flex.py
+    |           |       hook-flirpy.py
+    |           |       hook-fmpy.py
+    |           |       hook-folium.py
+    |           |       hook-freetype.py
+    |           |       hook-frictionless.py
+    |           |       hook-fsspec.py
+    |           |       hook-fvcore.nn.py
+    |           |       hook-gadfly.py
+    |           |       hook-gbulb.py
+    |           |       hook-gcloud.py
+    |           |       hook-geopandas.py
+    |           |       hook-gitlab.py
+    |           |       hook-gmplot.py
+    |           |       hook-gmsh.py
+    |           |       hook-gooey.py
+    |           |       hook-google.api_core.py
+    |           |       hook-google.cloud.bigquery.py
+    |           |       hook-google.cloud.core.py
+    |           |       hook-google.cloud.kms_v1.py
+    |           |       hook-google.cloud.pubsub_v1.py
+    |           |       hook-google.cloud.speech.py
+    |           |       hook-google.cloud.storage.py
+    |           |       hook-google.cloud.translate.py
+    |           |       hook-googleapiclient.model.py
+    |           |       hook-grapheme.py
+    |           |       hook-graphql_query.py
+    |           |       hook-great_expectations.py
+    |           |       hook-gribapi.py
+    |           |       hook-grpc.py
+    |           |       hook-gst._gst.py
+    |           |       hook-gtk.py
+    |           |       hook-h3.py
+    |           |       hook-h5py.py
+    |           |       hook-hdf5plugin.py
+    |           |       hook-hexbytes.py
+    |           |       hook-HtmlTestRunner.py
+    |           |       hook-httplib2.py
+    |           |       hook-humanize.py
+    |           |       hook-hydra.py
+    |           |       hook-ijson.py
+    |           |       hook-imageio.py
+    |           |       hook-imageio_ffmpeg.py
+    |           |       hook-iminuit.py
+    |           |       hook-intake.py
+    |           |       hook-IPython.py
+    |           |       hook-iso639.py
+    |           |       hook-itk.py
+    |           |       hook-jaraco.text.py
+    |           |       hook-jedi.py
+    |           |       hook-jieba.py
+    |           |       hook-jinja2.py
+    |           |       hook-jinxed.py
+    |           |       hook-jira.py
+    |           |       hook-jsonpath_rw_ext.py
+    |           |       hook-jsonrpcserver.py
+    |           |       hook-jsonschema.py
+    |           |       hook-jsonschema_specifications.py
+    |           |       hook-jupyterlab.py
+    |           |       hook-kaleido.py
+    |           |       hook-khmernltk.py
+    |           |       hook-kinterbasdb.py
+    |           |       hook-langchain.py
+    |           |       hook-langcodes.py
+    |           |       hook-langdetect.py
+    |           |       hook-laonlp.py
+    |           |       hook-lark.py
+    |           |       hook-ldfparser.py
+    |           |       hook-lensfunpy.py
+    |           |       hook-libaudioverse.py
+    |           |       hook-librosa.py
+    |           |       hook-lightgbm.py
+    |           |       hook-lightning.py
+    |           |       hook-limits.py
+    |           |       hook-linear_operator.py
+    |           |       hook-lingua.py
+    |           |       hook-litestar.py
+    |           |       hook-llvmlite.py
+    |           |       hook-logilab.py
+    |           |       hook-lxml.etree.py
+    |           |       hook-lxml.isoschematron.py
+    |           |       hook-lxml.objectify.py
+    |           |       hook-lxml.py
+    |           |       hook-lz4.py
+    |           |       hook-magic.py
+    |           |       hook-mako.codegen.py
+    |           |       hook-mariadb.py
+    |           |       hook-markdown.py
+    |           |       hook-mecab.py
+    |           |       hook-metpy.py
+    |           |       hook-migrate.py
+    |           |       hook-mimesis.py
+    |           |       hook-minecraft_launcher_lib.py
+    |           |       hook-mistune.py
+    |           |       hook-mnemonic.py
+    |           |       hook-monai.py
+    |           |       hook-moviepy.audio.fx.all.py
+    |           |       hook-moviepy.video.fx.all.py
+    |           |       hook-mpl_toolkits.basemap.py
+    |           |       hook-msoffcrypto.py
+    |           |       hook-nacl.py
+    |           |       hook-names.py
+    |           |       hook-nanite.py
+    |           |       hook-narwhals.py
+    |           |       hook-nbconvert.py
+    |           |       hook-nbdime.py
+    |           |       hook-nbformat.py
+    |           |       hook-nbt.py
+    |           |       hook-ncclient.py
+    |           |       hook-netCDF4.py
+    |           |       hook-niquests.py
+    |           |       hook-nltk.py
+    |           |       hook-nnpy.py
+    |           |       hook-notebook.py
+    |           |       hook-numba.py
+    |           |       hook-numbers_parser.py
+    |           |       hook-numcodecs.py
+    |           |       hook-nvidia.cublas.py
+    |           |       hook-nvidia.cuda_cupti.py
+    |           |       hook-nvidia.cuda_nvcc.py
+    |           |       hook-nvidia.cuda_nvrtc.py
+    |           |       hook-nvidia.cuda_runtime.py
+    |           |       hook-nvidia.cudnn.py
+    |           |       hook-nvidia.cufft.py
+    |           |       hook-nvidia.curand.py
+    |           |       hook-nvidia.cusolver.py
+    |           |       hook-nvidia.cusparse.py
+    |           |       hook-nvidia.nccl.py
+    |           |       hook-nvidia.nvjitlink.py
+    |           |       hook-nvidia.nvtx.py
+    |           |       hook-office365.py
+    |           |       hook-onnxruntime.py
+    |           |       hook-opencc.py
+    |           |       hook-OpenGL.py
+    |           |       hook-OpenGL_accelerate.py
+    |           |       hook-openpyxl.py
+    |           |       hook-opentelemetry.py
+    |           |       hook-orjson.py
+    |           |       hook-osgeo.py
+    |           |       hook-pandas_flavor.py
+    |           |       hook-panel.py
+    |           |       hook-parsedatetime.py
+    |           |       hook-parso.py
+    |           |       hook-passlib.py
+    |           |       hook-paste.exceptions.reporter.py
+    |           |       hook-patoolib.py
+    |           |       hook-patsy.py
+    |           |       hook-pdfminer.py
+    |           |       hook-pendulum.py
+    |           |       hook-phonenumbers.py
+    |           |       hook-pingouin.py
+    |           |       hook-pint.py
+    |           |       hook-pinyin.py
+    |           |       hook-platformdirs.py
+    |           |       hook-plotly.py
+    |           |       hook-pptx.py
+    |           |       hook-prettytable.py
+    |           |       hook-psutil.py
+    |           |       hook-psychopy.py
+    |           |       hook-psycopg2.py
+    |           |       hook-publicsuffix2.py
+    |           |       hook-pubsub.core.py
+    |           |       hook-puremagic.py
+    |           |       hook-py.py
+    |           |       hook-pyarrow.py
+    |           |       hook-pycountry.py
+    |           |       hook-pycparser.py
+    |           |       hook-pycrfsuite.py
+    |           |       hook-pydantic.py
+    |           |       hook-pydicom.py
+    |           |       hook-pydivert.py
+    |           |       hook-pyexcel-io.py
+    |           |       hook-pyexcel-ods.py
+    |           |       hook-pyexcel-ods3.py
+    |           |       hook-pyexcel-odsr.py
+    |           |       hook-pyexcel-xls.py
+    |           |       hook-pyexcel-xlsx.py
+    |           |       hook-pyexcel-xlsxw.py
+    |           |       hook-pyexcel.py
+    |           |       hook-pyexcelerate.Writer.py
+    |           |       hook-pyexcel_io.py
+    |           |       hook-pyexcel_ods.py
+    |           |       hook-pyexcel_ods3.py
+    |           |       hook-pyexcel_odsr.py
+    |           |       hook-pyexcel_xls.py
+    |           |       hook-pyexcel_xlsx.py
+    |           |       hook-pyexcel_xlsxw.py
+    |           |       hook-pygraphviz.py
+    |           |       hook-pygwalker.py
+    |           |       hook-pylibmagic.py
+    |           |       hook-pylint.py
+    |           |       hook-pylsl.py
+    |           |       hook-pymediainfo.py
+    |           |       hook-pymorphy3.py
+    |           |       hook-pymssql.py
+    |           |       hook-pynng.py
+    |           |       hook-pynput.py
+    |           |       hook-pyodbc.py
+    |           |       hook-pyopencl.py
+    |           |       hook-pypdfium2.py
+    |           |       hook-pypdfium2_raw.py
+    |           |       hook-pypemicro.py
+    |           |       hook-pyphen.py
+    |           |       hook-pyppeteer.py
+    |           |       hook-pyproj.py
+    |           |       hook-pypsexec.py
+    |           |       hook-pypylon.py
+    |           |       hook-pyqtgraph.py
+    |           |       hook-pyshark.py
+    |           |       hook-pysnmp.py
+    |           |       hook-pystray.py
+    |           |       hook-PyTaskbar.py
+    |           |       hook-pytest.py
+    |           |       hook-pythainlp.py
+    |           |       hook-pythoncom.py
+    |           |       hook-pyttsx.py
+    |           |       hook-pyttsx3.py
+    |           |       hook-pyviz_comms.py
+    |           |       hook-pyvjoy.py
+    |           |       hook-pywintypes.py
+    |           |       hook-pywt.py
+    |           |       hook-qtmodern.py
+    |           |       hook-radicale.py
+    |           |       hook-raven.py
+    |           |       hook-rawpy.py
+    |           |       hook-rdflib.py
+    |           |       hook-redmine.py
+    |           |       hook-regex.py
+    |           |       hook-reportlab.lib.utils.py
+    |           |       hook-reportlab.pdfbase._fontdata.py
+    |           |       hook-resampy.py
+    |           |       hook-rlp.py
+    |           |       hook-rpy2.py
+    |           |       hook-rtree.py
+    |           |       hook-ruamel.yaml.py
+    |           |       hook-rubicon.py
+    |           |       hook-sacremoses.py
+    |           |       hook-sam2.py
+    |           |       hook-saml2.py
+    |           |       hook-schwifty.py
+    |           |       hook-seedir.py
+    |           |       hook-selectolax.py
+    |           |       hook-selenium.py
+    |           |       hook-sentry_sdk.py
+    |           |       hook-setuptools_scm.py
+    |           |       hook-shapely.py
+    |           |       hook-shotgun_api3.py
+    |           |       hook-simplemma.py
+    |           |       hook-skimage.color.py
+    |           |       hook-skimage.data.py
+    |           |       hook-skimage.draw.py
+    |           |       hook-skimage.exposure.py
+    |           |       hook-skimage.feature.py
+    |           |       hook-skimage.filters.py
+    |           |       hook-skimage.future.py
+    |           |       hook-skimage.graph.py
+    |           |       hook-skimage.io.py
+    |           |       hook-skimage.measure.py
+    |           |       hook-skimage.metrics.py
+    |           |       hook-skimage.morphology.py
+    |           |       hook-skimage.py
+    |           |       hook-skimage.registration.py
+    |           |       hook-skimage.restoration.py
+    |           |       hook-skimage.transform.py
+    |           |       hook-sklearn.cluster.py
+    |           |       hook-sklearn.externals.array_api_compat.cupy.py
+    |           |       hook-sklearn.externals.array_api_compat.dask.array.py
+    |           |       hook-sklearn.externals.array_api_compat.numpy.py
+    |           |       hook-sklearn.externals.array_api_compat.torch.py
+    |           |       hook-sklearn.linear_model.py
+    |           |       hook-sklearn.metrics.cluster.py
+    |           |       hook-sklearn.metrics.pairwise.py
+    |           |       hook-sklearn.metrics.py
+    |           |       hook-sklearn.neighbors.py
+    |           |       hook-sklearn.py
+    |           |       hook-sklearn.tree.py
+    |           |       hook-sklearn.utils.py
+    |           |       hook-skyfield.py
+    |           |       hook-slixmpp.py
+    |           |       hook-sounddevice.py
+    |           |       hook-soundfile.py
+    |           |       hook-sound_lib.py
+    |           |       hook-spacy.py
+    |           |       hook-speech_recognition.py
+    |           |       hook-spiceypy.py
+    |           |       hook-spnego.py
+    |           |       hook-srsly.msgpack._packer.py
+    |           |       hook-sspilib.raw.py
+    |           |       hook-statsmodels.tsa.statespace.py
+    |           |       hook-stdnum.py
+    |           |       hook-storm.database.py
+    |           |       hook-sudachipy.py
+    |           |       hook-sunpy.py
+    |           |       hook-sv_ttk.py
+    |           |       hook-swagger_spec_validator.py
+    |           |       hook-tableauhyperapi.py
+    |           |       hook-tables.py
+    |           |       hook-tcod.py
+    |           |       hook-tensorflow.py
+    |           |       hook-textdistance.py
+    |           |       hook-text_unidecode.py
+    |           |       hook-thinc.backends.numpy_ops.py
+    |           |       hook-thinc.py
+    |           |       hook-timezonefinder.py
+    |           |       hook-timm.py
+    |           |       hook-tinycss2.py
+    |           |       hook-tkinterdnd2.py
+    |           |       hook-tkinterweb.py
+    |           |       hook-tkinterweb_tkhtml.py
+    |           |       hook-toga.py
+    |           |       hook-toga_cocoa.py
+    |           |       hook-toga_gtk.py
+    |           |       hook-toga_winforms.py
+    |           |       hook-torch.py
+    |           |       hook-torchao.py
+    |           |       hook-torchaudio.py
+    |           |       hook-torchtext.py
+    |           |       hook-torchvision.io.image.py
+    |           |       hook-torchvision.py
+    |           |       hook-trame.py
+    |           |       hook-trame_client.py
+    |           |       hook-trame_code.py
+    |           |       hook-trame_components.py
+    |           |       hook-trame_datagrid.py
+    |           |       hook-trame_deckgl.py
+    |           |       hook-trame_formkit.py
+    |           |       hook-trame_grid.py
+    |           |       hook-trame_iframe.py
+    |           |       hook-trame_keycloak.py
+    |           |       hook-trame_leaflet.py
+    |           |       hook-trame_markdown.py
+    |           |       hook-trame_matplotlib.py
+    |           |       hook-trame_mesh_streamer.py
+    |           |       hook-trame_plotly.py
+    |           |       hook-trame_pvui.py
+    |           |       hook-trame_quasar.py
+    |           |       hook-trame_rca.py
+    |           |       hook-trame_router.py
+    |           |       hook-trame_simput.py
+    |           |       hook-trame_tauri.py
+    |           |       hook-trame_tweakpane.py
+    |           |       hook-trame_vega.py
+    |           |       hook-trame_vtk.py
+    |           |       hook-trame_vtk3d.py
+    |           |       hook-trame_vtklocal.py
+    |           |       hook-trame_vuetify.py
+    |           |       hook-trame_xterm.py
+    |           |       hook-transformers.py
+    |           |       hook-travertino.py
+    |           |       hook-trimesh.py
+    |           |       hook-triton.py
+    |           |       hook-ttkthemes.py
+    |           |       hook-ttkwidgets.py
+    |           |       hook-tzdata.py
+    |           |       hook-tzwhere.py
+    |           |       hook-u1db.py
+    |           |       hook-ultralytics.py
+    |           |       hook-umap.py
+    |           |       hook-unidecode.py
+    |           |       hook-uniseg.py
+    |           |       hook-urllib3.py
+    |           |       hook-urllib3_future.py
+    |           |       hook-usb.py
+    |           |       hook-uuid6.py
+    |           |       hook-uvicorn.py
+    |           |       hook-uvloop.py
+    |           |       hook-vaderSentiment.py
+    |           |       hook-vtkmodules.vtkAcceleratorsVTKmCore.py
+    |           |       hook-vtkmodules.vtkAcceleratorsVTKmDataModel.py
+    |           |       hook-vtkmodules.vtkAcceleratorsVTKmFilters.py
+    |           |       hook-vtkmodules.vtkChartsCore.py
+    |           |       hook-vtkmodules.vtkCommonColor.py
+    |           |       hook-vtkmodules.vtkCommonComputationalGeometry.py
+    |           |       hook-vtkmodules.vtkCommonDataModel.py
+    |           |       hook-vtkmodules.vtkCommonExecutionModel.py
+    |           |       hook-vtkmodules.vtkCommonMath.py
+    |           |       hook-vtkmodules.vtkCommonMisc.py
+    |           |       hook-vtkmodules.vtkCommonPython.py
+    |           |       hook-vtkmodules.vtkCommonSystem.py
+    |           |       hook-vtkmodules.vtkCommonTransforms.py
+    |           |       hook-vtkmodules.vtkDomainsChemistry.py
+    |           |       hook-vtkmodules.vtkDomainsChemistryOpenGL2.py
+    |           |       hook-vtkmodules.vtkFiltersAMR.py
+    |           |       hook-vtkmodules.vtkFiltersCellGrid.py
+    |           |       hook-vtkmodules.vtkFiltersCore.py
+    |           |       hook-vtkmodules.vtkFiltersExtraction.py
+    |           |       hook-vtkmodules.vtkFiltersFlowPaths.py
+    |           |       hook-vtkmodules.vtkFiltersGeneral.py
+    |           |       hook-vtkmodules.vtkFiltersGeneric.py
+    |           |       hook-vtkmodules.vtkFiltersGeometry.py
+    |           |       hook-vtkmodules.vtkFiltersGeometryPreview.py
+    |           |       hook-vtkmodules.vtkFiltersHybrid.py
+    |           |       hook-vtkmodules.vtkFiltersHyperTree.py
+    |           |       hook-vtkmodules.vtkFiltersImaging.py
+    |           |       hook-vtkmodules.vtkFiltersModeling.py
+    |           |       hook-vtkmodules.vtkFiltersParallel.py
+    |           |       hook-vtkmodules.vtkFiltersParallelDIY2.py
+    |           |       hook-vtkmodules.vtkFiltersParallelImaging.py
+    |           |       hook-vtkmodules.vtkFiltersParallelStatistics.py
+    |           |       hook-vtkmodules.vtkFiltersPoints.py
+    |           |       hook-vtkmodules.vtkFiltersProgrammable.py
+    |           |       hook-vtkmodules.vtkFiltersPython.py
+    |           |       hook-vtkmodules.vtkFiltersReduction.py
+    |           |       hook-vtkmodules.vtkFiltersSelection.py
+    |           |       hook-vtkmodules.vtkFiltersSMP.py
+    |           |       hook-vtkmodules.vtkFiltersSources.py
+    |           |       hook-vtkmodules.vtkFiltersStatistics.py
+    |           |       hook-vtkmodules.vtkFiltersTemporal.py
+    |           |       hook-vtkmodules.vtkFiltersTensor.py
+    |           |       hook-vtkmodules.vtkFiltersTexture.py
+    |           |       hook-vtkmodules.vtkFiltersTopology.py
+    |           |       hook-vtkmodules.vtkFiltersVerdict.py
+    |           |       hook-vtkmodules.vtkGeovisCore.py
+    |           |       hook-vtkmodules.vtkImagingColor.py
+    |           |       hook-vtkmodules.vtkImagingCore.py
+    |           |       hook-vtkmodules.vtkImagingFourier.py
+    |           |       hook-vtkmodules.vtkImagingGeneral.py
+    |           |       hook-vtkmodules.vtkImagingHybrid.py
+    |           |       hook-vtkmodules.vtkImagingMath.py
+    |           |       hook-vtkmodules.vtkImagingMorphological.py
+    |           |       hook-vtkmodules.vtkImagingOpenGL2.py
+    |           |       hook-vtkmodules.vtkImagingSources.py
+    |           |       hook-vtkmodules.vtkImagingStatistics.py
+    |           |       hook-vtkmodules.vtkImagingStencil.py
+    |           |       hook-vtkmodules.vtkInfovisCore.py
+    |           |       hook-vtkmodules.vtkInfovisLayout.py
+    |           |       hook-vtkmodules.vtkInteractionImage.py
+    |           |       hook-vtkmodules.vtkInteractionStyle.py
+    |           |       hook-vtkmodules.vtkInteractionWidgets.py
+    |           |       hook-vtkmodules.vtkIOAMR.py
+    |           |       hook-vtkmodules.vtkIOAsynchronous.py
+    |           |       hook-vtkmodules.vtkIOAvmesh.py
+    |           |       hook-vtkmodules.vtkIOCellGrid.py
+    |           |       hook-vtkmodules.vtkIOCesium3DTiles.py
+    |           |       hook-vtkmodules.vtkIOCGNSReader.py
+    |           |       hook-vtkmodules.vtkIOChemistry.py
+    |           |       hook-vtkmodules.vtkIOCityGML.py
+    |           |       hook-vtkmodules.vtkIOCONVERGECFD.py
+    |           |       hook-vtkmodules.vtkIOCore.py
+    |           |       hook-vtkmodules.vtkIOEngys.py
+    |           |       hook-vtkmodules.vtkIOEnSight.py
+    |           |       hook-vtkmodules.vtkIOERF.py
+    |           |       hook-vtkmodules.vtkIOExodus.py
+    |           |       hook-vtkmodules.vtkIOExport.py
+    |           |       hook-vtkmodules.vtkIOExportGL2PS.py
+    |           |       hook-vtkmodules.vtkIOExportPDF.py
+    |           |       hook-vtkmodules.vtkIOFDS.py
+    |           |       hook-vtkmodules.vtkIOFLUENTCFF.py
+    |           |       hook-vtkmodules.vtkIOGeoJSON.py
+    |           |       hook-vtkmodules.vtkIOGeometry.py
+    |           |       hook-vtkmodules.vtkIOH5part.py
+    |           |       hook-vtkmodules.vtkIOH5Rage.py
+    |           |       hook-vtkmodules.vtkIOHDF.py
+    |           |       hook-vtkmodules.vtkIOImage.py
+    |           |       hook-vtkmodules.vtkIOImport.py
+    |           |       hook-vtkmodules.vtkIOInfovis.py
+    |           |       hook-vtkmodules.vtkIOIOSS.py
+    |           |       hook-vtkmodules.vtkIOLANLX3D.py
+    |           |       hook-vtkmodules.vtkIOLegacy.py
+    |           |       hook-vtkmodules.vtkIOLSDyna.py
+    |           |       hook-vtkmodules.vtkIOMINC.py
+    |           |       hook-vtkmodules.vtkIOMotionFX.py
+    |           |       hook-vtkmodules.vtkIOMovie.py
+    |           |       hook-vtkmodules.vtkIONetCDF.py
+    |           |       hook-vtkmodules.vtkIOOggTheora.py
+    |           |       hook-vtkmodules.vtkIOOMF.py
+    |           |       hook-vtkmodules.vtkIOParallel.py
+    |           |       hook-vtkmodules.vtkIOParallelExodus.py
+    |           |       hook-vtkmodules.vtkIOParallelLSDyna.py
+    |           |       hook-vtkmodules.vtkIOParallelXML.py
+    |           |       hook-vtkmodules.vtkIOPIO.py
+    |           |       hook-vtkmodules.vtkIOPLY.py
+    |           |       hook-vtkmodules.vtkIOSegY.py
+    |           |       hook-vtkmodules.vtkIOSQL.py
+    |           |       hook-vtkmodules.vtkIOTecplotTable.py
+    |           |       hook-vtkmodules.vtkIOTRUCHAS.py
+    |           |       hook-vtkmodules.vtkIOVeraOut.py
+    |           |       hook-vtkmodules.vtkIOVideo.py
+    |           |       hook-vtkmodules.vtkIOVPIC.py
+    |           |       hook-vtkmodules.vtkIOXdmf2.py
+    |           |       hook-vtkmodules.vtkIOXML.py
+    |           |       hook-vtkmodules.vtkIOXMLParser.py
+    |           |       hook-vtkmodules.vtkParallelCore.py
+    |           |       hook-vtkmodules.vtkPythonContext2D.py
+    |           |       hook-vtkmodules.vtkRenderingAnnotation.py
+    |           |       hook-vtkmodules.vtkRenderingCellGrid.py
+    |           |       hook-vtkmodules.vtkRenderingContext2D.py
+    |           |       hook-vtkmodules.vtkRenderingContextOpenGL2.py
+    |           |       hook-vtkmodules.vtkRenderingCore.py
+    |           |       hook-vtkmodules.vtkRenderingExternal.py
+    |           |       hook-vtkmodules.vtkRenderingFreeType.py
+    |           |       hook-vtkmodules.vtkRenderingGL2PSOpenGL2.py
+    |           |       hook-vtkmodules.vtkRenderingGridAxes.py
+    |           |       hook-vtkmodules.vtkRenderingHyperTreeGrid.py
+    |           |       hook-vtkmodules.vtkRenderingImage.py
+    |           |       hook-vtkmodules.vtkRenderingLabel.py
+    |           |       hook-vtkmodules.vtkRenderingLICOpenGL2.py
+    |           |       hook-vtkmodules.vtkRenderingLOD.py
+    |           |       hook-vtkmodules.vtkRenderingMatplotlib.py
+    |           |       hook-vtkmodules.vtkRenderingOpenGL2.py
+    |           |       hook-vtkmodules.vtkRenderingParallel.py
+    |           |       hook-vtkmodules.vtkRenderingSceneGraph.py
+    |           |       hook-vtkmodules.vtkRenderingUI.py
+    |           |       hook-vtkmodules.vtkRenderingVolume.py
+    |           |       hook-vtkmodules.vtkRenderingVolumeAMR.py
+    |           |       hook-vtkmodules.vtkRenderingVolumeOpenGL2.py
+    |           |       hook-vtkmodules.vtkRenderingVR.py
+    |           |       hook-vtkmodules.vtkRenderingVRModels.py
+    |           |       hook-vtkmodules.vtkRenderingVtkJS.py
+    |           |       hook-vtkmodules.vtkSerializationManager.py
+    |           |       hook-vtkmodules.vtkTestingRendering.py
+    |           |       hook-vtkmodules.vtkTestingSerialization.py
+    |           |       hook-vtkmodules.vtkViewsContext2D.py
+    |           |       hook-vtkmodules.vtkViewsCore.py
+    |           |       hook-vtkmodules.vtkViewsInfovis.py
+    |           |       hook-vtkmodules.vtkWebCore.py
+    |           |       hook-vtkmodules.vtkWebGLExporter.py
+    |           |       hook-vtkpython.py
+    |           |       hook-wavefile.py
+    |           |       hook-weasyprint.py
+    |           |       hook-web3.py
+    |           |       hook-webassets.py
+    |           |       hook-webrtcvad.py
+    |           |       hook-websockets.py
+    |           |       hook-webview.py
+    |           |       hook-win32com.py
+    |           |       hook-wordcloud.py
+    |           |       hook-workflow.py
+    |           |       hook-wx.lib.activex.py
+    |           |       hook-wx.lib.pubsub.py
+    |           |       hook-wx.xrc.py
+    |           |       hook-xarray.py
+    |           |       hook-Xlib.py
+    |           |       hook-xml.dom.html.HTMLDocument.py
+    |           |       hook-xml.sax.saxexts.py
+    |           |       hook-xmldiff.py
+    |           |       hook-xmlschema.py
+    |           |       hook-xsge_gui.py
+    |           |       hook-xyzservices.py
+    |           |       hook-yapf_third_party.py
+    |           |       hook-z3c.rml.py
+    |           |       hook-zarr.py
+    |           |       hook-zeep.py
+    |           |       hook-zmq.py
+    |           |       hook-zoneinfo.py
+    |           |       hook-_mssql.py
+    |           |       hook-_mysql.py
+    |           |       __init__.py
+    |           |       
+    |           \---utils
+    |                   nvidia_cuda.py
+    |                   vtkmodules.py
+    |                   __init__.py
+    |                   
+    \---Scripts
+            activate
+            activate.bat
+            activate.fish
+            Activate.ps1
+            cairosvg.exe
+            deactivate.bat
+            dotenv.exe
+            normalizer.exe
+            pip.exe
+            pip3.13.exe
+            pip3.exe
+            pyi-archive_viewer.exe
+            pyi-bindepend.exe
+            pyi-grab_version.exe
+            pyi-makespec.exe
+            pyi-set_version.exe
+            pyinstaller.exe
+            python.exe
+            pythonw.exe
+            

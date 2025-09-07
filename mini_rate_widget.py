@@ -46,15 +46,15 @@ START_PINNED = False
 TRANS_COLOR = 'black'
 
 # Sparkline settings
-SPARK_W, SPARK_H = 44, 12   # already narrowed/shortened per your last tweaks
+SPARK_W, SPARK_H = 44, 12
 HISTORY_MAX = 60
 
-# Bar spark config
-SPARK_VPAD = 2              # vertical padding inside canvas
-SPARK_SOFT_MARGIN = 0.08    # add 8% headroom on amplitude to avoid touching edges
-SPARK_BAR_GAP = 1           # gap in px between bars
-SPARK_BAR_MIN_WIDTH = 2     # min bar width in px (auto-reduces number of bars if needed)
-SPARK_DRAW_ZERO_LINE = True # draw a faint baseline (zero axis)
+# Bar spark config (fixed count)
+SPARK_VPAD = 2               # vertical canvas padding
+SPARK_SOFT_MARGIN = 0.08     # headroom on amplitude
+SPARK_BAR_GAP = 1            # gap between bars (px)
+SPARK_BAR_COUNT = 10         # << always render exactly 10 bars
+SPARK_DRAW_ZERO_LINE = True  # draw baseline (zero axis)
 
 # Persian digits maps
 P2E = str.maketrans("۰۱۲۳۴۵۶۷۸۹٬٫", "0123456789,.")
@@ -341,6 +341,8 @@ class UltraCompactRateApp(tk.Tk):
         self.price_history = {}  # last numeric values for diff arrows
         # Sparkline series per key
         self.series_hist = {"usd": [], "aud": [], "g18": [], "emami": []}
+        # Timestamps for each sample (aligned with series_hist points)
+        self.series_times = {"usd": [], "aud": [], "g18": [], "emami": []}
         
         self.is_fetching = False
         self.refresh_job = None
@@ -360,24 +362,183 @@ class UltraCompactRateApp(tk.Tk):
         
         self.after(100, lambda: self._refresh(manual=False))
     
-    # -------- formatting --------
+    # -------- formatting (compact, based on Toman) --------
     def _format_price_compact(self, n: Optional[int]) -> str:
-        """Format price into compact T (thousand) / M (million).
-        - Numbers use Persian digits; suffix stays Latin.
-        - Examples: 100000 -> '۱۰۰ T', 64700 -> '۶۴.۷ T', 8_150_000 -> '۸.۱۵ M', 90_000_000 -> '۹۰ M'."""
+        """Compact formatter based on Toman.
+        Input n is in Toman, then:
+          - < 1K Toman     : show plain Toman (no suffix), no decimals
+          - 1K .. < 1M     : show in K (thousand Toman)
+                             <100K -> 1 decimal, >=100K -> 0 decimals
+          - >= 1M          : show in M (million Toman)
+                             <10M -> 2 decimals, >=10M -> 0 decimals
+        Digits are Persian; suffixes stay Latin (K/M)."""
+        
+        # Define dictionary for converting English digits to Persian
+        E2P = str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹")
+        
+        # Check for None or non-numeric input
         if n is None:
             return "—"
-        if n < 1000:
-            s = f"{n}"
-            return s.translate(E2P)
-        if n < 1_000_000:
-            val = n / 1000.0
-            s = f"{val:.1f}".rstrip("0").rstrip(".")  # one decimal, trim zeros
-            return s.translate(E2P) + " T"
-        # >= 1,000,000
-        val = n / 1_000_000.0
-        s = f"{val:.2f}".rstrip("0").rstrip(".")      # up to two decimals
-        return s.translate(E2P) + " M"
+        if not isinstance(n, (int, float)):
+            return "—"
+        
+        # Use input directly as Toman
+        toman = n
+        
+        # Handle negative numbers
+        sign = "-" if toman < 0 else ""
+        toman = abs(toman)
+        
+        # < 1K Toman: show plain number without suffix
+        if toman < 1_000:
+            s = f"{int(round(toman)):,}".replace(",", "٬")
+            return sign + s.translate(E2P)
+        
+        # 1K .. < 1M Toman: show in thousands (K)
+        if toman < 1_000_000:
+            k = toman / 1_000.0
+            if k < 100:
+                s = f"{k:.1f}".rstrip("0").rstrip(".")
+            else:
+                s = f"{int(round(k)):,}".replace(",", "٬")
+            return sign + s.translate(E2P) + " K"
+        
+        # >= 1M Toman: show in millions (M)
+        m = toman / 1_000_000.0
+        if m < 10:
+            s = f"{m:.2f}".rstrip("0").rstrip(".")
+        else:
+            s = f"{int(round(m)):,}".replace(",", "٬")
+        return sign + s.translate(E2P) + " M"
+
+    
+    def _ensure_tooltip(self):
+        """Create tooltip window on demand."""
+        if hasattr(self, "_tooltip_win") and self._tooltip_win:
+            return
+        self._tooltip_win = tk.Toplevel(self)
+        self._tooltip_win.withdraw()
+        self._tooltip_win.overrideredirect(True)
+        self._tooltip_win.attributes("-topmost", True)
+        self._tooltip_label = tk.Label(
+            self._tooltip_win,
+            text="",
+            bg=self.t["SURFACE_VARIANT"],
+            fg=self.t["ON_SURFACE"],
+            font=self.t["FONT_SMALL"],
+            padx=6, pady=2,
+            bd=1, relief="solid"
+        )
+
+        # Use outline color for border
+        self._tooltip_label.configure(highlightthickness=0)
+        self._tooltip_label.pack()
+
+    def _row_context_menu(self, event, key):
+        """Context menu: copy value / copy row."""
+        try:
+            self._select_row(key)
+            m = tk.Menu(self, tearoff=0)
+            m.add_command(label="کپی مقدار", command=self._copy_value_selected)
+            m.add_command(label="کپی عنوان+مقدار", command=self._copy_row_selected)
+            m.tk_popup(event.x_root, event.y_root)
+        finally:
+            try:
+                m.grab_release()
+            except Exception:
+                pass
+
+    def _row_key_from_widget(self, widget):
+        """Walk up the widget tree to find row key for a widget."""
+        while widget and widget is not self:
+            for key, rw in self.row_widgets.items():
+                if widget in (rw["frame"], rw["inner"], rw["title_lbl"], rw["value_lbl"], rw.get("spark"), rw.get("trend_lbl")):
+                    return key
+            widget = getattr(widget, "master", None)
+        return None
+
+    def _copy_value_selected(self, event=None):
+        """Copy the FULL numeric value + ' ریال' of the selected row (fallback: row under cursor)."""
+        # Figure out which row
+        key = self.selected_row
+        if not key:
+            w = event.widget if event and hasattr(event, "widget") else self.winfo_containing(*self.winfo_pointerxy())
+            key = self._row_key_from_widget(w)
+        if not key or key not in self.row_widgets:
+            return
+
+        # Prefer numeric from price_history (exact full value)
+        val_num = self.price_history.get(key)
+
+        # Fallback: parse from compact label (e.g., "۸.۱۵ M", "۶۴.۷ T")
+        if val_num is None:
+            raw = self.row_widgets[key]["value_lbl"].cget("text").strip()
+            raw_en = raw.translate(P2E)  # Persian digits -> English
+            m = re.match(r"^\s*(\d+(?:\.\d+)?)\s*([TM])?\s*$", raw_en)
+            if m:
+                num = float(m.group(1))
+                suffix = m.group(2)
+                if suffix == "M":
+                    val_num = int(round(num * 1_000_000))
+                elif suffix == "T":
+                    val_num = int(round(num * 1_000))
+                else:
+                    val_num = int(round(num))
+
+        if val_num is None:
+            return  # nothing to copy
+
+        # Format full value with thousands separators + Persian digits + unit
+        txt = f"{self._format_price(val_num)} ریال"
+        self.clipboard_clear()
+        self.clipboard_append(txt)
+
+        # Optional toast
+        try:
+            if NOTIFICATIONS_AVAILABLE:
+                notification.notify(title="کپی شد", message="مقدار کامل کپی شد.", timeout=2)
+        except Exception:
+            pass
+
+    def _copy_row_selected(self, event=None):
+        """Copy 'Title: Value' of selected row."""
+        key = self.selected_row
+        if not key:
+            w = event.widget if event and hasattr(event, "widget") else self.winfo_containing(*self.winfo_pointerxy())
+            key = self._row_key_from_widget(w)
+        if not key or key not in self.row_widgets:
+            return
+        rw = self.row_widgets[key]
+        txt = f"{rw['title_lbl'].cget('text')}: {rw['value_lbl'].cget('text')}".strip()
+        self.clipboard_clear()
+        self.clipboard_append(txt)
+        try:
+            if NOTIFICATIONS_AVAILABLE:
+                notification.notify(title="کپی شد", message="ردیف (عنوان: مقدار) کپی شد.", timeout=2)
+        except Exception:
+            pass
+
+    def _tooltip_show(self, text: str, x: int, y: int):
+        """Show tooltip near screen coordinates (x, y)."""
+        self._ensure_tooltip()
+        self._tooltip_label.config(
+            text=text,
+            bg=self.t["SURFACE_VARIANT"],
+            fg=self.t["ON_SURFACE"]
+        )
+        # Slight offset so it doesn't sit exactly under the cursor
+        self._tooltip_win.geometry(f"+{x+12}+{y+12}")
+        self._tooltip_win.deiconify()
+        self._tooltip_win.lift()
+
+    def _tooltip_hide(self):
+        """Hide tooltip if visible."""
+        try:
+            if hasattr(self, "_tooltip_win") and self._tooltip_win:
+                self._tooltip_win.withdraw()
+        except Exception:
+            pass
+
 
     # -------- fonts/theme --------
     def _get_preferred_font(self, preferred_list: List[str]):
@@ -472,6 +633,14 @@ class UltraCompactRateApp(tk.Tk):
     def _update_ui_theme(self):
         """Updates colors and fonts to the current theme."""
         t = self.t
+        
+        # If tooltip is visible, refresh its palette
+        if hasattr(self, "_tooltip_win") and self._tooltip_win and self._tooltip_win.state() == "normal":
+            try:
+                self._tooltip_label.config(bg=self.t["SURFACE_VARIANT"], fg=self.t["ON_SURFACE"])
+            except Exception:
+                pass
+
         
         self.configure(bg=TRANS_COLOR)
         self.card.configure(bg=t["SURFACE"])
@@ -593,47 +762,53 @@ class UltraCompactRateApp(tk.Tk):
         t = self.t
 
         rows_container = tk.Frame(parent, bg=t["SURFACE"])
-        
+
         self.data_rows = {
             "usd": {"title": "دلار امریکا", "value": None},
             "aud": {"title": "دلار استرالیا", "value": None},
             "g18": {"title": "طلای ۱۸ عیار", "value": None},
             "emami": {"title": "سکه امامی", "value": None}
         }
-        
+
         self.row_widgets = {}
         self.row_bgs = {}
-        
+
+        # helper for binding clicks per row
+        def _bind_row_clicks(widget, k):
+            widget.bind("<Button-1>",        lambda e, key=k: self._select_row(key))
+            widget.bind("<Double-Button-1>", lambda e, key=k: (self._select_row(key), self._copy_value_selected()))
+            widget.bind("<Button-3>",        lambda e, key=k: self._row_context_menu(e, key))  # right-click
+
         for idx, (key, row) in enumerate(self.data_rows.items()):
             bgc = t["ROW_ODD"] if idx % 2 == 0 else t["ROW_EVEN"]
             self.row_bgs[key] = bgc
+
             rf = tk.Frame(rows_container, bg=bgc, height=28)
             rf.pack(fill=tk.X, pady=2)
             rf.pack_propagate(False)
-            rf.bind("<Button-1>", lambda e, k=key: self._select_row(k))
 
             inner = tk.Frame(rf, bg=bgc)
             inner.pack(fill=tk.BOTH, expand=True, padx=8)
-            inner.bind("<Button-1>", lambda e, k=key: self._select_row(k))
 
-            # Value on left (ltr)
+            # value (left)
             value_lbl = tk.Label(inner, text="—", fg=t["ON_SURFACE"], bg=bgc, font=t["FONT_BOLD"], anchor="w")
             value_lbl.pack(side=tk.LEFT)
-            value_lbl.bind("<Button-1>", lambda e, k=key: self._select_row(k))
 
-            # Sparkline canvas (narrower + tighter padding)
+            # spark (left-middle)
             spark = tk.Canvas(inner, width=SPARK_W, height=SPARK_H, bg=bgc, highlightthickness=0, bd=0)
-            spark.pack(side=tk.LEFT, padx=(4, 2))  # was (6, 4)
+            spark.pack(side=tk.LEFT, padx=(4, 2))
 
-            # Trend label (let it expand to use remaining space)
-            trend_lbl = tk.Label(inner, text="", fg=t["ON_SURFACE_VARIANT"], bg=bgc, font=self.font_trend_small, anchor="w")
-            trend_lbl.pack(side=tk.LEFT, padx=(2, 6), expand=True, fill=tk.X)  # add expand=True, fill=tk.X
+            # trend (expand to take space)
+            trend_lbl = tk.Label(inner, text="", fg=t["ON_SURFACE_VARIANT"], bg=bgc,
+                                 font=self.font_trend_small, anchor="w")
+            trend_lbl.pack(side=tk.LEFT, padx=(2, 6), expand=True, fill=tk.X)
 
-            # Title on right
-            title_lbl = tk.Label(inner, text=row["title"], fg=t["ON_SURFACE"], bg=bgc, font=t["FONT_PRIMARY"], anchor="e")
+            # title (right)
+            title_lbl = tk.Label(inner, text=row["title"], fg=t["ON_SURFACE"], bg=bgc,
+                                 font=t["FONT_PRIMARY"], anchor="e")
             title_lbl.pack(side=tk.RIGHT)
-            title_lbl.bind("<Button-1>", lambda e, k=key: self._select_row(k))
 
+            # store refs
             self.row_widgets[key] = {
                 "frame": rf,
                 "inner": inner,
@@ -642,7 +817,11 @@ class UltraCompactRateApp(tk.Tk):
                 "spark": spark,
                 "trend_lbl": trend_lbl
             }
-        
+
+            # bind AFTER widgets exist
+            for w in (rf, inner, title_lbl, value_lbl, spark, trend_lbl):
+                _bind_row_clicks(w, key)
+
         return rows_container
 
     def _create_minimal_footer(self, parent):
@@ -678,109 +857,142 @@ class UltraCompactRateApp(tk.Tk):
 
     # -------- sparkline helpers --------
     def _push_history(self, key: str, value: int | None):
-        """Append a point on every refresh.
-        - If value is None: repeat the last point (flat forward) if exists.
-        - Always append to move sparkline horizontally.
+        """Append a point on every refresh (and its timestamp).
+        - If value is None and we have previous, repeat last (flat forward).
+        - Always append to move the chart horizontally.
         """
         series = self.series_hist.get(key)
+        times = self.series_times.get(key)
         if series is None:
             self.series_hist[key] = series = []
+        if times is None:
+            self.series_times[key] = times = []
+
+        # Determine value to append
         if value is None:
             if not series:
-                return
+                return  # nothing to append yet
             value = series[-1]
+
+        # Append value + timestamp (HH:MM)
         series.append(value)
+        times.append(datetime.now().strftime('%H:%M'))
+
+        # Trim to HISTORY_MAX for memory
         if len(series) > HISTORY_MAX:
-            del series[:-HISTORY_MAX]
+            trim = len(series) - HISTORY_MAX
+            del series[:trim]
+            del times[:trim]
 
     def _render_spark(self, key: str):
-        """Draw a compact positive/negative bar chart per row.
-        - Each bar shows the diff between consecutive points.
-        - The NEWEST bar (rightmost) is green if price went up, red if down; neutral if unchanged.
-        - Other bars also use sign-based colors.
+        """Draw a fixed-count (10) positive/negative bar chart per row with tooltips.
+        - Always renders exactly SPARK_BAR_COUNT bars.
+        - Each bar represents diff between consecutive points.
+        - Oldest bar drops from the left; newest bar appears at the right.
+        - Bar color: green for up, red for down, neutral gray for zero.
+        - Tooltip shows the time (HH:MM) the bar was created (timestamp of the newer sample).
         """
         rw = self.row_widgets.get(key)
         if not rw or "spark" not in rw:
             return
         cv = rw["spark"]
-        series = self.series_hist.get(key, [])
         cv.delete("all")
-        if len(series) < 2:
-            return
-    
-        # Canvas size
+
+        series = self.series_hist.get(key, [])
+        times = self.series_times.get(key, [])
+
+        # Canvas size & padding
         w = int(cv.cget("width"))
         h = int(cv.cget("height"))
         pad_x = 1
         pad_y = max(1, SPARK_VPAD)
-    
-        # Build diffs (sequential changes)
-        diffs = [series[i] - series[i - 1] for i in range(1, len(series))]
-        if not diffs:
-            return
-    
-        # Fit bars to canvas
-        max_bars = max(1, int((w - 2 * pad_x + SPARK_BAR_GAP) / (SPARK_BAR_MIN_WIDTH + SPARK_BAR_GAP)))
-        if len(diffs) > max_bars:
-            diffs = diffs[-max_bars:]  # keep most recent bars only
-    
-        k = len(diffs)
+
+        # Build diffs and aligned bar-times/values (time & price of the NEWER point)
+        if len(series) >= 2:
+            diffs = [series[i] - series[i - 1] for i in range(1, len(series))]
+            bar_times  = [times[i]  if i < len(times)  else None for i in range(1, len(series))]
+            bar_values = [series[i] if i < len(series) else None for i in range(1, len(series))]
+        else:
+            diffs, bar_times, bar_values = [], [], []
+
+            # Ensure exactly SPARK_BAR_COUNT bars
+            if len(diffs) >= SPARK_BAR_COUNT:
+                diffs      = diffs[-SPARK_BAR_COUNT:]
+                bar_times  = bar_times[-SPARK_BAR_COUNT:]
+                bar_values = bar_values[-SPARK_BAR_COUNT:]
+            else:
+                pad_len    = SPARK_BAR_COUNT - len(diffs)
+                diffs      = [0]    * pad_len + diffs
+                bar_times  = [None] * pad_len + bar_times
+                bar_values = [None] * pad_len + bar_values
+
+
+        # Compute per-bar width and scaling
+        k = SPARK_BAR_COUNT
         total_gap = (k - 1) * SPARK_BAR_GAP
-        bar_w = max(SPARK_BAR_MIN_WIDTH, int((w - 2 * pad_x - total_gap) / k))
-    
-        # Amplitude scaling (symmetric around zero, with soft margins)
-        dmin, dmax = min(diffs), max(diffs)
+        bar_w = max(1, int((w - 2 * pad_x - total_gap) / k))
+
+        # Amplitude scaling symmetric around zero with soft margin
+        dmin, dmax = (min(diffs), max(diffs)) if diffs else (0, 0)
         amp = max(abs(dmin), abs(dmax))
         if amp == 0:
             amp = 1
         amp = amp * (1 + SPARK_SOFT_MARGIN)
         usable_half_h = max(1, (h - 2 * pad_y) / 2.0)
         scale = usable_half_h / amp
-    
+
         # Baseline (zero) in the middle
         y0 = h / 2.0
         if SPARK_DRAW_ZERO_LINE:
             cv.create_line(pad_x, y0, w - pad_x, y0, fill=self.t["OUTLINE"], width=1)
-    
-        # Draw bars from left to right (most recent at the right)
+
+        # Draw bars left->right; rightmost is the newest bar
         x = pad_x
         for i, d in enumerate(diffs):
-            is_latest = (i == k - 1)  # NEWEST bar (rightmost)
-            # Color per sign; the newest bar must be green/red if up/down
+            # Color per sign
             if d > 0:
                 color = self.t["SUCCESS"]
             elif d < 0:
                 color = self.t["ERROR"]
             else:
                 color = self.t["ON_SURFACE_VARIANT"]
-    
+
+            # Build tooltip text (time on first line, full price on second)
+            tlabel = bar_times[i]
+            vlabel = bar_values[i]
+
+            time_txt  = (tlabel.translate(E2P) if tlabel else "—")
+            price_txt = (self._format_price_compact(vlabel)) if vlabel is not None else "—"
+
+            tip_txt = f"{time_txt}\n{price_txt}"
+
+
             if d == 0:
-                # Neutral: tiny baseline segment
-                cv.create_line(x, y0, x + bar_w, y0, fill=color, width=1)
-                x += bar_w + SPARK_BAR_GAP
-                continue
-            
-            # Compute bar endpoints
-            if d > 0:
-                y1, y2 = y0 - (d * scale), y0  # up bar
+                # Neutral thin segment on baseline
+                item = cv.create_line(x, y0, x + bar_w, y0, fill=color, width=1)
             else:
-                y1, y2 = y0, y0 + (abs(d) * scale)  # down bar
-    
-            # Clamp to canvas with vertical padding
-            y1 = max(pad_y, min(h - pad_y, y1))
-            y2 = max(pad_y, min(h - pad_y, y2))
-            if abs(y2 - y1) < 1:
-                # Ensure at least 1px visible
-                if y2 >= y1:
-                    y2 = y1 + 1
+                if d > 0:
+                    y1, y2 = y0 - (d * scale), y0
                 else:
-                    y1 = y2 + 1
-    
-            # Draw solid bar (newest implicitly drawn last, so always visible)
-            cv.create_rectangle(x, y1, x + bar_w, y2, outline=color, fill=color, width=0)
+                    y1, y2 = y0, y0 + (abs(d) * scale)
+                # Clamp within vertical padding
+                y1 = max(pad_y, min(h - pad_y, y1))
+                y2 = max(pad_y, min(h - pad_y, y2))
+                if abs(y2 - y1) < 1:
+                    # Guarantee visibility
+                    if y2 >= y1:
+                        y2 = y1 + 1
+                    else:
+                        y1 = y2 + 1
+                item = cv.create_rectangle(x, y1, x + bar_w, y2, outline=color, fill=color, width=0)
+
+            # Bind tooltip to this bar item
+            cv.tag_bind(item, "<Enter>", lambda e, txt=tip_txt: self._tooltip_show(txt, e.x_root, e.y_root))
+            cv.tag_bind(item, "<Motion>", lambda e, txt=tip_txt: self._tooltip_show(txt, e.x_root, e.y_root))
+            cv.tag_bind(item, "<Leave>", lambda e: self._tooltip_hide())
+            cv.tag_bind(item, "<Button-1>", lambda e, key=key: self._select_row(key))
+
             x += bar_w + SPARK_BAR_GAP
-
-
 
     # -------- footer helpers --------
     def _theme_icon_for(self, theme_name: str) -> str:
@@ -817,15 +1029,21 @@ class UltraCompactRateApp(tk.Tk):
             self.geometry(f"{WIN_W}x{int(total_h)}+{self.winfo_x()}+{self.winfo_y()}")
         except Exception:
             pass
-    
+
     def _setup_shortcuts(self):
         """Keyboard shortcuts."""
+        # Copy just the value (rate column)
+        for seq in ("<Control-c>", "<Control-Key-c>", "<Control-C>"):
+            self.bind_all(seq, self._copy_value_selected)
+        # Copy "Title: Value"
+        for seq in ("<Control-Shift-c>", "<Control-Shift-Key-c>"):
+            self.bind_all(seq, self._copy_row_selected)
+
         self.bind_all("<Control-r>", lambda e: self._refresh(manual=True))
-        self.bind_all("<F5>", lambda e: self._refresh(manual=True))
-        self.bind_all("<Escape>", lambda e: self._hide_to_tray())
-        self.bind_all("<Control-q>", lambda e: self._exit_app())
-        self.bind_all("<Control-c>", self._copy_selected)  # copy selected row
-    
+        self.bind_all("<F5>",       lambda e: self._refresh(manual=True))
+        self.bind_all("<Escape>",   lambda e: self._hide_to_tray())
+        self.bind_all("<Control-q>",lambda e: self._exit_app())
+
     def _start_drag(self, event):
         self._drag_data["x"] = event.x
         self._drag_data["y"] = event.y

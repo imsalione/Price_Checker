@@ -1,11 +1,37 @@
 {
-  "theme": "dark",
-  "auto_refresh": true,
-  "notifications": true,
-  "price_threshold": 1000,
+  "theme": "light",
+  "ui_scale": 0.9090909090909091,
+  "window_alpha": 1.0,
+  "always_on_top": false,
   "window_position": [
-    -1901,
-    809
+    -1905,
+    781
   ],
-  "always_on_top": true
+  "window_size": [
+    350,
+    200
+  ],
+  "auto_refresh": true,
+  "auto_refresh_ms": 300000,
+  "notifications": true,
+  "pinned_ids": [
+    "fx:دلار آمریکا",
+    "fx:دلار استرالیا",
+    "gold:سکه امامی (طرح جدید)",
+    "gold:گرم طلای عیار",
+    "fx:لیر ترکیه"
+  ],
+  "pinned_limit": 5,
+  "news_accounts": [
+    "IranIntlbrk"
+  ],
+  "news_visible": false,
+  "price_threshold": 1000,
+  "news_enabled": false,
+  "window_geometry": {
+    "w": 360,
+    "h": 220,
+    "x": -1901,
+    "y": 754
+  }
 }
