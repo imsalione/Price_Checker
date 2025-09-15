@@ -3,56 +3,69 @@
 """
 Dependency Injection (DI) container for MiniRates.
 
-Responsibilities:
-  - Provide a central registry for app services (singleton by default).
-  - Lazily construct instances via factories (functions with no args).
-  - Decouple construction/wiring from consumers (UI, presentation, etc.).
+Responsibilities
+----------------
+- Provide a tiny, explicit DI container with lazy singletons.
+- Centralize wiring of app services (bus, settings, theme, tray, catalog, twitter).
+- Keep consumers decoupled from construction details & concrete modules.
 
-Usage:
-  from app.core.di import container, register_default_services
+Usage
+-----
+    from app.core.di import container, register_default_services
 
-  register_default_services()  # once at startup (e.g., in main.py)
-  settings = container.resolve("settings")
-  tray     = container.resolve("tray")
-  catalog  = container.resolve("catalog")     # see CatalogService facade
-  twitter  = container.resolve("twitter")     # see TwitterService facade
-  bus      = container.resolve("bus")
+    register_default_services()  # once at startup (e.g., in main.py)
+
+    bus      = container.resolve("bus")
+    settings = container.resolve("settings")
+    theme    = container.resolve("theme")
+    tray     = container.resolve("tray")
+    catalog  = container.resolve("catalog")   # CatalogService facade
+    twitter  = container.try_resolve("twitter")  # optional
 """
 
 from __future__ import annotations
 from typing import Any, Callable, Dict, Optional
 
 
-# ---- Thin facades (no heavy logic) ----
+# ---------- Thin Facades (no heavy logic) ----------
+
 class CatalogService:
     """
-    Facade over catalog/cache utilities.
+    A small facade over catalog/cache utilities (multi-source ready).
 
-    Methods:
-      fetch(force_refresh=False) -> dict                 # raw catalog (fx/gold/crypto)
-      build_view(settings) -> dict                       # {"pinned": [...], "others": {...}}
+    Methods
+    -------
+    fetch(force_refresh: bool = False) -> dict
+        Return the merged catalog (fx/gold/crypto). Bypasses caches if force_refresh=True.
+
+    build_view(settings) -> dict
+        Return UI-friendly structure using pins:
+        {
+          "pinned": [...],
+          "others": {"fx":[...], "gold":[...], "crypto":[...]}
+        }
     """
     def __init__(self, get_catalog_cached_or_fetch, build_display_lists):
         self._get = get_catalog_cached_or_fetch
         self._build = build_display_lists
 
-    def fetch(self, *, force_refresh: bool = False) -> Dict[str, Any]:
+    def fetch(self, *, force_refresh: bool = False):
         return self._get(force_refresh=force_refresh)
 
-    def build_view(self, settings) -> Dict[str, Any]:
-        # Note: If you want to reuse last fetched catalog, call fetch(False) here.
+    def build_view(self, settings):
         catalog = self.fetch(force_refresh=False)
         return self._build(catalog, settings)
 
 
 class TwitterService:
     """
-    Facade over twitter adapter/service to make it DI-friendly.
+    A light wrapper to make the Twitter (X) service DI-friendly.
 
-    Methods:
-      resolve_usernames(usernames: list[str]) -> list[str]
-      fetch_latest(usernames: list[str], per_user=3,
-                   exclude_replies=False, exclude_retweets=False) -> list[dict]
+    Methods
+    -------
+    resolve_usernames(usernames: list[str]) -> list[str]
+    fetch_latest(usernames: list[str], per_user=3,
+                 exclude_replies=False, exclude_retweets=False) -> list[dict]
     """
     def __init__(self, mod):
         self._mod = mod
@@ -69,21 +82,26 @@ class TwitterService:
         )
 
 
-# ---- Minimal container implementation ----
+# ---------- Minimal DI Container ----------
+
 class Container:
-    """A minimal DI container with lazy singleton factories."""
+    """A minimal DI container with lazy, singleton-like instances."""
     def __init__(self) -> None:
         self._factories: Dict[str, Callable[[], Any]] = {}
         self._instances: Dict[str, Any] = {}
 
     def register(self, name: str, factory: Callable[[], Any], *, override: bool = False) -> None:
         """
-        Register a service factory by name.
+        Register a factory under a unique name.
 
-        Args:
-            name: Unique service name.
-            factory: Zero-arg callable returning a new instance.
-            override: If True, replace existing registration and drop cached instance.
+        Parameters
+        ----------
+        name : str
+            Service name.
+        factory : Callable[[], Any]
+            Zero-argument callable returning a new instance.
+        override : bool
+            If True, replace existing registration and drop any cached instance.
         """
         if not callable(factory):
             raise TypeError(f"Factory for '{name}' must be callable.")
@@ -94,7 +112,7 @@ class Container:
             self._instances.pop(name, None)
 
     def resolve(self, name: str) -> Any:
-        """Get (and lazily construct) a service instance by name."""
+        """Return the (possibly newly constructed) instance for a registered service."""
         if name in self._instances:
             return self._instances[name]
         if name not in self._factories:
@@ -104,18 +122,18 @@ class Container:
         return instance
 
     def try_resolve(self, name: str, default: Optional[Any] = None) -> Any:
-        """Resolve a service if registered; otherwise return default."""
+        """Resolve a service if available; otherwise return default (no exception)."""
         try:
             return self.resolve(name)
         except KeyError:
             return default
 
     def clear_instances(self) -> None:
-        """Clear cached instances (factories remain)."""
+        """Drop all cached instances (factories remain)."""
         self._instances.clear()
 
     def reset(self) -> None:
-        """Clear both factories and instances."""
+        """Drop both factories and instances."""
         self._factories.clear()
         self._instances.clear()
 
@@ -127,43 +145,47 @@ container = Container()
 def register_default_services(*, override: bool = False) -> None:
     """
     Register core app services into the global container.
-    Safe to call once at startup (e.g., main.py). Set override=True to re-wire.
 
-    Registered names:
-      - "bus"         -> EventBus()
-      - "settings"    -> SettingsManager()
-      - "baselines"   -> DailyBaselines()
-      - "tray"        -> TrayService()
-      - "theme"       -> ThemeService(bus)
-      - "catalog"     -> CatalogService(cache.get_catalog_cached_or_fetch, catalog.build_display_lists)
-      - "twitter"     -> TwitterService(twitter_module)
+    Registered Names
+    ----------------
+    - "bus"       -> EventBus()
+    - "settings"  -> SettingsManager()
+    - "baselines" -> DailyBaselines()
+    - "tray"      -> TrayService()
+    - "theme"     -> ThemeService(bus)  (fallback no-op if missing)
+    - "catalog"   -> CatalogService(get_catalog_cached_or_fetch, build_display_lists)
+    - "twitter"   -> TwitterService(twitter_service_module) (optional)
     """
-    # Local imports to avoid import cycles on module import
+    # Local imports to avoid import-cycles at module import time
     from app.core.events import EventBus
-    from app.config.settings import SettingsManager
-    from app.services.baselines import DailyBaselines
+    from app.config.settings import SettingsManager  # 
+    from app.services.baselines import DailyBaselines  # 
 
-    # Tray (may vary by platform)
+    # Tray service
+    from app.infra.tray import TrayService  # 
+
+    # Catalog: multi-source cache + view builder
+    # (Services live under app/services in this project)
+    from app.services.cache import get_catalog_cached_or_fetch  # 
+    from app.services.catalog import build_display_lists         # 
+
+    # Theme service (graceful fallback if module not present)
     try:
-        from app.infra.tray import TrayService
+        from app.services.theme_service import ThemeService
     except Exception:
-        TrayService = lambda: object()  # type: ignore
+        class ThemeService:  # type: ignore
+            """No-op fallback ThemeService used when the real module is absent."""
+            def __init__(self, *_args, **_kwargs) -> None:
+                pass
 
-    # Catalog helpers
-    from app.services.cache import get_catalog_cached_or_fetch
-    from app.services.catalog import build_display_lists
-
-    # Theme service (needs bus)
-    from app.services.theme_service import ThemeService
-
-    # Twitter adapter/service (name may vary between projects)
+    # Twitter (X) service: prefer services path; fallback to scrapers path if needed
     twitter_mod = None
     try:
-        from app.infra import twitter_adapter as _twitter_mod  # preferred
+        from app.services import twitter_service as _twitter_mod  # preferred  
         twitter_mod = _twitter_mod
     except Exception:
         try:
-            from app.infra import twitter_adapter as _twitter_mod  # fallback
+            from app.scrapers import twitter_service as _twitter_mod  # fallback (header shows scrapers)
             twitter_mod = _twitter_mod
         except Exception:
             twitter_mod = None

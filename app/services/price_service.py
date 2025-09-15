@@ -13,6 +13,9 @@ Notes:
   - Does network/cache I/O off the UI thread (threading).
   - Use set_dispatcher(root.after) from UI to marshal publishes to the main thread.
   - Works with DI facades registered in core/di.py ("catalog", "settings").
+  - Catalog facade is expected to provide:
+        • fetch(force_refresh: bool = False) -> None    # optional
+        • build_view(settings) -> {"pinned":[...], "others":{"fx":[...], "gold":[...], "crypto":[...]}}
 """
 
 from __future__ import annotations
@@ -21,7 +24,6 @@ from typing import Any, Dict, List, Optional, Callable, Union
 
 from app.core.events import EventBus, RefreshRequested, PricesRefreshed
 from app.core.di import container
-
 
 Number = Union[int, float]
 
@@ -39,7 +41,7 @@ class PriceService:
         self.bus.subscribe(RefreshRequested, self._on_refresh_requested)
 
         # lazy deps (via DI)
-        self._catalog = None   # "catalog" facade from DI
+        self._catalog = None   # "catalog" facade (multi-source ready)
         self._settings = None  # SettingsManager
 
     # ---------- public API ----------
@@ -76,17 +78,14 @@ class PriceService:
             if self._settings is None:
                 self._settings = container.resolve("settings")
 
-            # Hint the catalog to refresh cache if 'force' (depending on facade impl).
-            # Our DI facade's build_view() fetches internally (from cache),
-            # so an explicit fetch(force=True) here ensures fresh data if requested.
+            # Ask the catalog facade to refresh caches if supported
             if force:
                 try:
-                    self._catalog.fetch(force_refresh=True)
+                    self._catalog.fetch(force_refresh=True)  # may be a no-op if not implemented
                 except Exception:
-                    # Facade may not expose fetch or may be already fresh; continue.
                     pass
 
-            # Build the catalog view (pinned + categories) using current settings
+            # Build the catalog view (merging sources + applying pins)
             view = self._catalog.build_view(self._settings)
 
             # Flatten to minimal UI rows
@@ -175,6 +174,5 @@ class PriceService:
                 self._dispatcher(0, lambda: self.bus.publish(evt))
                 return
             except Exception:
-                # Fallback to direct publish
                 pass
         self.bus.publish(evt)

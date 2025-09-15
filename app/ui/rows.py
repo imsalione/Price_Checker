@@ -500,7 +500,7 @@ class RateRow(tk.Frame):
         self._index = int(index)
         self._on_hover = on_hover
         self._tooltip_mgr = tooltip
-        self._on_toggle_pin_cb = on_toggle_pin  # <— نام درست و پایدار
+        self._on_toggle_pin_cb = on_toggle_pin
 
         self.t: Dict[str, Any] = parent.master.master.t if hasattr(parent, "master") else {}
         self._bg = self._pick_bg(self.t)
@@ -519,8 +519,8 @@ class RateRow(tk.Frame):
         right.pack(side=tk.RIGHT, padx=6)
 
         self._pin_colors = {
-            "on":  self.t.get("PRIMARY", "#00e5c7"),            # آبی/تیل برای pinned
-            "off": self.t.get("ON_SURFACE_VARIANT", "#9aa0a6"), # خاکستری برای unpinned
+            "on":  self.t.get("PRIMARY", "#825DD6"),
+            "off": self.t.get("ON_SURFACE_VARIANT", "#9aa0a6"),
         }
 
         self.pin_label = tk.Label(
@@ -655,7 +655,7 @@ class RateRow(tk.Frame):
                 w.configure(bg=self._bg)
 
             self._pin_colors = {
-                "on":  self.t.get("PRIMARY", "#00e5c7"),
+                "on":  self.t.get("PRIMARY", "#825DD6"),
                 "off": self.t.get("ON_SURFACE_VARIANT", "#9aa0a6"),
             }
             self.pin_label.configure(
@@ -832,7 +832,7 @@ class RateRow(tk.Frame):
     # ---- Pin helpers ----
     def _pin_icon_text(self) -> str:
         """Icon based on current pinned state."""
-        return "📌" if bool(self.item.get("pinned")) else "📍"   # ← اصلاح شد
+        return "📌" if bool(self.item.get("pinned")) else "📌"
 
     def _refresh_pin_icon(self) -> None:
         try:
@@ -864,7 +864,7 @@ class RateRow(tk.Frame):
         item_id = self._item_id()
         if callable(self._on_toggle_pin_cb):
             try:
-                self._on_toggle_pin_cb(item_id, new_state)  # ← نام درست کال‌بک
+                self._on_toggle_pin_cb(item_id, new_state) 
             except Exception:
                 pass
 

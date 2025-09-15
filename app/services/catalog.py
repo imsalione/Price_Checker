@@ -1,95 +1,120 @@
-# app/services/catalog.py
-# -*- coding: utf-8 -*-
 """
 Catalog services:
 - Stable IDs for items
 - Pin/unpin helpers using SettingsManager
 - Build display list: pinned (top) + the rest (by categories)
+- NEW: Allow-list filtering to keep only the most relevant rows
 
-This module also does a *light* normalization on items so downstream
-(PriceService/UI) can rely on minimal common fields:
-  - name: str (trimmed)
-  - price: float|int|None  (fallback: price -> sell -> buy)
-  - delta_dir: "up"|"down"|"" (lower-cased, safe)
-  - unit: str|None (if provided by adapter)
-Other original fields are kept intact.
-
-Output of build_display_lists:
-{
-  "pinned": [items...],                  # exactly in pinned order (if exists in catalog)
-  "others": {
-      "fx": [...],
-      "gold": [...],
-      "crypto": [...]
-  }
-}
+Notes:
+- We intentionally filter ONLY the "others" lists. Pinned items remain visible
+  even if they don't match the allow-list, so users don't lose what they pinned.
 """
 
 from __future__ import annotations
 from typing import Dict, Any, List, Tuple, Optional
+import re
 
 from app.config.settings import SettingsManager
 from app.utils.numbers import normalize_text
 
 
 # ---------- ID helpers ----------
-
 def make_item_id(category: str, name: str) -> str:
     """Create a stable ID for an item based on category and normalized name."""
-    norm = normalize_text(name or "")
+    norm = normalize_text(name)
     return f"{category}:{norm}"
-
-
-def _normalize_item_fields(item: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Light, non-destructive normalization for downstream consumption.
-    - Ensure 'name' exists and is a clean string.
-    - Ensure 'price' exists when possible (fallback to sell/buy).
-    - Normalize 'delta_dir' to up|down|"".
-    - Keep 'unit' if present.
-    """
-    it = dict(item or {})
-
-    # name
-    name = str(it.get("name", "")).strip()
-    it["name"] = name
-
-    # price (prefer explicit 'price', otherwise sell/buy)
-    price = it.get("price", None)
-    if price is None:
-        price = it.get("sell", None)
-    if price is None:
-        price = it.get("buy", None)
-    it["price"] = price
-
-    # delta_dir
-    delta_dir = str(it.get("delta_dir", "") or "").strip().lower()
-    if delta_dir not in ("up", "down"):
-        delta_dir = ""
-    it["delta_dir"] = delta_dir
-
-    # unit (keep if present)
-    # it["unit"] = it.get("unit")  # no-op; present if adapter provides
-
-    return it
 
 
 def index_catalog(catalog: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
     """Build an ID->item index for quick lookups across all categories."""
     idx: Dict[str, Dict[str, Any]] = {}
     for cat in ("fx", "gold", "crypto"):
-        for item in catalog.get(cat, []) or []:
-            name = str(item.get("name", "")).strip()
-            _id = make_item_id(cat, name)
-            item2 = _normalize_item_fields(item)
+        for item in catalog.get(cat, []):
+            _id = make_item_id(cat, item.get("name", ""))
+            item2 = dict(item)
             item2["_category"] = cat
             item2["_id"] = _id
             idx[_id] = item2
     return idx
 
 
-# ---------- Pin management ----------
+# ---------- Allow-list (compact, regex-friendly) ----------
+# These patterns operate on normalize_text(name) (lowercased, Arabic variants unified, etc.)
+# Adjust as needed.
 
+# FX: keep only "Dollar" rates (various countries). We match Persian "دلار" or "USD".
+_PAT_FX_ALLOW = [
+    r"دلار",          # دلار آمریکا/کانادا/استرالیا/...
+    r"لیر",          # لیر ترکیه
+    r"یورو",         # یورو
+    r"\bUSD\b",       # USD
+]
+
+# GOLD: keep only Coins (full, half, quarter) and 18k gram.
+_PAT_GOLD_ALLOW = [
+    r"سکه\s*(?:امامی|طرح\s*جدید|تمام)",    # سکه امامی/طرح جدید/تمام
+    r"نیم\s*سکه",                           # نیم‌سکه
+    r"ربع\s*سکه",                           # ربع‌سکه
+    r"(?:گرم|گرمی)?\s*طل[اآ]?\s*(?:18|۱۸)\s*عیار",  # گرم طلای ۱۸ عیار (با/بی کلمه‌ی طلا/گرم)
+    r"گرم\s*(?:18|۱۸)",                     # کوتاه: «گرم ۱۸»
+]
+
+# CRYPTO: keep major coins + Tether (USDT)
+# We match both Persian names and common tickers.
+_PAT_CRYPTO_ALLOW = [
+    # Tether:
+    r"\bUSDT\b", r"تتر",
+
+    # Major coins (tickers or Persian names):
+    r"\bBTC\b", r"بیت\s*کوین",
+    r"\bETH\b", r"اتریوم",
+    r"\bBNB\b",
+    r"\bXRP\b",
+    r"\bADA\b",
+    r"\bSOL\b",
+    r"\bDOGE\b",
+    r"\bTRX\b",
+    r"\bTON\b",
+    r"\bAVAX\b",
+    r"\bSHIB\b",
+    r"\bLTC\b",
+    r"\bDOT\b",
+    r"\bMATIC\b",
+]
+
+def _is_allowed(category: str, name: str) -> bool:
+    """
+    Return True if the item name is allowed for the given category based on
+    the project's requirements. Matching is done on normalized text and a few
+    raw tickers using simple regex checks.
+    """
+    if not name:
+        return False
+    cat = (category or "").strip().lower()
+    n = normalize_text(name)
+
+    def _match_any(pats: List[str], text: str) -> bool:
+        for p in pats:
+            # First try against normalized (for Persian words, spaces, etc.)
+            if re.search(p, text, flags=re.IGNORECASE):
+                return True
+        # Then a second pass for raw tickers in the original name (e.g., BTC, USDT)
+        for p in pats:
+            if re.search(p, name, flags=re.IGNORECASE):
+                return True
+        return False
+
+    if cat == "fx":
+        return _match_any(_PAT_FX_ALLOW, n)
+    if cat == "gold":
+        return _match_any(_PAT_GOLD_ALLOW, n)
+    if cat == "crypto":
+        return _match_any(_PAT_CRYPTO_ALLOW, n)
+    # Other/unknown categories → exclude by default
+    return False
+
+
+# ---------- Pin management ----------
 def get_pinned_ids(settings: SettingsManager) -> List[str]:
     """Return pinned IDs from settings (ordered)."""
     pins = settings.get("pinned_ids", [])
@@ -102,16 +127,13 @@ def set_pinned_ids(settings: SettingsManager, pins: List[str]) -> None:
 
 
 def pin_item(settings: SettingsManager, item_id: str) -> Tuple[bool, List[str]]:
-    """Pin an item if not already pinned and within limit.
-    Returns (changed, new_pins).
-    """
+    """Pin an item if not already pinned and within limit. Returns (changed, new_pins)."""
     pins = get_pinned_ids(settings)
     if item_id in pins:
         return False, pins
     limit = int(settings.get("pinned_limit", 5) or 5)
     if len(pins) >= limit:
-        # drop the oldest (front) to keep size under limit
-        pins = pins[1:] + [item_id]
+        pins = pins[1:] + [item_id]  # drop oldest
     else:
         pins = pins + [item_id]
     set_pinned_ids(settings, pins)
@@ -129,33 +151,48 @@ def unpin_item(settings: SettingsManager, item_id: str) -> Tuple[bool, List[str]
 
 
 # ---------- Display building ----------
-
 def build_display_lists(
     catalog: Dict[str, Any],
     settings: SettingsManager,
 ) -> Dict[str, Any]:
-    """Return lists ready for UI (pinned + per-category others)."""
+    """Return lists ready for UI:
+
+    {
+      "pinned": [items...],                  # exactly in pinned order (if exists in catalog)
+      "others": {
+          "fx": [...],
+          "gold": [...],
+          "crypto": [...]
+      }
+    }
+
+    - Pinned items are preserved even if they don't match the allow-list.
+    - The "others" lists are filtered by _is_allowed(...) so the UI stays compact.
+    - Each item includes: name, sell/buy/price, delta_dir, unit, _category, _id
+    """
     idx = index_catalog(catalog)
     pins = get_pinned_ids(settings)
 
-    # Pinned, in order (skip missing IDs gracefully)
+    # Pinned (keep as-is if present in catalog)
     pinned_items: List[Dict[str, Any]] = []
-    seen: set[str] = set()
     for pid in pins:
         it = idx.get(pid)
-        if it and pid not in seen:
+        if it:
             pinned_items.append(it)
-            seen.add(pid)
 
-    # Others (remove pinned)
+    # Others (apply allow-list filtering)
     others = {"fx": [], "gold": [], "crypto": []}
     for cat in ("fx", "gold", "crypto"):
-        for it in catalog.get(cat, []) or []:
-            name = str(it.get("name", "")).strip()
-            _id = make_item_id(cat, name)
-            if _id in seen:
+        for it in catalog.get(cat, []):
+            _id = make_item_id(cat, it.get("name", ""))
+            if _id in pins:
+                # Skip from "others" if pinned (to avoid duplication)
                 continue
-            it2 = _normalize_item_fields(it)
+            # Allow-list check
+            name = str(it.get("name") or it.get("title") or "")
+            if not _is_allowed(cat, name):
+                continue
+            it2 = dict(it)
             it2["_category"] = cat
             it2["_id"] = _id
             others[cat].append(it2)

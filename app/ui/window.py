@@ -38,6 +38,7 @@ from app.ui.footer import FooterBar
 from app.ui.rows import Rows
 from app.ui.news_bar import NewsBar
 from app.ui.tooltip import Tooltip
+from app.ui.header import HeaderBar
 
 # --- Config / Settings / Themes ---
 from app.config import constants as C
@@ -151,6 +152,11 @@ class MiniRatesWindow(tk.Tk):
         except Exception:
             pass
 
+        # ---- Header state (search & source) ----
+        self._search_query: str = ""
+        self._source_mode: str = "both"  # "alanchand" | "tgju" | "both"
+        self._all_items_cache: list[dict] = []  # last full list (pre-filter)
+        
         # ---- Restore geometry (size + position) ----
         self._last_saved_geom: Optional[Tuple[int, int, int, int]] = None
         self._apply_geometry_from_settings()
@@ -169,7 +175,7 @@ class MiniRatesWindow(tk.Tk):
 
         # ---- Global tooltip ----
         self.tooltip = Tooltip(self, self.t)
-
+        
         # ---- Build UI ----
         self._build_ui()
 
@@ -255,6 +261,16 @@ class MiniRatesWindow(tk.Tk):
         """Builds the main layout: rows area + footer (+ optional news bar)."""
         self.root_frame = tk.Frame(self, bg=self.t["SURFACE"], highlightthickness=0, bd=0)
         self.root_frame.pack(fill=tk.BOTH, expand=True)
+
+        # --- Header (source selector + realtime search) ---
+        self.header = HeaderBar(
+            self.root_frame,
+            theme=self.t,
+            on_source_change=self._on_source_change,
+            on_search_change=self._on_search_change,
+            tooltip=self.tooltip,
+        )
+        self.header.pack(fill=tk.X, side=tk.TOP, anchor="n")
 
         # Rows wrap: we control its height to shape the list viewport
         self.rows_wrap = tk.Frame(self.root_frame, bg=self.t["SURFACE"], highlightthickness=0, bd=0)
@@ -375,6 +391,15 @@ class MiniRatesWindow(tk.Tk):
             self.configure(bg=self.t["SURFACE"])
             self.root_frame.configure(bg=self.t["SURFACE"])
             self.rows_wrap.configure(bg=self.t["SURFACE"])
+        except Exception:
+            pass
+
+        try:
+            if hasattr(self, "header"):
+                self.header.set_theme(self.t)
+                self.header.set_fonts(family)
+                if hasattr(self.header, "set_scale"):
+                    self.header.set_scale(s)
         except Exception:
             pass
 
@@ -544,11 +569,20 @@ class MiniRatesWindow(tk.Tk):
 
     # ================= Rows / Footer helpers =================
     def _on_rows_yview(self, first: float, _last: float) -> None:
+        # mark: user is scrolling (throttle viewport recalcs a bit)
         self._in_rows_scroll = True
         if self._in_rows_scroll_after_id is not None:
-            try: self.after_cancel(self._in_rows_scroll_after_id)
-            except Exception: pass
+            try:
+                self.after_cancel(self._in_rows_scroll_after_id)
+            except Exception:
+                pass
         self._in_rows_scroll_after_id = self.after(120, self._clear_rows_scrolling)
+
+        # NEW: toggle BackToTop visibility based on scroll position
+        try:
+            self.footer.set_back_top_visible(bool(first > 0.01))
+        except Exception:
+            pass
 
     def _on_row_pin_toggle(self, item_id: Optional[str], new_state: bool) -> None:
         """Handle pin/unpin requests coming from Rows/RateRow."""
@@ -600,11 +634,6 @@ class MiniRatesWindow(tk.Tk):
                 self._update_rows_viewport()
             except Exception:
                 pass
-        except Exception:
-            pass
-
-        try:
-            self.footer.set_back_top_visible(bool(first > 0.01))
         except Exception:
             pass
 
@@ -669,6 +698,11 @@ class MiniRatesWindow(tk.Tk):
     def _on_prices_refreshed(self, evt: PricesRefreshed) -> None:
         items = list(evt.items or [])
         items = self._enrich_with_deltas(items)
+
+        # Keep full snapshot, then apply UI filters (search/source)
+        self._all_items_cache = items
+        items = self._apply_ui_filters(items)
+
         try:
             self.rows.update(items)
         except Exception:

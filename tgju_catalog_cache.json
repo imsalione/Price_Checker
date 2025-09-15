@@ -1,0 +1,2810 @@
+{
+  "timestamp": "2025-09-15 12:53:09",
+  "fx": [
+    {
+      "name": "01:30",
+      "sell": null,
+      "buy": null,
+      "price": 1,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "01:30 CN شاخص قیمت خانه (سالانه)",
+      "sell": null,
+      "buy": null,
+      "price": 1,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "02:00 CN (تغییرات سالیانه)سرمایه گذاری ثابت دارایی (YTD)",
+      "sell": null,
+      "buy": null,
+      "price": 2,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "02:00 CN (تولیدات صنعتی (تغییرات سالیانه",
+      "sell": null,
+      "buy": null,
+      "price": 2,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "02:00 CN (خرده فروشی (تغییرات سالیانه",
+      "sell": null,
+      "buy": null,
+      "price": 2,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "02:00 CN 0.5%",
+      "sell": null,
+      "buy": null,
+      "price": 2,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "02:00 CN 3.4%",
+      "sell": null,
+      "buy": null,
+      "price": 2,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "02:00 CN 5.2%",
+      "sell": null,
+      "buy": null,
+      "price": 2,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "02:00 CN 5.3%",
+      "sell": null,
+      "buy": null,
+      "price": 2,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "02:00 CN نرخ بیکاری",
+      "sell": null,
+      "buy": null,
+      "price": 2,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "02:30 KR 2.835%",
+      "sell": null,
+      "buy": null,
+      "price": 2,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "02:30 KR مزایده ۱۰ ساله KTB",
+      "sell": null,
+      "buy": null,
+      "price": 2,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "02:30 SG نرخ بیکاری نهایی",
+      "sell": null,
+      "buy": null,
+      "price": 2,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "03:30 BR بازخوانی بازار تمرکزبانک مرکزی برزیل",
+      "sell": null,
+      "buy": null,
+      "price": 3,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "03:30 CN (حقیقی) تغییرات سالیانه سرمایه گذاری مستقیم خارجی",
+      "sell": null,
+      "buy": null,
+      "price": 3,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "03:30 IN صادرات",
+      "sell": null,
+      "buy": null,
+      "price": 3,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "03:30 IN فروش خودروهای سواری (سالانه)",
+      "sell": null,
+      "buy": null,
+      "price": 3,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "03:30 IN موازنه تجاری",
+      "sell": null,
+      "buy": null,
+      "price": 3,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "03:30 IN واردات",
+      "sell": null,
+      "buy": null,
+      "price": 3,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "03:30 SA قیمت عمده فروشی ( تغییرات سالانه)",
+      "sell": null,
+      "buy": null,
+      "price": 3,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "03:30 SA نرخ تورم (سالانه)",
+      "sell": null,
+      "buy": null,
+      "price": 3,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "03:30 SA نرخ تورم (ماهانه)",
+      "sell": null,
+      "buy": null,
+      "price": 3,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "03:30 TR 12.8%",
+      "sell": null,
+      "buy": null,
+      "price": 3,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "03:30 TR 37%",
+      "sell": null,
+      "buy": null,
+      "price": 3,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "03:30 TR تولید خودرو (سالانه)",
+      "sell": null,
+      "buy": null,
+      "price": 3,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "03:30 TR فروش خودرو (سالانه)",
+      "sell": null,
+      "buy": null,
+      "price": 3,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "03:30 TR موازنه بودجه",
+      "sell": null,
+      "buy": null,
+      "price": 3,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "03:30 ZA 4.2%",
+      "sell": null,
+      "buy": null,
+      "price": 3,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "03:30 ZA انتظارات تورم",
+      "sell": null,
+      "buy": null,
+      "price": 3,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "06:00",
+      "sell": null,
+      "buy": null,
+      "price": 6,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "06:00 DE 0.7%",
+      "sell": null,
+      "buy": null,
+      "price": 6,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "06:00 DE قیمت عمده فروشی ( تغییرات سالانه)",
+      "sell": null,
+      "buy": null,
+      "price": 6,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "06:00 DE قیمت عمده فروشی (ماهانه)",
+      "sell": null,
+      "buy": null,
+      "price": 6,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "06:00 SA 0.1%",
+      "sell": null,
+      "buy": null,
+      "price": 6,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "06:00 SA 2.1%",
+      "sell": null,
+      "buy": null,
+      "price": 6,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "06:00 SA 2.3%",
+      "sell": null,
+      "buy": null,
+      "price": 6,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "06:30",
+      "sell": null,
+      "buy": null,
+      "price": 6,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "06:30 IN (تغییرات سالیانه) شاخص قیمت عمده فروشی",
+      "sell": null,
+      "buy": null,
+      "price": 6,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "06:30 IN (سالانه) شاخص غذا WPI",
+      "sell": null,
+      "buy": null,
+      "price": 6,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "06:30 IN (شاخص قیمت عمده فروشی سوخت (تغییرات سالیانه",
+      "sell": null,
+      "buy": null,
+      "price": 6,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "06:30 IN 0.21%",
+      "sell": null,
+      "buy": null,
+      "price": 6,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "06:30 IN 0.52%",
+      "sell": null,
+      "buy": null,
+      "price": 6,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "06:30 IN 2.55%",
+      "sell": null,
+      "buy": null,
+      "price": 6,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "07:00 TR 12.8%",
+      "sell": null,
+      "buy": null,
+      "price": 7,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "07:00 TR 37%",
+      "sell": null,
+      "buy": null,
+      "price": 7,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "08:00 EA نظرسنجی ECB از تحلیلگران پولی",
+      "sell": null,
+      "buy": null,
+      "price": 8,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "08:00 IT موازنه تجاری",
+      "sell": null,
+      "buy": null,
+      "price": 8,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "08:00 IT €7.908B",
+      "sell": null,
+      "buy": null,
+      "price": 8,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "08:00 TR TRY96.7B",
+      "sell": null,
+      "buy": null,
+      "price": 8,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "09:00 EA موازنه تجاری",
+      "sell": null,
+      "buy": null,
+      "price": 9,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "09:00 EA €12.4B",
+      "sell": null,
+      "buy": null,
+      "price": 9,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "09:30 DE Bubill مزایده ۱۲ ماهه",
+      "sell": null,
+      "buy": null,
+      "price": 8951,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "۱ روز",
+      "sell": null,
+      "buy": null,
+      "price": 1012554,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "۱ روز 1,012,554 ریال",
+      "sell": null,
+      "buy": null,
+      "price": 1012554,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "1 روز پیش",
+      "sell": null,
+      "buy": null,
+      "price": 1,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "۱ سال",
+      "sell": null,
+      "buy": null,
+      "price": 1221347,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "۱ ماه",
+      "sell": null,
+      "buy": null,
+      "price": 1059144,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "۱ هفته",
+      "sell": null,
+      "buy": null,
+      "price": 966206,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "100 ین ژاپن",
+      "sell": 487195,
+      "buy": 482810,
+      "price": null,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "10:30 IN نرخ بیکاری",
+      "sell": null,
+      "buy": null,
+      "price": 10,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "11:30 EA بانک مرکزی اروپا-Schnabel سخنرانی",
+      "sell": null,
+      "buy": null,
+      "price": 11,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "12:00 BR فعالیت اقتصادی IBC-Br",
+      "sell": null,
+      "buy": null,
+      "price": 12,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "12:30 CA عمده فروش نهایی (تغییرات ماهیانه)",
+      "sell": null,
+      "buy": null,
+      "price": 12,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "12:30 CA فروش تولید نهایی (تغییرات ماهیانه)",
+      "sell": null,
+      "buy": null,
+      "price": 12,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "12:30 CA فروش خودرو موتور جدید",
+      "sell": null,
+      "buy": null,
+      "price": 12,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "12:30 US NY Empire شاخص تولیدات",
+      "sell": null,
+      "buy": null,
+      "price": 12,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "13:00 FR BTF مزایده دوازده ماهه",
+      "sell": null,
+      "buy": null,
+      "price": 13,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "13:00 FR BTF مزایده سه ماهه",
+      "sell": null,
+      "buy": null,
+      "price": 13,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "13:00 FR BTF مزایده شش ماهه",
+      "sell": null,
+      "buy": null,
+      "price": 13,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "15:30 US سه ماهه Bill مزایده",
+      "sell": null,
+      "buy": null,
+      "price": 15,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "15:30 US شش ماهه Bill مزایده",
+      "sell": null,
+      "buy": null,
+      "price": 15,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "18:10 EA سخنرانی لاگارد رئیس بانک مرکزی اروپا",
+      "sell": null,
+      "buy": null,
+      "price": 18,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "2 روز پیش",
+      "sell": null,
+      "buy": null,
+      "price": 2,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "21 ساعت پیش",
+      "sell": null,
+      "buy": null,
+      "price": 21,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "21:00 KR (قیمت های صادرات (تغییرات سالیانه",
+      "sell": null,
+      "buy": null,
+      "price": 21,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "21:00 KR (قیمت های واردات (تغییرات سالیانه",
+      "sell": null,
+      "buy": null,
+      "price": 21,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "22 ساعت پیش",
+      "sell": null,
+      "buy": null,
+      "price": 22,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "23:50 AU سخنرانی هانتر RBA",
+      "sell": null,
+      "buy": null,
+      "price": 23,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "24 ساعت پیش",
+      "sell": null,
+      "buy": null,
+      "price": 24,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "۳ ماه",
+      "sell": null,
+      "buy": null,
+      "price": 1206201,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "4 روز پیش",
+      "sell": null,
+      "buy": null,
+      "price": 4,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "5 روز پیش",
+      "sell": null,
+      "buy": null,
+      "price": 5,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "۶ ماه",
+      "sell": null,
+      "buy": null,
+      "price": 1080366,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "AUD/USD",
+      "sell": null,
+      "buy": null,
+      "price": 6658,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "EUR/USD",
+      "sell": null,
+      "buy": null,
+      "price": 1739,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "GBP/USD",
+      "sell": null,
+      "buy": null,
+      "price": 3583,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "Layer 1",
+      "sell": null,
+      "buy": null,
+      "price": 8280,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "USD/CAD",
+      "sell": null,
+      "buy": null,
+      "price": 3832,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "USD/CHF",
+      "sell": null,
+      "buy": null,
+      "price": 12,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "USD/CNY",
+      "sell": null,
+      "buy": null,
+      "price": 1233,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "USD/JPY",
+      "sell": null,
+      "buy": null,
+      "price": 147,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "USD/KRW",
+      "sell": null,
+      "buy": null,
+      "price": 1387,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "USD/NZD",
+      "sell": null,
+      "buy": null,
+      "price": 6783,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "USD/SAR",
+      "sell": null,
+      "buy": null,
+      "price": 7556,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "USD/SEK",
+      "sell": null,
+      "buy": null,
+      "price": 3239,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "USD/TRY",
+      "sell": null,
+      "buy": null,
+      "price": 3356,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "آبان تتر",
+      "sell": null,
+      "buy": null,
+      "price": 983100,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "آبشده نقدی",
+      "sell": null,
+      "buy": null,
+      "price": 373580000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "آرسونکس",
+      "sell": null,
+      "buy": null,
+      "price": 989210,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "آریومکس",
+      "sell": null,
+      "buy": null,
+      "price": 988200,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "آساکوین",
+      "sell": null,
+      "buy": null,
+      "price": 996720,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "آلومینیوم",
+      "sell": null,
+      "buy": null,
+      "price": 2685,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "آوالانچ",
+      "sell": null,
+      "buy": null,
+      "price": 28246000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "آکوکوین",
+      "sell": null,
+      "buy": null,
+      "price": 979500,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "آیبکس اسپانیا",
+      "sell": null,
+      "buy": null,
+      "price": 25474,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "اتراکس",
+      "sell": null,
+      "buy": null,
+      "price": 971000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "ارز آزاد",
+      "sell": null,
+      "buy": null,
+      "price": 990600,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "ارز مدرن",
+      "sell": null,
+      "buy": null,
+      "price": 991700,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "ارز پایا",
+      "sell": null,
+      "buy": null,
+      "price": 990800,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "ارزاینجا",
+      "sell": null,
+      "buy": null,
+      "price": 280000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "ارزدکس",
+      "sell": null,
+      "buy": null,
+      "price": 1004850,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "ارزونکس",
+      "sell": null,
+      "buy": null,
+      "price": 970000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "ارزپلاس",
+      "sell": null,
+      "buy": null,
+      "price": 993500,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "ارزکت",
+      "sell": null,
+      "buy": null,
+      "price": 977290,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "ارزیپتو",
+      "sell": null,
+      "buy": null,
+      "price": 997600,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "اس & پی 500",
+      "sell": null,
+      "buy": null,
+      "price": 6584,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "اس & پی کانادا",
+      "sell": null,
+      "buy": null,
+      "price": 29283,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "استلار",
+      "sell": null,
+      "buy": null,
+      "price": 374000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "اسمال کپ 2000",
+      "sell": null,
+      "buy": null,
+      "price": 2000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "افرا تتر",
+      "sell": null,
+      "buy": null,
+      "price": 979152,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "افغانی",
+      "sell": null,
+      "buy": null,
+      "price": 14590,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "التکس",
+      "sell": null,
+      "buy": null,
+      "price": 984120,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "انس نقره",
+      "sell": null,
+      "buy": null,
+      "price": 42,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "انس پالادیوم",
+      "sell": null,
+      "buy": null,
+      "price": 1233,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "انس پلاتین",
+      "sell": null,
+      "buy": null,
+      "price": 1410,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "او ام پی فینکس",
+      "sell": null,
+      "buy": null,
+      "price": 99040,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "اول پرداخت",
+      "sell": null,
+      "buy": null,
+      "price": 982010,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "اوپودکس",
+      "sell": null,
+      "buy": null,
+      "price": 991720,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "اوکی اکسچنج",
+      "sell": null,
+      "buy": null,
+      "price": 992210,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "اکس اونیکس",
+      "sell": null,
+      "buy": null,
+      "price": 984980,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "اکس نوین",
+      "sell": null,
+      "buy": null,
+      "price": 869300,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "اکسفور آی آر",
+      "sell": null,
+      "buy": null,
+      "price": 970000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "اکسچنج لند",
+      "sell": null,
+      "buy": null,
+      "price": 989210,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "اکسچنجر پرو",
+      "sell": null,
+      "buy": null,
+      "price": 969000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "اکسکوینو",
+      "sell": null,
+      "buy": null,
+      "price": 936804,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "اکسیر",
+      "sell": null,
+      "buy": null,
+      "price": 993570,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "ایرانیکارت",
+      "sell": null,
+      "buy": null,
+      "price": 908500,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "اینوکس",
+      "sell": null,
+      "buy": null,
+      "price": 992090,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "ایکس پی",
+      "sell": null,
+      "buy": null,
+      "price": 980000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "بات تایلند",
+      "sell": null,
+      "buy": null,
+      "price": 31100,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "بازار اول فرابورس",
+      "sell": null,
+      "buy": null,
+      "price": 8917,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "بازار دوم فرابورس",
+      "sell": null,
+      "buy": null,
+      "price": 9086,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "بالینکس",
+      "sell": null,
+      "buy": null,
+      "price": 985000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "بایننس کوین",
+      "sell": null,
+      "buy": null,
+      "price": 906684000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "برنج",
+      "sell": null,
+      "buy": null,
+      "price": 11,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "بنزین (گالن)",
+      "sell": null,
+      "buy": null,
+      "price": 9915,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "بورس ( )",
+      "sell": null,
+      "buy": null,
+      "price": 2676988,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "بورس تهران",
+      "sell": null,
+      "buy": null,
+      "price": 2676988,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "بورس های جهانی",
+      "sell": null,
+      "buy": null,
+      "price": 45834,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "بیت 24",
+      "sell": null,
+      "buy": null,
+      "price": 997120,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "بیت ارز",
+      "sell": null,
+      "buy": null,
+      "price": 979100,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "بیت ایمن",
+      "sell": null,
+      "buy": null,
+      "price": 690670,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "بیت برگ",
+      "sell": null,
+      "buy": null,
+      "price": 972000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "بیت سوبیت",
+      "sell": null,
+      "buy": null,
+      "price": 859000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "بیت میت",
+      "sell": null,
+      "buy": null,
+      "price": 966615,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "بیت پین",
+      "sell": null,
+      "buy": null,
+      "price": 989970,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "بیتستان",
+      "sell": null,
+      "buy": null,
+      "price": 997000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "بیتمکس",
+      "sell": null,
+      "buy": null,
+      "price": 981890,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "بیتکسینو",
+      "sell": null,
+      "buy": null,
+      "price": 1009800,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "بیتیوم",
+      "sell": null,
+      "buy": null,
+      "price": 989130,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "بیست بیت",
+      "sell": null,
+      "buy": null,
+      "price": 873700,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "تبدیل",
+      "sell": null,
+      "buy": null,
+      "price": 993860,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "تتر",
+      "sell": null,
+      "buy": null,
+      "price": 989790,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "تتر ( )",
+      "sell": null,
+      "buy": null,
+      "price": 989790,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "تترلند",
+      "sell": null,
+      "buy": null,
+      "price": 990000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "ترون",
+      "sell": null,
+      "buy": null,
+      "price": 342600,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "تقویم اقتصادی (۱۴۰۴/۰۶/۲۴)",
+      "sell": null,
+      "buy": null,
+      "price": 1404,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "توایکس",
+      "sell": null,
+      "buy": null,
+      "price": 984600,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "تون‌کوین",
+      "sell": null,
+      "buy": null,
+      "price": 2197000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "تیبوبیت",
+      "sell": null,
+      "buy": null,
+      "price": 988120,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "جهان ارز",
+      "sell": null,
+      "buy": null,
+      "price": 677320,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "جیبیتکس",
+      "sell": null,
+      "buy": null,
+      "price": 974600,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "حامی پرداخت",
+      "sell": null,
+      "buy": null,
+      "price": 987578,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "حباب آبشده",
+      "sell": null,
+      "buy": null,
+      "price": 2211360,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "داوجونز",
+      "sell": null,
+      "buy": null,
+      "price": 45834,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "دبلیو ام فا",
+      "sell": null,
+      "buy": null,
+      "price": 994000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "درام ارمنستان",
+      "sell": null,
+      "buy": null,
+      "price": 2780,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "درهم",
+      "sell": 196087,
+      "buy": 194322,
+      "price": null,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "درهم امارات",
+      "sell": null,
+      "buy": null,
+      "price": 270790,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "دش",
+      "sell": null,
+      "buy": null,
+      "price": 23238200,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "دلار",
+      "sell": null,
+      "buy": null,
+      "price": 990600,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "دلار ( )",
+      "sell": null,
+      "buy": null,
+      "price": 991800,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "دلار استرالیا",
+      "sell": null,
+      "buy": null,
+      "price": 659400,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "دلار سنگاپور",
+      "sell": null,
+      "buy": null,
+      "price": 772800,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "دلار نیوزیلند",
+      "sell": null,
+      "buy": null,
+      "price": 590200,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "دلار هنگ کنگ",
+      "sell": null,
+      "buy": null,
+      "price": 127400,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "دلار کانادا",
+      "sell": null,
+      "buy": null,
+      "price": 716200,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "دوج کوین",
+      "sell": null,
+      "buy": null,
+      "price": 259200,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "دکس آلمان",
+      "sell": null,
+      "buy": null,
+      "price": 23785,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "دینار بحرین",
+      "sell": null,
+      "buy": null,
+      "price": 2627500,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "دینار عراق",
+      "sell": null,
+      "buy": null,
+      "price": 771,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "دینار کویت",
+      "sell": null,
+      "buy": null,
+      "price": 3248800,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "رابین کش",
+      "sell": null,
+      "buy": null,
+      "price": 992510,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "راستین",
+      "sell": null,
+      "buy": null,
+      "price": 993900,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "ربیتال",
+      "sell": null,
+      "buy": null,
+      "price": 980000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "رمز پلاس",
+      "sell": null,
+      "buy": null,
+      "price": 995010,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "رمزینکس",
+      "sell": null,
+      "buy": null,
+      "price": 990451,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "روبل روسیه",
+      "sell": null,
+      "buy": null,
+      "price": 11940,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "روپیه هند",
+      "sell": null,
+      "buy": null,
+      "price": 11240,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "روپیه پاکستان",
+      "sell": null,
+      "buy": null,
+      "price": 3505,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "روی (تن)",
+      "sell": null,
+      "buy": null,
+      "price": 2956,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "ریال عربستان",
+      "sell": null,
+      "buy": null,
+      "price": 264340,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "ریال عمان",
+      "sell": null,
+      "buy": null,
+      "price": 2579600,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "ریال قطر",
+      "sell": null,
+      "buy": null,
+      "price": 281200,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "رینگیت مالزی",
+      "sell": null,
+      "buy": null,
+      "price": 235700,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "ریون اکس",
+      "sell": null,
+      "buy": null,
+      "price": 1013760,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "ریپل",
+      "sell": null,
+      "buy": null,
+      "price": 2939400,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "زرین دکس",
+      "sell": null,
+      "buy": null,
+      "price": 1010900,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "سالاریکس",
+      "sell": null,
+      "buy": null,
+      "price": 989910,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "سامانی تاجیکستان",
+      "sell": null,
+      "buy": null,
+      "price": 106500,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "ساناکش",
+      "sell": null,
+      "buy": null,
+      "price": 974000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "سرب (تن)",
+      "sell": null,
+      "buy": null,
+      "price": 2010,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "سرمایکس",
+      "sell": null,
+      "buy": null,
+      "price": 997180,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "سولانا",
+      "sell": null,
+      "buy": null,
+      "price": 230818000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "سوم قرقیزستان",
+      "sell": null,
+      "buy": null,
+      "price": 11330,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "شاخص 30 شركت بزرگ",
+      "sell": null,
+      "buy": null,
+      "price": 169987,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "شاخص 50 شركت فعالتر",
+      "sell": null,
+      "buy": null,
+      "price": 107341,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "شاخص بازار اول",
+      "sell": null,
+      "buy": null,
+      "price": 3327,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "شاخص بازار دوم",
+      "sell": null,
+      "buy": null,
+      "price": 13833,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "شاخص كل",
+      "sell": null,
+      "buy": null,
+      "price": 2676988,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "شاخص‌ فرابورس",
+      "sell": null,
+      "buy": null,
+      "price": 24155,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "شاخص‌قیمت 50 شركت",
+      "sell": null,
+      "buy": null,
+      "price": 31953,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "شاخص‌قیمت هم وزن",
+      "sell": null,
+      "buy": null,
+      "price": 402886,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "شاخص‌قیمت وزنی ارزشی",
+      "sell": null,
+      "buy": null,
+      "price": 478310,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "شاخص‌كل هم وزن",
+      "sell": null,
+      "buy": null,
+      "price": 802761,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "شانگهای چین",
+      "sell": null,
+      "buy": null,
+      "price": 3860,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "شیبا اینو",
+      "sell": null,
+      "buy": null,
+      "price": 12,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "صرافکس",
+      "sell": null,
+      "buy": null,
+      "price": 988300,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "صرافی",
+      "sell": null,
+      "buy": null,
+      "price": 562850,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "صرافی آی او",
+      "sell": null,
+      "buy": null,
+      "price": 990300,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "فتسی بریتانیا",
+      "sell": null,
+      "buy": null,
+      "price": 7908,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "فراسواپ",
+      "sell": null,
+      "buy": null,
+      "price": 994000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "فرانک سوئیس",
+      "sell": null,
+      "buy": null,
+      "price": 1244700,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "فرهاد اکسچنج",
+      "sell": null,
+      "buy": null,
+      "price": 996277,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "قلع",
+      "sell": null,
+      "buy": null,
+      "price": 34925,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "قیمت ارزهای دیجیتال",
+      "sell": null,
+      "buy": null,
+      "price": 113623092000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "قیمت فلزات پایه",
+      "sell": null,
+      "buy": null,
+      "price": 2685,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "قیمت نفت و انرژی",
+      "sell": null,
+      "buy": null,
+      "price": 67,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "لاری گرجستان",
+      "sell": null,
+      "buy": null,
+      "price": 366900,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "لایت کوین",
+      "sell": null,
+      "buy": null,
+      "price": 112103300,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "لیدیا",
+      "sell": null,
+      "buy": null,
+      "price": 992000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "لیر ترکیه",
+      "sell": null,
+      "buy": null,
+      "price": 24000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "لیر سوریه",
+      "sell": null,
+      "buy": null,
+      "price": 76,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "لیپارکس",
+      "sell": null,
+      "buy": null,
+      "price": 99863,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "محاسبه گر سود و زیان ؟",
+      "sell": null,
+      "buy": null,
+      "price": 1012554,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "مس (تن)",
+      "sell": null,
+      "buy": null,
+      "price": 10071,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "منات آذربایجان",
+      "sell": null,
+      "buy": null,
+      "price": 584400,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "منات ترکمنستان",
+      "sell": null,
+      "buy": null,
+      "price": 284800,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "مهران بیت",
+      "sell": null,
+      "buy": null,
+      "price": 983000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "موربیت",
+      "sell": null,
+      "buy": null,
+      "price": 1404,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "نرخ ارزها",
+      "sell": 720128,
+      "buy": 713647,
+      "price": null,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "نرخ انس",
+      "sell": null,
+      "buy": null,
+      "price": 3644,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "نرخ برابری ارزها",
+      "sell": null,
+      "buy": null,
+      "price": 1739,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "نزدک",
+      "sell": null,
+      "buy": null,
+      "price": 22141,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "نفت اپک",
+      "sell": null,
+      "buy": null,
+      "price": 70,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "نفت برنت",
+      "sell": null,
+      "buy": null,
+      "price": 67,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "نفت برنت ( )",
+      "sell": null,
+      "buy": null,
+      "price": 67,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "نفت سبک",
+      "sell": null,
+      "buy": null,
+      "price": 62,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "نوبیتکس",
+      "sell": null,
+      "buy": null,
+      "price": 991970,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "نیفتی 50",
+      "sell": null,
+      "buy": null,
+      "price": 25081,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "نیپوتو",
+      "sell": null,
+      "buy": null,
+      "price": 989380,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "نیکل (تن)",
+      "sell": null,
+      "buy": null,
+      "price": 15460,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "نیکی ژاپن",
+      "sell": null,
+      "buy": null,
+      "price": 44768,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "هلواکس",
+      "sell": null,
+      "buy": null,
+      "price": 995000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "همتا پی",
+      "sell": null,
+      "buy": null,
+      "price": 990110,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "والکس",
+      "sell": null,
+      "buy": null,
+      "price": 988840,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "وانفینکس",
+      "sell": null,
+      "buy": null,
+      "price": 990060,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "وون کره جنوبی",
+      "sell": null,
+      "buy": null,
+      "price": 701,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "ویترین کارت",
+      "sell": null,
+      "buy": null,
+      "price": 987820,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "ویرا",
+      "sell": null,
+      "buy": null,
+      "price": 981000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "پارس بیت",
+      "sell": null,
+      "buy": null,
+      "price": 988253,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "پربازدیدترین / اخبار و تحلیل های اقتصادی ۱۴۰۴/۰۶/۲۳ ۱۷:۵۴ مسکن نسل اجاره‌نشین؛ چرا جوانان ایرانی دیگر توان خرید خانه ندارند؟ ۱۴۰۴/۰۶/۲۳ ۱۵:۱۲ جهان از تسلا تا تظاهرات لندن؛ ورود جنجالی ماسک به سیاست مهاجرتی اروپا ۱۴۰۴/۰۶/۲۳ ۱۷:۵۶ تولید سرب زیر فشار مازاد عرضه، اما باتری‌ها امید را زنده نگه می‌دارند! ۱۴۰۴/۰۶/۲۳ ۱۷:۱۰ خودرو رشد تولید در رکود تقاضا؛ آیا ایران‌خودرو در مسیر مازاد عرضه حرکت می‌کند؟ ۱۴۰۴/۰۶/۲۳ ۱۴:۱۸ فناوری انقلاب پهپادی؛ وقتی هوش مصنوعی فرمانده میدان جنگ می‌شود ۱۴۰۴/۰۶/۲۳ ۱۵:۴۳ جهان لندن در تب اعتراضات؛ ۱۱۰ هزار نفر علیه سیاست‌های مهاجرتی به خیابان آمدند ۱۴۰۴/۰۶/۲۳ ۱۵:۰۳ مسکن وضع هوای کشور در ۵ روز آینده چگونه است؟ ۱۴۰۴/۰۶/۲۳ ۱۴:۳۲ مسکن فرود اضطراری پرواز ازمیر به تهران در ارومیه جدیدترین / اخبار و تحلیل های اقتصادی تمام عناوین خودرو مسکن تولید فناوری قیمت ها جهان شرکت‌ها ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان ادعای جروزالم پست: در جنگ ۱۲ روزه، ده‌ها زن آموزش‌‌دیده توسط موساد به ایران نفوذ کردند ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان وضعیت ما به عنوان یک کشور هسته‌ای تغییرناپذیر است ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان گاف عجیب ترامپ درباره تعداد قربانیان مواد مخدر در آمریکا ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان واکنش کاربران خارجی شبکه‌های اجتماعی به نشست دوحه ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان افزایش پرواز‌های جاسوسی آمریکا از ونزوئلا ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان فاجعه انسانی در مناطق زلزله‌زده افغانستان ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان گسترش کریدور جنوبی آذربایجان به بالکان؛ باکو فقط گاز نمی فروشد ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان ونزوئلا: پروازهای جاسوسی آمریکا، سه برابر شده است ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان هشدار ترامپ به نتانیاهو در آستانه نشست دوحه ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان تحریم‌های ضد روسی اروپا بسیار ضعیف هستند ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان نشست سالانه کنفرانس عمومی آژانس بین‌المللی انرژی اتمی در وین آغاز شد ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان تجاوز به خاک سوریه؛ رژیم صهیونیستی در جنوب سوریه یک ایست بازرسی مستقر کرد ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان نیروی دفاعی استرالیا و پاپوآ گینه نو یکپارچه می‌شوند ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان فقدان فرستاده ویژه امور ایران در دولت ترامپ، بی برنامگی یا تمرکز قدرت؟ ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان سناتور تد کروز دیوارنوشته توهین‌آمیز علیه چارلی کرک را پاک کرد بیشتر",
+      "sell": null,
+      "buy": null,
+      "price": 1404,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "پول نو",
+      "sell": null,
+      "buy": null,
+      "price": 993000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "پولکادات",
+      "sell": null,
+      "buy": null,
+      "price": 4127000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "پوند انگلیس",
+      "sell": null,
+      "buy": null,
+      "price": 1345700,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "پینگی",
+      "sell": null,
+      "buy": null,
+      "price": 991470,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "چنج کن",
+      "sell": null,
+      "buy": null,
+      "price": 989860,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "کاردانو",
+      "sell": null,
+      "buy": null,
+      "price": 851800,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "کافه ارز",
+      "sell": null,
+      "buy": null,
+      "price": 618000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "کرون دانمارک",
+      "sell": null,
+      "buy": null,
+      "price": 155700,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "کرون سوئد",
+      "sell": null,
+      "buy": null,
+      "price": 106500,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "کرون نروژ",
+      "sell": null,
+      "buy": null,
+      "price": 100800,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "کوین نیک مارکت",
+      "sell": null,
+      "buy": null,
+      "price": 1016760,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "کک فرانسه",
+      "sell": null,
+      "buy": null,
+      "price": 7908,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "کیف پول",
+      "sell": null,
+      "buy": null,
+      "price": 982000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "گاز طبیعی",
+      "sell": null,
+      "buy": null,
+      "price": 2,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "گازوئیل",
+      "sell": null,
+      "buy": null,
+      "price": 692,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "گرم نقره ۹۹۹",
+      "sell": null,
+      "buy": null,
+      "price": 1573100,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "گرین موج",
+      "sell": null,
+      "buy": null,
+      "price": 1006790,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "گیوکس",
+      "sell": null,
+      "buy": null,
+      "price": 999900,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "ین ژاپن",
+      "sell": null,
+      "buy": null,
+      "price": 672190,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "یوان چین",
+      "sell": null,
+      "buy": null,
+      "price": 139100,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "یوبیتکس",
+      "sell": null,
+      "buy": null,
+      "price": 979980,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "یورو",
+      "sell": null,
+      "buy": null,
+      "price": 1163000,
+      "delta_dir": null,
+      "unit": "toman"
+    }
+  ],
+  "gold": [
+    {
+      "name": "آبشده / مثقال طلا",
+      "sell": null,
+      "buy": null,
+      "price": 925100000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "اخبار بورس فاصله بورس ایران با جهان؛ از بیمه ریزش بازار تا قیمت‌گذاری دستوری دوشنبه 24 شهریور 1404 ساعت 11:52 چرا ترامپ بر برکناری لیزا کوک اصرار دارد؟ جنگ تعرفه‌ها در برابر قدرت تولید چین؛ آمریکا در پی مهار اقتصاد پکن واکنش مثبت سکه امامی به حمایت ۹۰ میلیونی طلای آبشده در مرز حمایت حساس چین و رؤیای پول ملی جهانی؛ آیا یوان می‌تواند دلار را به چالش بکشد؟ ترامپ خواستار تعرفه‌های سنگین ناتو بر چین برای پایان جنگ اوکراین شد نقض پیاپی حریم ناتو؛ آیا اروپا به آستانه رویارویی مستقیم با روسیه رسیده است؟ هیجان خرید طلا 18 عیار را در مسیر 8 میلیون تومان قرار داد",
+      "sell": null,
+      "buy": null,
+      "price": 1404,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "اخبار و مقالات اخبار بورس فاصله بورس ایران با جهان؛ از بیمه ریزش بازار تا قیمت‌گذاری دستوری دوشنبه 24 شهریور 1404 ساعت 11:52 چرا ترامپ بر برکناری لیزا کوک اصرار دارد؟ جنگ تعرفه‌ها در برابر قدرت تولید چین؛ آمریکا در پی مهار اقتصاد پکن واکنش مثبت سکه امامی به حمایت ۹۰ میلیونی طلای آبشده در مرز حمایت حساس چین و رؤیای پول ملی جهانی؛ آیا یوان می‌تواند دلار را به چالش بکشد؟ ترامپ خواستار تعرفه‌های سنگین ناتو بر چین برای پایان جنگ اوکراین شد نقض پیاپی حریم ناتو؛ آیا اروپا به آستانه رویارویی مستقیم با روسیه رسیده است؟ هیجان خرید طلا 18 عیار را در مسیر 8 میلیون تومان قرار داد اخبار ویژه تحلیل بنیادین تحلیل تکنیکال طلا و سکه بازار ارز ارز دیجیتال دانشنامه اقتصادی بروکرها ویکی‌کریپتو بازار نفت در حالت آماده‌باش! اخبار نفت و انرژی دوشنبه 24 شهریور 1404 چرا گلکسی دیجیتال ۳۰۰ میلیون دلار سولانا خریداری کرد؟ اخبار ارزهای دیجیتال دوشنبه 24 شهریور 1404 هشدار ویتالیک بوترین درباره استفاده از هوش مصنوعی در حاکمیت رمزارزها اخبار ارزهای دیجیتال دوشنبه 24 شهریور 1404 جهش عجیب مونرو با وجود نقض امنیتی اخبار ارزهای دیجیتال دوشنبه 24 شهریور 1404 طلای بدون توقف؛ آیا رکورد ۳۶۷۰ دلار، آغاز کار است؟ اخبار طلا و سکه دوشنبه 24 شهریور 1404 اتریوم با ورود سرمایه ETF در مسیر رسیدن به ۶۰۰۰ دلار! اخبار ارزهای دیجیتال دوشنبه 24 شهریور 1404 رشد تولید در رکود تقاضا؛ آیا ایران‌خودرو در مسیر مازاد عرضه حرکت می‌کند؟ اخبار خودرو یکشنبه 23 شهریور 1404 طلا میان سه‌گانه سیاست، دلار و اونس جهانی؛ آینده کدام مسیر است؟ اخبار طلا و سکه یکشنبه 23 شهریور 1404 لندن در تب اعتراضات؛ ۱۱۰ هزار نفر علیه سیاست‌های مهاجرتی به خیابان آمدند اخبار جهان یکشنبه 23 شهریور 1404 از تسلا تا تظاهرات لندن؛ ورود جنجالی ماسک به سیاست مهاجرتی اروپا اخبار جهان یکشنبه 23 شهریور 1404 آیا طلا در صدد فتح قله‌های تازه است؟ اخبار طلا و سکه یکشنبه 23 شهریور 1404 انقلاب پهپادی؛ وقتی هوش مصنوعی فرمانده میدان جنگ می‌شود اخبار فناوری یکشنبه 23 شهریور 1404",
+      "sell": null,
+      "buy": null,
+      "price": 1404,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "انس طلا",
+      "sell": null,
+      "buy": null,
+      "price": 3645,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "انس طلا ( )",
+      "sell": null,
+      "buy": null,
+      "price": 3645,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "بازار نفت در حالت آماده‌باش! اخبار نفت و انرژی دوشنبه 24 شهریور 1404 چرا گلکسی دیجیتال ۳۰۰ میلیون دلار سولانا خریداری کرد؟ اخبار ارزهای دیجیتال دوشنبه 24 شهریور 1404 هشدار ویتالیک بوترین درباره استفاده از هوش مصنوعی در حاکمیت رمزارزها اخبار ارزهای دیجیتال دوشنبه 24 شهریور 1404 جهش عجیب مونرو با وجود نقض امنیتی اخبار ارزهای دیجیتال دوشنبه 24 شهریور 1404 طلای بدون توقف؛ آیا رکورد ۳۶۷۰ دلار، آغاز کار است؟ اخبار طلا و سکه دوشنبه 24 شهریور 1404 اتریوم با ورود سرمایه ETF در مسیر رسیدن به ۶۰۰۰ دلار! اخبار ارزهای دیجیتال دوشنبه 24 شهریور 1404",
+      "sell": null,
+      "buy": null,
+      "price": 1404,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "تمام سکه آینده",
+      "sell": null,
+      "buy": null,
+      "price": 933332,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "تمام سکه رفاه",
+      "sell": null,
+      "buy": null,
+      "price": 930400,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "تمام سکه سامان",
+      "sell": null,
+      "buy": null,
+      "price": 937500,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "حباب ربع سکه",
+      "sell": null,
+      "buy": null,
+      "price": 62400000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "حباب سکه",
+      "sell": null,
+      "buy": null,
+      "price": 74380000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "حباب سکه امامی",
+      "sell": null,
+      "buy": null,
+      "price": 74380000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "حباب سکه بهار آزادی",
+      "sell": null,
+      "buy": null,
+      "price": 9330000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "حباب سکه گرمی",
+      "sell": null,
+      "buy": null,
+      "price": 46410000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "حباب نیم سکه",
+      "sell": null,
+      "buy": null,
+      "price": 50850000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "دلار یورو پوند انگلیس درهم امارات سکه بهار آزادی سکه امامی نیم سکه ربع سکه سکه گرمی مثقال طلای 18 عیار طلای 24 عیار ۱ روز 1,012,554 ریال ۱ هفته 966,206 ریال ۱ ماه 1,059,144 ریال ۳ ماه 1,206,201 ریال ۶ ماه 1,080,366 ریال ۱ سال 1,221,347 ریال",
+      "sell": null,
+      "buy": null,
+      "price": 1012554,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "ربع سکه",
+      "sell": null,
+      "buy": null,
+      "price": 275000000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "سکه",
+      "sell": null,
+      "buy": null,
+      "price": 925050000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "سکه ( )",
+      "sell": null,
+      "buy": null,
+      "price": 925050000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "سکه 75,270,000 حباب سکه امامی تغییر روزانه 2,910,000 (4.02%) 10,070,000 حباب سکه بهار آزادی تغییر روزانه 7,860,000 (355.66%) 51,210,000 حباب نیم سکه تغییر روزانه 2,450,000 (5.02%) 62,580,000 حباب ربع سکه تغییر روزانه 3,720,000 (6.32%) 46,500,000 حباب سکه گرمی تغییر روزانه 120,000 (0.26%)",
+      "sell": null,
+      "buy": null,
+      "price": 75270000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "سکه 925,100,000 سکه امامی تغییر روزانه 12,250,000 (1.34%) 860,100,000 سکه بهار آزادی تغییر روزانه 17,000,000 (2.02%) 476,000,000 نیم سکه تغییر روزانه 7,000,000 (1.49%) 275,000,000 ربع سکه تغییر روزانه 6,000,000 (2.23%) 151,000,000 سکه گرمی تغییر روزانه 1,000,000 (0.67%) 3,020,000 تمام سکه مرکزی تغییر روزانه 0 (0%)",
+      "sell": null,
+      "buy": null,
+      "price": 925100000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "سکه 926,600,000 سکه امامی تک فروشی تغییر روزانه 12,000,000 (1.31%) 860,800,000 سکه بهار آزادی تک فروشی تغییر روزانه 16,900,000 (2%) 476,600,000 نیم سکه تک فروشی تغییر روزانه 7,000,000 (1.49%) 275,600,000 ربع سکه تک فروشی تغییر روزانه 6,000,000 (2.23%) 151,300,000 سکه گرمی تک فروشی تغییر روزانه 1,000,000 (0.67%)",
+      "sell": null,
+      "buy": null,
+      "price": 926600000,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "سکه امامی",
+      "sell": null,
+      "buy": null,
+      "price": 925050000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "سکه بهار آزادی",
+      "sell": null,
+      "buy": null,
+      "price": 859800000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "سکه در بورس",
+      "sell": null,
+      "buy": null,
+      "price": 930400,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "سکه گرمی",
+      "sell": null,
+      "buy": null,
+      "price": 151000000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "شاخص دلار یورو پوند انگلیس درهم امارات کرون نروژ کرون سوئد دینار عراق یوان چین لیر ترکیه دلار استرالیا دلار کانادا حواله دلار حواله یورو حواله درهم حواله یوان مثقال طلای 18 عیار طلای 24 عیار سکه بهار آزادی سکه امامی نیم سکه ربع سکه سکه گرمی انس طلا انس نقره بورس نفت سبک نفت اپک نفت برنت",
+      "sell": null,
+      "buy": null,
+      "price": 1393,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "صندوق سکه کهربا",
+      "sell": null,
+      "buy": null,
+      "price": 85828,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "صندوق طلای لوتوس",
+      "sell": null,
+      "buy": null,
+      "price": 626650,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "صندوق طلای مثقال",
+      "sell": null,
+      "buy": null,
+      "price": 70835,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "صندوق طلای مفید",
+      "sell": null,
+      "buy": null,
+      "price": 242300,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "صندوق طلای گوهر",
+      "sell": null,
+      "buy": null,
+      "price": 423406,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "طلا ( )",
+      "sell": null,
+      "buy": null,
+      "price": 86212000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "طلا ۱۸",
+      "sell": null,
+      "buy": null,
+      "price": 86212000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "طلا 242,100 صندوق طلای مفید تغییر روزانه 3,348 (1.4%) 625,320 صندوق طلای لوتوس تغییر روزانه 7,217 (1.17%) 381,825 صندوق طلای زر تغییر روزانه 5,423 (1.44%) 423,334 صندوق طلای گوهر تغییر روزانه 6,208 (1.49%)",
+      "sell": null,
+      "buy": null,
+      "price": 242100,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "طلا 3,644 انس طلا تغییر روزانه 1 (0.02%) 42 انس نقره تغییر روزانه 0 (0.06%) 1,407 انس پلاتین تغییر روزانه 5 (0.37%) 1,231 انس پالادیوم تغییر روزانه 20 (1.62%) 86,247,000 طلای 18 عیار تغییر روزانه 1,993,000 (2.37%) 114,995,000 طلای 24 عیار تغییر روزانه 2,657,000 (2.37%) 85,096,900 طلای دست دوم تغییر روزانه 1,965,800 (2.36%) 373,620,000 مثقال طلا تغییر روزانه 8,710,000 (2.39%) 373,620,000 آبشده نقدی تغییر روزانه 8,700,000 (2.38%) 2,211,360 حباب آبشده تغییر روزانه 5,793,676 (262%) 377,060,000 مثقال / بدون حباب تغییر روزانه 4,079,000 (1.09%) 242,100 صندوق طلای مفید تغییر روزانه 3,348 (1.4%) 625,320 صندوق طلای لوتوس تغییر روزانه 7,217 (1.17%) 381,825 صندوق طلای زر تغییر روزانه 5,423 (1.44%) 423,334 صندوق طلای گوهر تغییر روزانه 6,208 (1.49%)",
+      "sell": null,
+      "buy": null,
+      "price": 3644,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "طلا 3,644 انس طلا تغییر روزانه 1 (0.02%) 86,247,000 طلای 18 عیار تغییر روزانه 1,993,000 (2.37%) 1,573,100 گرم نقره ۹۹۹ تغییر روزانه 14,700 (0.94%) 373,620,000 مثقال طلا تغییر روزانه 8,710,000 (2.39%) 373,620,000 آبشده نقدی تغییر روزانه 8,700,000 (2.38%) 377,060,000 مثقال / بدون حباب تغییر روزانه 4,079,000 (1.09%)",
+      "sell": null,
+      "buy": null,
+      "price": 3644,
+      "delta_dir": "down",
+      "unit": "toman"
+    },
+    {
+      "name": "طلا در بورس",
+      "sell": null,
+      "buy": null,
+      "price": 242300,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "طلای 18 عیار",
+      "sell": null,
+      "buy": null,
+      "price": 86212000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "طلای 24 عیار",
+      "sell": null,
+      "buy": null,
+      "price": 114948000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "طلای دست دوم",
+      "sell": null,
+      "buy": null,
+      "price": 85062730,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "قیمت سکه",
+      "sell": null,
+      "buy": null,
+      "price": 925050000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "قیمت سکه / تک فروشی",
+      "sell": null,
+      "buy": null,
+      "price": 926500000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "قیمت طلا",
+      "sell": null,
+      "buy": null,
+      "price": 86212000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "مبدل مقیاس ها طلا و ارز کالاهای جهانی",
+      "sell": null,
+      "buy": null,
+      "price": 1739,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "مثقال / بدون حباب",
+      "sell": null,
+      "buy": null,
+      "price": 377344000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "مثقال طلا",
+      "sell": null,
+      "buy": null,
+      "price": 373550000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "مثقال طلا ( )",
+      "sell": null,
+      "buy": null,
+      "price": 373550000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "نیم سکه",
+      "sell": null,
+      "buy": null,
+      "price": 476000000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "واحد مبدا ریال دلار یورو پوند انگلیس درهم امارات مثقال طلای 18 عیار طلای 24 عیار سکه بهار آزادی سکه امامی نیم سکه ربع سکه سکه گرمی",
+      "sell": null,
+      "buy": null,
+      "price": 18,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "پربازدیدترین / اخبار و تحلیل های اقتصادی ۱۴۰۴/۰۶/۲۳ ۱۷:۵۴ مسکن نسل اجاره‌نشین؛ چرا جوانان ایرانی دیگر توان خرید خانه ندارند؟ ۱۴۰۴/۰۶/۲۳ ۱۵:۱۲ جهان از تسلا تا تظاهرات لندن؛ ورود جنجالی ماسک به سیاست مهاجرتی اروپا ۱۴۰۴/۰۶/۲۳ ۱۷:۵۶ تولید سرب زیر فشار مازاد عرضه، اما باتری‌ها امید را زنده نگه می‌دارند! ۱۴۰۴/۰۶/۲۳ ۱۷:۱۰ خودرو رشد تولید در رکود تقاضا؛ آیا ایران‌خودرو در مسیر مازاد عرضه حرکت می‌کند؟ ۱۴۰۴/۰۶/۲۳ ۱۴:۱۸ فناوری انقلاب پهپادی؛ وقتی هوش مصنوعی فرمانده میدان جنگ می‌شود ۱۴۰۴/۰۶/۲۳ ۱۵:۴۳ جهان لندن در تب اعتراضات؛ ۱۱۰ هزار نفر علیه سیاست‌های مهاجرتی به خیابان آمدند ۱۴۰۴/۰۶/۲۳ ۱۵:۰۳ مسکن وضع هوای کشور در ۵ روز آینده چگونه است؟ ۱۴۰۴/۰۶/۲۳ ۱۴:۳۲ مسکن فرود اضطراری پرواز ازمیر به تهران در ارومیه جدیدترین / اخبار و تحلیل های اقتصادی تمام عناوین خودرو مسکن تولید فناوری قیمت ها جهان شرکت‌ها ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان ادعای جروزالم پست: در جنگ ۱۲ روزه، ده‌ها زن آموزش‌‌دیده توسط موساد به ایران نفوذ کردند ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان وضعیت ما به عنوان یک کشور هسته‌ای تغییرناپذیر است ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان گاف عجیب ترامپ درباره تعداد قربانیان مواد مخدر در آمریکا ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان واکنش کاربران خارجی شبکه‌های اجتماعی به نشست دوحه ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان افزایش پرواز‌های جاسوسی آمریکا از ونزوئلا ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان فاجعه انسانی در مناطق زلزله‌زده افغانستان ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان گسترش کریدور جنوبی آذربایجان به بالکان؛ باکو فقط گاز نمی فروشد ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان ونزوئلا: پروازهای جاسوسی آمریکا، سه برابر شده است ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان هشدار ترامپ به نتانیاهو در آستانه نشست دوحه ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان تحریم‌های ضد روسی اروپا بسیار ضعیف هستند ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان نشست سالانه کنفرانس عمومی آژانس بین‌المللی انرژی اتمی در وین آغاز شد ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان تجاوز به خاک سوریه؛ رژیم صهیونیستی در جنوب سوریه یک ایست بازرسی مستقر کرد ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان نیروی دفاعی استرالیا و پاپوآ گینه نو یکپارچه می‌شوند ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان فقدان فرستاده ویژه امور ایران در دولت ترامپ، بی برنامگی یا تمرکز قدرت؟ ۱۴۰۴/۰۶/۲۴ ۱۲:۲۳ جهان سناتور تد کروز دیوارنوشته توهین‌آمیز علیه چارلی کرک را پاک کرد بیشتر پربازدیدترین / اخبار و تحلیل های تخصصی ۱۴۰۴/۰۶/۲۳ ۲۰:۵۱ بازار ارز پیش بینی قیمت طلا فردا ۲۴ شهریور ۱۴۰۴ / قیمت طلا به کانال ۷ میلیون تومان می‌رسد؟ ۱۴۰۴/۰۶/۲۴ ۱۰:۵۲ طلا و سکه واکنش مثبت سکه امامی به حمایت ۹۰ میلیونی ۱۴۰۴/۰۶/۲۳ ۱۹:۲۲ بازار ارز ارزآوری ۳ برابری گردشگران سلامت | گردشگران سلامت بیشتر به کدام استان ها می روند؟ ۱۴۰۴/۰۶/۲۳ ۱۹:۳۱ انرژی قطعی برق گیلان فردا دوشنبه ۲۴ شهریور ۱۴۰۴ | برنامه زمان‌بندی رشت و شهرستان‌ها ۱۴۰۴/۰۶/۲۳ ۲۰:۲۱ طلا و سکه شگفتی جوان کامل نشد ؛‌  کشتی ایران به نقره جهان بسنده کرد + ویدئو ۱۴۰۴/۰۶/۲۳ ۱۹:۳۱ طلا و سکه نتیجه‌گیری‌های عجیب ملی‌پوشان کشتی؛ طلا از دست نخودی هم پرید ۱۴۰۴/۰۶/۲۴ ۲:۳۱ طلا و سکه احتمال خیزش مجدد قیمت طلا/رکوردشکنی پیاپی قیمت نقره ۱۴۰۴/۰۶/۲۴ ۱۰:۱۰ طلا و سکه طلای آبشده در مرز حمایت حساس ۱۴۰۴/۰۶/۲۳ ۱۹:۴۱ طلا و سکه شکست غیرمنتظره محمد نخودی مقابل یونان در نیمه‌نهایی وزن ۷۹ کیلوگرم ۱۴۰۴/۰۶/۲۳ ۲۱:۴۱ طلا و سکه نخستین مدال ایران در کشتی آزاد جهانی ۲۰۲۵ به دست آمد جدیدترین / اخبار و تحلیل های تخصصی تمام عناوین طلا و سکه بازار ارز ارز دیجیتال نفت و انرژی بورس بانک و بیمه ۱۴۰۴/۰۶/۲۴ ۱۲:۴۱ بازار ارز پیش‌بینی قیمت دلار آمریکا فردا سه شنبه ۲۵ شهریور ۱۴۰۴ + تحلیل قیمت دلار | عبور از مرز حساس؟ ۱۴۰۴/۰۶/۲۴ ۱۲:۴۰ ارز دیجیتال حمایت‌ها تثبیت شد؛ بیت‌کوین آماده جهش ۱۴۰۴/۰۶/۲۴ ۱۲:۳۱ طلا و سکه تب سکه داغ‌تر از تب عشق ۱۴۰۴/۰۶/۲۴ ۱۲:۲۱ بازار ارز نشست کمیسیون مشترک همکاری‌های اقتصادی ایران و پاکستان برگزار شد ۱۴۰۴/۰۶/۲۴ ۱۲:۱۱ انرژی درآمد ۵ ماهه پتروشیمی بوعلی سینا از مرز ۴۱ همت گذشت ۱۴۰۴/۰۶/۲۴ ۱۲:۱۱ انرژی دسترسی به جایگاه های سوخت آسان می شود ۱۴۰۴/۰۶/۲۴ ۱۲:۱۱ بازار ارز تخلف عجیب پرسپولیس؛ ایجنت نیازمند ۲۳۰ هزار دلار گرفت! ۱۴۰۴/۰۶/۲۴ ۱۲:۱۰ بازار ارز قیمت دلار، یورو و پوند امروز دوشنبه ۲۴ شهریور1404/ کاهش قیمت دلار و یورو+ جدول ۱۴۰۴/۰۶/۲۴ ۱۲:۰۸ انرژی بازار نفت در حالت آماده‌باش! ۱۴۰۴/۰۶/۲۴ ۱۲:۰۱ بازار ارز فعالیت گمرک یزد در روزهای تعطیل| صادرات ۹.۸ میلیون دلار کالا به خارج ۱۴۰۴/۰۶/۲۴ ۱۲:۰۱ طلا و سکه بازار طلا در مسیر اصلاح| سقوط به کانال ۷ میلیون تومان بعید است ۱۴۰۴/۰۶/۲۴ ۱۲:۰۱ طلا و سکه ادامه اصلاح نیم سکه تا محدوده 46 میلیون ۱۴۰۴/۰۶/۲۴ ۱۱:۵۳ ارز دیجیتال چرا ترامپ بر برکناری لیزا کوک اصرار دارد؟ ۱۴۰۴/۰۶/۲۴ ۱۱:۵۱ بازار ارز ثروتمندترین مرد جدید جهان کیست؟ | با پدرخوانده مرموز هوش مصنوعی آشنا شوید ۱۴۰۴/۰۶/۲۴ ۱۱:۵۱ طلا و سکه ثبات قیمت طلا در آستانه تصمیم فدرال رزرو درباره نرخ بهره بیشتر",
+      "sell": null,
+      "buy": null,
+      "price": 1404,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "گواهی سپرده سکه طلا",
+      "sell": null,
+      "buy": null,
+      "price": 929000000,
+      "delta_dir": null,
+      "unit": "toman"
+    }
+  ],
+  "crypto": [
+    {
+      "name": "اتریوم",
+      "sell": null,
+      "buy": null,
+      "price": 4468297600,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "بیت کوین",
+      "sell": null,
+      "buy": null,
+      "price": 113649418000,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "بیت کوین ( )",
+      "sell": null,
+      "buy": null,
+      "price": 114794,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "بیت کوین کش",
+      "sell": null,
+      "buy": null,
+      "price": 588812100,
+      "delta_dir": null,
+      "unit": "toman"
+    }
+  ],
+  "cached_at": 1757928190
+}
