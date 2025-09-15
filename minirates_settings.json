@@ -1,5 +1,5 @@
 {
-  "theme": "light",
+  "theme": "dark",
   "ui_scale": 0.9090909090909091,
   "window_alpha": 1.0,
   "always_on_top": true,
@@ -15,10 +15,10 @@
   "auto_refresh_ms": 300000,
   "notifications": true,
   "pinned_ids": [
+    "fx:یورو",
     "fx:دلار استرالیا",
-    "fx:دلار آمریکا",
-    "fx:لیر ترکیه",
-    "fx:دلار"
+    "crypto:بیت کوین",
+    "fx:دلار آمریکا"
   ],
   "pinned_limit": 5,
   "news_accounts": [
@@ -28,9 +28,15 @@
   "price_threshold": 1000,
   "news_enabled": false,
   "window_geometry": {
-    "w": 360,
-    "h": 220,
+    "w": 1920,
+    "h": 1009,
     "x": -1901,
     "y": 754
-  }
+  },
+  "catalog_sources": [
+    "alanchand",
+    "tgju"
+  ],
+  "search_enabled": false,
+  "search_visible": false
 }

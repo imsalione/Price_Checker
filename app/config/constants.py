@@ -24,8 +24,8 @@ START_PINNED = False
 TRANS_COLOR = "black"             # used for transparent window background
 
 # --- Spark/Chart config (dynamic bar-count) ---
-SPARK_W, SPARK_H = 60, 12          # initial canvas size; may expand in rows.py
-HISTORY_MAX = 64                    # must be >= SPARK_BAR_MAX_COUNT
+SPARK_W, SPARK_H = 70, 12          # initial canvas size; may expand in rows.py
+HISTORY_MAX = 74                    # must be >= SPARK_BAR_MAX_COUNT
 
 # Dynamic bar layout: compute count from available width
 SPARK_BAR_IDEAL_W = 14             # target per-bar width (px)

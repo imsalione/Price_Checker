@@ -100,6 +100,19 @@ class SettingsManager:
         """Set a setting and save immediately."""
         self.settings[key] = value
         self.save_settings()
+        
+    # ---- helpers: catalog sources (optional) ----
+    def rate_sources(self) -> list[str]:
+        v = self.settings.get("catalog_sources", [])
+        if isinstance(v, list) and v:
+            return [str(x).strip().lower() for x in v if str(x).strip()]
+        return ["alanchand", "tgju"]
+
+    def set_rate_sources(self, sources: list[str]) -> None:
+        cleaned = [str(x).strip().lower() for x in (sources or []) if str(x).strip()]
+        if not cleaned:
+            cleaned = ["alanchand", "tgju"]
+        self.set("catalog_sources", cleaned)
 
     # ---------- helpers: theme ----------
     def theme_name(self) -> str:
