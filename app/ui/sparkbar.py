@@ -55,7 +55,18 @@ except Exception:  # pragma: no cover
 
 # Persian digits
 try:
-    from app.utils.numbers import to_persian_digits
+    from app.utils.price import (
+    # units
+    to_toman,
+    # compute
+    compute_delta_amount, compute_delta_percent, compute_delta_24h_amount,
+    # format
+    format_thousands_toman, format_compact_toman,
+    format_delta_toman, format_delta_percent,
+    # digits/parsing
+    to_persian_digits, to_english_digits, normalize_text, to_int_irr,
+)
+
 except Exception:  # pragma: no cover
     def to_persian_digits(s: Any) -> str:
         return str(s)

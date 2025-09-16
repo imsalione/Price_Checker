@@ -55,40 +55,18 @@ except Exception:
 # ---------- Adapters (import robustly) ----------
 # AlanChand adapter
 _scrape_alanchand = None
-try:
-    # Preferred (infra adapter)
-    from app.infra.alanchand_adapter import scrape_alanchand_all as _scrape_alanchand
-except Exception:
-    try:
-        # Common alternative (scrapers package)
-        from app.scrapers.alanchand import scrape_alanchand_all as _scrape_alanchand
-    except Exception:
-        try:
-            # Flat fallback (rare)
-            from app.alanchand import scrape_alanchand_all as _scrape_alanchand
-        except Exception:
-            _scrape_alanchand = None
+from app.infra.adapters.alanchand_adapter import scrape_alanchand_all as _scrape_alanchand
+
 
 # TGJU adapter
 _scrape_tgju = None
-try:
-    # Preferred (infra adapter)
-    from app.infra.tgju_adapter import scrape_tgju_all as _scrape_tgju
-except Exception:
-    try:
-        # Common alternative (scrapers package)
-        from app.scrapers.tgju import scrape_tgju_all as _scrape_tgju
-    except Exception:
-        try:
-            # Flat fallback (rare)
-            from app.tgju import scrape_tgju_all as _scrape_tgju
-        except Exception:
-            _scrape_tgju = None
+from app.infra.adapters.tgju_adapter import scrape_tgju_all as _scrape_tgju
+
 
 
 # ---------- Utilities ----------
 try:
-    from app.utils.numbers import normalize_text
+    from app.utils.price import normalize_text
 except Exception:
     def normalize_text(s: str) -> str:
         """Ultra-light fallback normalizer (lowercase + trim)."""

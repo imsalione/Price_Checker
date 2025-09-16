@@ -1,3 +1,5 @@
+# app/scrapers/alanchand_adapter.py
+# -*- coding: utf-8 -*-
 """
 Alanchand scraper (catalog only):
 - scrape_alanchand_all: full categorized catalog (fx / gold / crypto)
@@ -6,14 +8,15 @@ All numbers are parsed as integers in Toman (site convention).
 """
 
 from __future__ import annotations
-from typing import Optional, Dict, List
+from typing import Dict, List, Optional, Union
 from datetime import datetime
 import re
+from bs4.element import Tag
 
 from app.config.constants import BASE_URL
 from app.utils.net import get_html_cache_bust
-from app.utils.numbers import normalize_text, to_int_irr
-
+from app.utils.price import normalize_text, to_int_irr
+from app.infra.adapters.name_filters import DEFAULT_FILTERS
 
 # -----------------------------
 # Classification heuristics
@@ -52,7 +55,8 @@ def _is_match_any(text: str, patterns: List[str]) -> bool:
 
 
 def _extract_name_from_row(row) -> str:
-    """Heuristically extract a 'name' cell from a row-like element.
+    """
+    Heuristically extract a 'name' cell from a row-like element.
     Prefer <th>, then first <td> that is not a price cell; else strip numbers from whole row.
     """
     th = row.find("th")
@@ -76,10 +80,9 @@ def _extract_name_from_row(row) -> str:
 
 
 def _extract_prices_from_row(row) -> dict:
-    """Extract sell/buy/single price and direction from a row-like element."""
-    out = {"sell": None, "buy": None, "price": None, "delta_dir": None}
+    """Extract sell/buy/single price and direction from a row-like element (Toman)."""
+    out: Dict[str, Optional[Union[int, str]]] = {"sell": None, "buy": None, "price": None, "delta_dir": None}
 
-    # Try explicit cells first
     sell = row.find(class_=lambda c: c and re.search(r"\bsellPrice\b", c, re.IGNORECASE))
     buy  = row.find(class_=lambda c: c and re.search(r"\bbuyPrice\b",  c, re.IGNORECASE))
 
@@ -127,23 +130,11 @@ def _classify_row(name_text: str) -> str:
 # Public API
 # -----------------------------
 def scrape_alanchand_all() -> Dict[str, List[dict]]:
-    """Scrape Alanchand and return a categorized catalog of rates.
-
-    Output schema:
-    {
-      "timestamp": "YYYY-MM-DD HH:MM:SS",
-      "fx":     [ {name, sell, buy, price, delta_dir, unit}, ... ],
-      "gold":   [ {...} ],
-      "crypto": [ {...} ]
-    }
-    Numbers are integers in Toman.
-    """
+    """Scrape Alanchand and return a categorized catalog of rates (Toman)."""
     soup = get_html_cache_bust(BASE_URL)
     catalog = {
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "fx": [],
-        "gold": [],
-        "crypto": [],
+        "fx": [], "gold": [], "crypto": [],
     }
     if not soup:
         return catalog
@@ -151,29 +142,30 @@ def scrape_alanchand_all() -> Dict[str, List[dict]]:
     # Collect rows from tables
     rows = []
     for tb in soup.find_all("table"):
-        rows.extend(tb.find_all("tr"))
+        if isinstance(tb, Tag):
+            rows.extend(tb.find_all("tr"))
 
     # Also collect prominent price spans/cards (e.g., gold/coin cards)
-    spans = soup.find_all("span", class_=lambda c: c and "priceSymbol" in c)
+    spans = soup.find_all("span", class_=re.compile("priceSymbol"))
     for sp in spans:
         parent = sp
         hop = 0
-        # climb up a few levels to get a meaningful container
-        while parent and hop < 3 and parent.name not in ("tr", "li", "article", "section", "div"):
+        while parent and hop < 3 and getattr(parent, "name", None) not in ("tr", "li", "article", "section", "div"):
             parent = parent.parent
             hop += 1
         if parent and parent not in rows:
             rows.append(parent)
 
-    seen = set()
+    # --- de-dup set on (category, normalized_name) ---
+    seen: set[tuple[str, str]] = set()
+
     for row in rows:
         name = _extract_name_from_row(row)
         if not name:
             continue
 
-        # Avoid duplicates by normalized name (rough heuristic)
-        key = normalize_text(name)
-        if key in seen:
+        # Centralized blacklist (skip non-price blocks)
+        if DEFAULT_FILTERS.is_blacklisted(name):
             continue
 
         prices = _extract_prices_from_row(row)
@@ -181,6 +173,11 @@ def scrape_alanchand_all() -> Dict[str, List[dict]]:
             continue  # nothing usable
 
         cat = _classify_row(name)
+        key = (cat, normalize_text(name))
+        if key in seen:
+            continue
+        seen.add(key)
+
         item = {
             "name": name,
             "sell": prices["sell"],
@@ -190,7 +187,6 @@ def scrape_alanchand_all() -> Dict[str, List[dict]]:
             "unit": "toman",  # site convention
         }
         catalog[cat].append(item)
-        seen.add(key)
 
     # Sort each bucket alphabetically by normalized name
     for k in ("fx", "gold", "crypto"):

@@ -1,3 +1,5 @@
+# app/infra/tray.py
+# -*- coding: utf-8 -*-
 """
 System tray service using pystray.
 - When the window hides, we start the tray icon.

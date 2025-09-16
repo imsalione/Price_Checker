@@ -43,8 +43,7 @@ from app.core.events import (
 
 # Enrichment utils
 from app.services.baselines import DailyBaselines
-from app.utils.formatting import short_toman
-from app.utils.numbers import to_persian_digits
+
 
 # Spark roll fallback
 try:

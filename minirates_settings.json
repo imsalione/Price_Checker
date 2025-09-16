@@ -1,5 +1,5 @@
 {
-  "theme": "dark",
+  "theme": "light",
   "ui_scale": 0.9090909090909091,
   "window_alpha": 1.0,
   "always_on_top": true,
@@ -18,7 +18,8 @@
     "fx:یورو",
     "fx:دلار استرالیا",
     "crypto:بیت کوین",
-    "fx:دلار آمریکا"
+    "fx:دلار آمریکا",
+    "fx:لیر ترکیه"
   ],
   "pinned_limit": 5,
   "news_accounts": [

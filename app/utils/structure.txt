@@ -1,0 +1,29 @@
+Folder PATH listing
+Volume serial number is 3A10-CC11
+C:.
+|   delta_format.py
+|   formatting.py
+|   net.py
+|   numbers.py
+|   price_std.py
+|   structure.txt
+|   __init__.py
+|   
++---price
+|       format_compact.py
+|       format_delta.py
+|       format_full.py
+|       price_compute.py
+|       price_digits.py
+|       price_rules.py
+|       price_units.py
+|       __init__.py
+|       
+\---__pycache__
+        delta_format.cpython-313.pyc
+        formatting.cpython-313.pyc
+        net.cpython-313.pyc
+        numbers.cpython-313.pyc
+        price_std.cpython-313.pyc
+        __init__.cpython-313.pyc
+        

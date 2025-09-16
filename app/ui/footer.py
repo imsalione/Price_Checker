@@ -25,7 +25,18 @@ import tkinter as tk
 from tkinter import font as tkfont
 from typing import Optional, Callable, Dict, Any, List
 
-from app.utils.formatting import to_persian_digits
+from app.utils.price import (
+    # units
+    to_toman,
+    # compute
+    compute_delta_amount, compute_delta_percent, compute_delta_24h_amount,
+    # format
+    format_thousands_toman, format_compact_toman,
+    format_delta_toman, format_delta_percent,
+    # digits/parsing
+    to_persian_digits, to_english_digits, normalize_text, to_int_irr,
+)
+
 
 # ---------- Emojis ----------
 EMOJI_THEME    = "🌓"
