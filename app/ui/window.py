@@ -5,7 +5,7 @@ MiniRates - Main Window (robust layout with grid, search toggle synced with Foot
 
 - HeaderBar (smart search) is now optional/visible based on footer 🔍 toggle.
 - Footer 🔍 toggles HeaderBar on/off and persists the setting.
-- No extra kwargs passed to Rows to avoid Tk "unknown option" errors.
+- Rows constructed with theme + tooltip so per-bar spark tooltips are active.
 """
 
 from __future__ import annotations
@@ -43,11 +43,13 @@ from app.core.events import (
 
 # Enrichment utils
 from app.services.baselines import DailyBaselines
-
+from app.utils.price import short_toman
+from app.utils.price import to_persian_digits
 
 # Spark roll fallback
 try:
     from app.ui.sparkbar import roll_fixed_window
+    from app.ui.rows import Rows
 except Exception:  # pragma: no cover
     def roll_fixed_window(series, times, *, k=10, new_value=None, new_time=None):
         s = list(series or []); t = list(times or [])
@@ -151,7 +153,7 @@ class MiniRatesWindow(tk.Tk):
         self.news_enabled: bool = bool(self.settings.news_visible())
         self.news_failed_once: bool = False
 
-        # Tooltip
+        # Tooltip (shared manager for whole window)
         self.tooltip = Tooltip(self, self.t)
 
         # ---------- Build UI ----------
@@ -252,17 +254,22 @@ class MiniRatesWindow(tk.Tk):
         self.rows_wrap.grid(row=1, column=0, sticky="nsew")
         self.rows_wrap.grid_propagate(True)  # let it expand; we no longer force height
 
-        # IMPORTANT: don't pass extra kwargs to Rows (avoids Tk unknown option errors)
-        self.rows = Rows(self.rows_wrap)
+        # Construct Rows WITH theme + tooltip so spark tooltips are active
+        self.rows = Rows(self.rows_wrap, tooltip=self.tooltip)
         self.rows.pack(side=tk.TOP, anchor="n", fill=tk.BOTH, expand=True)
 
-        # If rows supports post-construction wiring, do it safely
+        # Post-construction wiring (safe): use the actual setter if available
         if hasattr(self.rows, "set_tooltip"):
-            try: self.rows.set_tooltip(self.tooltip)
-            except Exception: pass
+            try:
+                self.rows.set_tooltip(self.tooltip)
+            except Exception:
+                pass
         elif hasattr(self.rows, "tooltip"):
-            try: setattr(self.rows, "tooltip", self.tooltip)
-            except Exception: pass
+            # legacy fallback (kept for backward-compat)
+            try:
+                setattr(self.rows, "tooltip", self.tooltip)
+            except Exception:
+                pass
 
         if hasattr(self.rows, "set_on_pin_toggle"):
             try: self.rows.set_on_pin_toggle(self._on_row_pin_toggle)
@@ -606,8 +613,40 @@ class MiniRatesWindow(tk.Tk):
     # ================= Refresh: event-driven =================
     def _safe_initial_refresh(self) -> None:
         """Kick the first refresh and arm the next scheduled one."""
-        try: self._on_refresh_click()
-        finally: self._schedule_next_refresh(self.auto_refresh_ms)
+        try:
+            self._on_refresh_click()
+        finally:
+            # اگر تا 1 ثانیه بعد چیزی نیامد، fallback محلی بزن
+            def _fallback_if_empty():
+                try:
+                    # اگه rows پره، کاری نکن
+                    has_rows = bool(getattr(self.rows, "_rows", []))
+                    if has_rows:
+                        return
+                    # fallback: کش/کاتالوگ را مستقیم بخوان
+                    catalog_data = self._get_catalog_cached() or self._fetch_catalog_data() or {}
+                    from app.services.catalog import build_display_lists
+                    view = build_display_lists(catalog_data, self.settings)
+                    items = []
+                    items.extend(view.get("pinned") or [])
+                    other = view.get("groups") or view.get("others") or {}
+                    for cat in ("fx", "gold", "crypto"):
+                        items.extend(other.get(cat, []) or [])
+                    items = self._enrich_with_deltas(items)
+                    # فیلترهای UI (سورس/سرچ)
+                    items = self._apply_ui_filters(items)
+                    self._all_items_cache = list(items)
+                    self.rows.update(items)
+                    if self._ui_built:
+                        self.after_idle(self._update_rows_viewport)
+                    print("[MiniRates] Fallback filled rows with", len(items), "items.")
+                except Exception as e:
+                    print("[MiniRates] Fallback failed:", e)
+            self.after(1000, _fallback_if_empty)
+    
+            # برنامه‌ریزی رفرش بعدی مثل قبل
+            self._schedule_next_refresh(self.auto_refresh_ms)
+    
 
     def _on_refresh_click(self) -> None:
         """Publish a refresh request and set loading state."""
@@ -641,16 +680,16 @@ class MiniRatesWindow(tk.Tk):
 
     # ================= Event handlers =================
     def _on_prices_refreshed(self, evt: PricesRefreshed) -> None:
-        """
-        Receive new catalog items, enrich, cache (enriched), filter, and render.
-        We cache *enriched* items so UI filters (search/source) always act on the same snapshot.
-        """
         raw = list(evt.items or [])
+        print("[MiniRates] PricesRefreshed raw:", len(raw))
         items = self._enrich_with_deltas(raw)
         self._all_items_cache = list(items)
         filtered = self._apply_ui_filters(items)
-        try: self.rows.update(filtered)
-        except Exception: pass
+        print("[MiniRates] PricesRefreshed filtered:", len(filtered))
+        try:
+            self.rows.update(filtered)
+        except Exception as e:
+            print("[MiniRates] rows.update error:", e)
         if self._ui_built:
             self.after_idle(self._update_rows_viewport)
         self._on_prices_refreshed_done()

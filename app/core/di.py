@@ -173,15 +173,16 @@ def register_default_services(*, override: bool = False) -> None:
     try:
         from app.services.theme_service import ThemeService
     except Exception:
-        class ThemeService:  # type: ignore
+        class FallbackThemeService:  # type: ignore
             """No-op fallback ThemeService used when the real module is absent."""
             def __init__(self, *_args, **_kwargs) -> None:
                 pass
+        ThemeService = FallbackThemeService
 
     # Twitter (X) service: prefer services path; fallback to scrapers path if needed
     twitter_mod = None
     try:
-        from app.services import twitter_service as _twitter_mod  # preferred  
+        from app.infra.adapters import twitter_adapter as _twitter_mod  # preferred  
         twitter_mod = _twitter_mod
     except Exception:
         try:

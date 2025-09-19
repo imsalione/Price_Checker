@@ -1,10 +1,10 @@
 {
-  "timestamp": "2025-09-16 14:46:38",
+  "timestamp": "2025-09-19 17:57:01",
   "fx": [
     {
       "name": "100 ین ژاپن",
-      "sell": 48868,
-      "buy": 48428,
+      "sell": 49204,
+      "buy": 48761,
       "price": null,
       "delta_dir": null,
       "unit": "toman"
@@ -13,7 +13,7 @@
       "name": "AUD/USD",
       "sell": null,
       "buy": null,
-      "price": 666,
+      "price": 659,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -21,7 +21,7 @@
       "name": "EUR/USD",
       "sell": null,
       "buy": null,
-      "price": 180,
+      "price": 175,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -29,7 +29,7 @@
       "name": "GBP/USD",
       "sell": null,
       "buy": null,
-      "price": 363,
+      "price": 349,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -37,7 +37,7 @@
       "name": "USD/CAD",
       "sell": null,
       "buy": null,
-      "price": 376,
+      "price": 380,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -45,7 +45,7 @@
       "name": "USD/CHF",
       "sell": null,
       "buy": null,
-      "price": 791,
+      "price": 794,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -53,7 +53,7 @@
       "name": "USD/CNY",
       "sell": null,
       "buy": null,
-      "price": 115,
+      "price": 117,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -61,7 +61,7 @@
       "name": "USD/KRW",
       "sell": null,
       "buy": null,
-      "price": 138,
+      "price": 139,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -69,7 +69,15 @@
       "name": "USD/NZD",
       "sell": null,
       "buy": null,
-      "price": 675,
+      "price": 707,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "USD/SAR",
+      "sell": null,
+      "buy": null,
+      "price": 754,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -77,7 +85,7 @@
       "name": "USD/SEK",
       "sell": null,
       "buy": null,
-      "price": 262,
+      "price": 403,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -85,7 +93,7 @@
       "name": "USD/TRY",
       "sell": null,
       "buy": null,
-      "price": 307,
+      "price": 380,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -93,7 +101,7 @@
       "name": "آساکوین",
       "sell": null,
       "buy": null,
-      "price": 100548,
+      "price": 101606,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -101,7 +109,7 @@
       "name": "آلومینیوم",
       "sell": null,
       "buy": null,
-      "price": 270,
+      "price": 267,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -109,7 +117,7 @@
       "name": "آکوکوین",
       "sell": null,
       "buy": null,
-      "price": 98450,
+      "price": 99950,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -125,7 +133,7 @@
       "name": "او ام پی فینکس",
       "sell": null,
       "buy": null,
-      "price": 9949,
+      "price": 10117,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -149,7 +157,7 @@
       "name": "اینوکس",
       "sell": null,
       "buy": null,
-      "price": 99468,
+      "price": 101429,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -157,7 +165,7 @@
       "name": "بالینکس",
       "sell": null,
       "buy": null,
-      "price": 99560,
+      "price": 99250,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -165,7 +173,15 @@
       "name": "بایننس کوین",
       "sell": null,
       "buy": null,
-      "price": 92460180,
+      "price": 99981630,
+      "delta_dir": null,
+      "unit": "toman"
+    },
+    {
+      "name": "بنزین (گالن)",
+      "sell": null,
+      "buy": null,
+      "price": 991,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -173,7 +189,7 @@
       "name": "بیت پین",
       "sell": null,
       "buy": null,
-      "price": 99688,
+      "price": 100896,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -181,7 +197,7 @@
       "name": "بیتکسینو",
       "sell": null,
       "buy": null,
-      "price": 101490,
+      "price": 103020,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -189,14 +205,14 @@
       "name": "تون‌کوین",
       "sell": null,
       "buy": null,
-      "price": 221800,
+      "price": 224000,
       "delta_dir": null,
       "unit": "toman"
     },
     {
       "name": "درهم",
-      "sell": 19597,
-      "buy": 19421,
+      "sell": 19608,
+      "buy": 19432,
       "price": null,
       "delta_dir": null,
       "unit": "toman"
@@ -205,7 +221,7 @@
       "name": "درهم امارات",
       "sell": null,
       "buy": null,
-      "price": 27274,
+      "price": 27018,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -213,7 +229,7 @@
       "name": "دلار",
       "sell": null,
       "buy": null,
-      "price": 99750,
+      "price": 98845,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -221,7 +237,7 @@
       "name": "دلار استرالیا",
       "sell": null,
       "buy": null,
-      "price": 66500,
+      "price": 65480,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -229,7 +245,7 @@
       "name": "دلار سنگاپور",
       "sell": null,
       "buy": null,
-      "price": 78120,
+      "price": 77170,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -237,7 +253,7 @@
       "name": "دلار نیوزیلند",
       "sell": null,
       "buy": null,
-      "price": 59550,
+      "price": 58170,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -245,7 +261,7 @@
       "name": "دلار هنگ کنگ",
       "sell": null,
       "buy": null,
-      "price": 12820,
+      "price": 12710,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -253,7 +269,7 @@
       "name": "دلار کانادا",
       "sell": null,
       "buy": null,
-      "price": 72500,
+      "price": 71670,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -261,7 +277,7 @@
       "name": "دوج کوین",
       "sell": null,
       "buy": null,
-      "price": 26410,
+      "price": 27420,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -269,14 +285,14 @@
       "name": "دینار بحرین",
       "sell": null,
       "buy": null,
-      "price": 264640,
+      "price": 262080,
       "delta_dir": null,
       "unit": "toman"
     },
     {
       "name": "دینار عراق",
-      "sell": 5494,
-      "buy": 5445,
+      "sell": 5493,
+      "buy": 5444,
       "price": null,
       "delta_dir": null,
       "unit": "toman"
@@ -285,7 +301,7 @@
       "name": "دینار کویت",
       "sell": null,
       "buy": null,
-      "price": 327440,
+      "price": 324350,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -293,7 +309,7 @@
       "name": "رابین کش",
       "sell": null,
       "buy": null,
-      "price": 99551,
+      "price": 102351,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -301,7 +317,7 @@
       "name": "راستین",
       "sell": null,
       "buy": null,
-      "price": 99851,
+      "price": 101721,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -309,7 +325,7 @@
       "name": "رمزینکس",
       "sell": null,
       "buy": null,
-      "price": 99498,
+      "price": 100908,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -317,7 +333,7 @@
       "name": "رینگیت مالزی",
       "sell": null,
       "buy": null,
-      "price": 23730,
+      "price": 23570,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -325,7 +341,7 @@
       "name": "زرین دکس",
       "sell": null,
       "buy": null,
-      "price": 101090,
+      "price": 97385,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -333,7 +349,7 @@
       "name": "شانگهای چین",
       "sell": null,
       "buy": null,
-      "price": 386,
+      "price": 382,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -341,7 +357,7 @@
       "name": "لایت کوین",
       "sell": null,
       "buy": null,
-      "price": 11408440,
+      "price": 11728770,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -349,7 +365,7 @@
       "name": "لیر ترکیه",
       "sell": null,
       "buy": null,
-      "price": 2410,
+      "price": 2390,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -357,7 +373,7 @@
       "name": "وانفینکس",
       "sell": null,
       "buy": null,
-      "price": 99531,
+      "price": 100918,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -365,7 +381,7 @@
       "name": "ویترین کارت",
       "sell": null,
       "buy": null,
-      "price": 99701,
+      "price": 100784,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -373,7 +389,7 @@
       "name": "پوند انگلیس",
       "sell": null,
       "buy": null,
-      "price": 136000,
+      "price": 134200,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -381,7 +397,7 @@
       "name": "پینگی",
       "sell": null,
       "buy": null,
-      "price": 99997,
+      "price": 101163,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -389,7 +405,7 @@
       "name": "کوین نیک مارکت",
       "sell": null,
       "buy": null,
-      "price": 102150,
+      "price": 103882,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -397,7 +413,7 @@
       "name": "گرین موج",
       "sell": null,
       "buy": null,
-      "price": 101500,
+      "price": 102593,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -405,7 +421,7 @@
       "name": "ین ژاپن",
       "sell": null,
       "buy": null,
-      "price": 67834,
+      "price": 66789,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -413,7 +429,7 @@
       "name": "یوان چین",
       "sell": null,
       "buy": null,
-      "price": 14020,
+      "price": 13910,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -421,7 +437,7 @@
       "name": "یورو",
       "sell": null,
       "buy": null,
-      "price": 117770,
+      "price": 116490,
       "delta_dir": null,
       "unit": "toman"
     }
@@ -431,7 +447,7 @@
       "name": "تمام سکه آینده",
       "sell": null,
       "buy": null,
-      "price": 95200,
+      "price": 95300,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -439,7 +455,7 @@
       "name": "تمام سکه رفاه",
       "sell": null,
       "buy": null,
-      "price": 95199,
+      "price": 94993,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -447,7 +463,7 @@
       "name": "تمام سکه سامان",
       "sell": null,
       "buy": null,
-      "price": 95560,
+      "price": 95500,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -455,7 +471,7 @@
       "name": "حباب ربع سکه",
       "sell": null,
       "buy": null,
-      "price": 6320000,
+      "price": 5952000,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -463,7 +479,7 @@
       "name": "حباب سکه امامی",
       "sell": null,
       "buy": null,
-      "price": 7969000,
+      "price": 8786000,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -471,7 +487,7 @@
       "name": "حباب سکه بهار آزادی",
       "sell": null,
       "buy": null,
-      "price": 1454000,
+      "price": 2101000,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -479,7 +495,7 @@
       "name": "حباب سکه گرمی",
       "sell": null,
       "buy": null,
-      "price": 4635000,
+      "price": 4647000,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -487,7 +503,7 @@
       "name": "حباب نیم سکه",
       "sell": null,
       "buy": null,
-      "price": 5345000,
+      "price": 5909000,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -495,7 +511,7 @@
       "name": "ربع سکه",
       "sell": null,
       "buy": null,
-      "price": 28000000,
+      "price": 27200000,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -503,7 +519,7 @@
       "name": "سکه",
       "sell": null,
       "buy": null,
-      "price": 94705000,
+      "price": 93790000,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -511,7 +527,7 @@
       "name": "سکه امامی",
       "sell": null,
       "buy": null,
-      "price": 94705000,
+      "price": 93790000,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -519,7 +535,7 @@
       "name": "سکه بهار آزادی",
       "sell": null,
       "buy": null,
-      "price": 88190000,
+      "price": 87105000,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -527,7 +543,7 @@
       "name": "سکه گرمی",
       "sell": null,
       "buy": null,
-      "price": 15300000,
+      "price": 15100000,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -543,7 +559,7 @@
       "name": "صندوق طلای لوتوس",
       "sell": null,
       "buy": null,
-      "price": 64393,
+      "price": 64330,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -551,7 +567,7 @@
       "name": "صندوق طلای مثقال",
       "sell": null,
       "buy": null,
-      "price": 7260,
+      "price": 7256,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -559,7 +575,7 @@
       "name": "صندوق طلای مفید",
       "sell": null,
       "buy": null,
-      "price": 24980,
+      "price": 24892,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -567,7 +583,7 @@
       "name": "صندوق طلای گوهر",
       "sell": null,
       "buy": null,
-      "price": 43328,
+      "price": 43191,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -575,7 +591,7 @@
       "name": "طلا ۱۸",
       "sell": null,
       "buy": null,
-      "price": 8899600,
+      "price": 8741000,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -583,7 +599,7 @@
       "name": "طلای 18 عیار",
       "sell": null,
       "buy": null,
-      "price": 8899600,
+      "price": 8741000,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -591,7 +607,7 @@
       "name": "طلای 24 عیار",
       "sell": null,
       "buy": null,
-      "price": 11866100,
+      "price": 11654600,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -599,7 +615,7 @@
       "name": "طلای دست دوم",
       "sell": null,
       "buy": null,
-      "price": 8780985,
+      "price": 8624495,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -607,7 +623,7 @@
       "name": "مثقال / بدون حباب",
       "sell": null,
       "buy": null,
-      "price": 38479400,
+      "price": 37713200,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -615,7 +631,7 @@
       "name": "مثقال طلا",
       "sell": null,
       "buy": null,
-      "price": 38548000,
+      "price": 37865000,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -623,7 +639,7 @@
       "name": "نیم سکه",
       "sell": null,
       "buy": null,
-      "price": 48700000,
+      "price": 48400000,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -631,7 +647,7 @@
       "name": "گواهی سپرده سکه طلا",
       "sell": null,
       "buy": null,
-      "price": 95299980,
+      "price": 95489980,
       "delta_dir": null,
       "unit": "toman"
     }
@@ -641,7 +657,7 @@
       "name": "اتریوم",
       "sell": null,
       "buy": null,
-      "price": 449126420,
+      "price": 457307970,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -649,7 +665,7 @@
       "name": "بیت کوین",
       "sell": null,
       "buy": null,
-      "price": 11514849700,
+      "price": 11729292000,
       "delta_dir": null,
       "unit": "toman"
     },
@@ -657,10 +673,10 @@
       "name": "بیت کوین کش",
       "sell": null,
       "buy": null,
-      "price": 59063960,
+      "price": 61078800,
       "delta_dir": null,
       "unit": "toman"
     }
   ],
-  "cached_at": 1758021398
+  "cached_at": 1758292021
 }

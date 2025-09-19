@@ -116,22 +116,27 @@ class Tooltip:
         # If rich layout was visible previously, hide it and use simple label
         try:
             if getattr(self, '_rich', None) is not None:
-                self._rich.pack_forget()
+                if self._rich is not None:
+                    self._rich.pack_forget()
         except Exception:
             pass
 
         self._cur_text = str(text)
 
         try:
-            self._lbl.config(text=self._cur_text, wraplength=self._wrap, justify="left")
+            if self._lbl is not None:
+                self._lbl.config(text=self._cur_text, wraplength=self._wrap, justify="left")
         except Exception:
             pass
 
         x, y = self._place_near(x_root, y_root)
         try:
-            self._tip.geometry(f"+{x}+{y}")
-            self._tip.deiconify()
-            self._tip.lift()
+            if self._tip is not None:
+                self._tip.geometry(f"+{x}+{y}")
+            if self._tip is not None:
+                self._tip.deiconify()
+            if self._tip is not None:
+                self._tip.lift()
         except Exception:
             pass
         self._visible = True
@@ -161,13 +166,17 @@ class Tooltip:
         color = up if trend > 0 else (dn if trend < 0 else nt)
 
         try:
-            self._icon.configure(text=icon, fg=color)
-            self._delta.configure(text=str(delta_text or ""), fg=color)
+            if self._icon is not None:
+                self._icon.configure(text=icon, fg=color)
+            if self._delta is not None:
+                self._delta.configure(text=str(delta_text or ""), fg=color)
             # add clock icon to time
             tt = f"🕒 {time_text}" if time_text else ""
-            self._time.configure(text=tt)
+            if self._time is not None:
+                self._time.configure(text=tt)
             # place and show rich frame
-            self._rich.pack(fill=tk.BOTH, expand=True)
+            if self._rich is not None:
+                self._rich.pack(fill=tk.BOTH, expand=True)
         except Exception:
             pass
 

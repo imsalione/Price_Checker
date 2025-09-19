@@ -2,7 +2,22 @@
 # -*- coding: utf-8 -*-
 """
 Rates List (Rows) — strict DI theming, flicker-free updates, SparkBar integration.
-[... docstring kept the same ...]
+
+This module renders a scrollable list of rate rows with:
+  - Stateful Canvas-based scrolling (no external scroll module dependency)
+  - Per-row SparkBar (tiny bar sparkline) with per-bar tooltips
+  - DI-driven theming via ThemeService tokens (updated on ThemeToggled)
+  - Copy shortcuts (Ctrl+C: value, Ctrl+Shift+C: title: value)
+  - Pin toggle callback back to parent
+
+New in this revision:
+  • set_tooltip(tooltip): Wire (or replace) a shared Tooltip manager post-construction
+    and propagate it to existing rows; each row re-renders its spark so per-bar tag
+    binds for tooltips are created immediately.
+  • RateRow.set_tooltip(tooltip): Update row manager, re-attach the price label tip
+    via the manager, set SparkBar.tooltip and refresh to rebind bar handlers.
+
+No dependency on scroll.py; an internal Canvas + content Frame manage scrolling.
 """
 
 from __future__ import annotations
@@ -44,8 +59,10 @@ try:
         format_delta_toman, format_delta_percent,
         # digits/parsing
         to_persian_digits, to_english_digits, normalize_text, to_int_irr,
+        # FIX: used in this file
+        short_toman,            # <- required by _price_text
+        format_full_toman,      # <- required by _build_tooltip_text
     )
-
 except Exception:  # pragma: no cover
     def short_toman(v: float) -> str: return f"{v:,.0f}"
     def format_full_toman(v: float) -> str: return f"{v:,.0f}"
@@ -68,6 +85,7 @@ __all__ = ["Rows", "RateRow"]
 
 # ---------- Back-compat scroll facade ----------
 class _ScrollFacade:
+    """Compatibility layer so window.py can call set_on_yview/smooth_scroll_to like before."""
     def __init__(self, owner: "Rows") -> None:
         self._owner = owner
 
@@ -75,6 +93,9 @@ class _ScrollFacade:
         self._owner.set_on_yview(cb)
 
     def smooth_scroll_to(self, target_first: float, duration_ms: int = 240) -> None:
+        """
+        Smooth scroll to a yview fraction, using canvas.yview_moveto in small steps.
+        """
         try:
             cur_first, _ = self._owner._get_yview()
         except Exception:
@@ -96,10 +117,12 @@ class _ScrollFacade:
 
     @property
     def canvas(self) -> tk.Canvas:
+        """Expose owner canvas for focus management by the window."""
         return self._owner.canvas
 
 
 def _require_di() -> tuple[Any, Any, Dict[str, Any]]:
+    """Resolve ThemeService and EventBus from DI; get initial theme tokens."""
     theme_srv = container.resolve("theme")
     bus = container.resolve("bus")
     tokens = dict(theme_srv.tokens())
@@ -109,7 +132,26 @@ def _require_di() -> tuple[Any, Any, Dict[str, Any]]:
 
 
 class Rows(tk.Frame):
-    """Scrollable list of RateRow items implemented with an internal Canvas (stateful)."""
+    """
+    Scrollable list of RateRow items implemented with an internal Canvas (stateful).
+
+    Public API:
+      - update(items)
+      - apply_theme(overrides)
+      - set_scale(scale: float)
+      - set_viewport_height(h: int) / set_max_height(h: int)
+      - set_scroll_enabled(enabled: bool)
+      - set_on_yview(callback)
+      - content_height() -> int
+      - scroll_to_top()
+
+      - set_tooltip(tooltip)  # NEW: inject shared Tooltip manager after construction
+
+    Design notes:
+      - We keep a Canvas + content Frame and compute scrollregion from content bbox.
+      - Mouse wheel bindings are local to this component to avoid global conflicts.
+      - Theming is strictly from DI ThemeService; overrides only accept font/size scalars.
+    """
 
     def __init__(
         self,
@@ -141,6 +183,7 @@ class Rows(tk.Frame):
 
         self._on_yview: Optional[Callable[[float, float], None]] = None
 
+        # Canvas + content
         self.canvas = tk.Canvas(
             self,
             bg=self.t.get("SURFACE", "#111"),
@@ -165,19 +208,45 @@ class Rows(tk.Frame):
         self.bind_all("<Control-Shift-c>", self._copy_title_value)
         self.bind_all("<Control-Shift-C>", self._copy_title_value)
 
+        # Back-compat facade (used by window.py)
         self.sf = _ScrollFacade(self)
 
         self._apply_theme(self.t)
         self._update_scrollregion()
         self._auto_enable_wheel()
 
+    # ---------- New: Tooltip wiring ----------
+    def set_tooltip(self, tooltip: TooltipMgr) -> None:
+        """
+        Wire (or replace) the shared Tooltip manager after construction and propagate
+        it to all existing rows. Each row will:
+          - re-attach the price label tooltip via the manager
+          - set SparkBar.tooltip
+          - refresh the spark so bar tag-binds for tooltips become active immediately.
+        """
+        self._tooltip_mgr = tooltip
+        for r in self._rows:
+            try:
+                if hasattr(r, "set_tooltip"):
+                    r.set_tooltip(tooltip)
+            except Exception:
+                pass
+
+    # ---------- Wiring ----------
     def set_on_pin_toggle(self, cb: Optional[Callable[[str, bool], None]]) -> None:
         self._on_pin_toggle = cb
 
     def set_event_bus(self, bus: EventBus) -> None:
         self._bus = bus
 
+    # ---------- Updates ----------
     def update(self, items: List[Dict]) -> None:
+        """
+        Build or update rows for the given items list with minimal churn:
+          - reuse row instances by stable key (_id/symbol/category:name)
+          - update in-place when possible; otherwise create/destroy as needed
+          - pack rows in new order with ROW_VPAD spacing
+        """
         self._layout_busy = True
         try:
             items = list(items or [])
@@ -238,7 +307,12 @@ class Rows(tk.Frame):
         finally:
             self._layout_busy = False
 
+    # ---------- Theming / Scaling ----------
     def apply_theme(self, overrides: Optional[Dict[str, Any]] = None) -> None:
+        """
+        Apply DI theme tokens with optional overrides (fonts/sizes only),
+        then push to each child row and refresh layout/scroll.
+        """
         base = dict(self._theme_service.tokens())
         if overrides:
             for k in ("FONT_PRIMARY", "FONT_BOLD", "FONT_SMALL",
@@ -248,6 +322,7 @@ class Rows(tk.Frame):
         self._apply_theme(base)
 
     def set_scale(self, s: float) -> None:
+        """Adjust internal row height according to global UI scale."""
         try:
             self.scale = float(s)
         except Exception:
@@ -257,6 +332,10 @@ class Rows(tk.Frame):
         self._refresh_view()
 
     def set_viewport_height(self, h: int) -> None:
+        """
+        Fit rows area to available height; enable/disable wheel scroll automatically
+        based on content height vs. viewport.
+        """
         self._viewport_h = max(60, int(h))
         try:
             self.configure(height=self._viewport_h)
@@ -267,9 +346,11 @@ class Rows(tk.Frame):
         self._notify_yview()
 
     def set_max_height(self, h: int) -> None:
+        """Alias for external callers that think in 'max height'."""
         self.set_viewport_height(h)
 
     def scroll_to_top(self) -> None:
+        """Scroll the canvas to the very top."""
         try:
             self.canvas.yview_moveto(0.0)
         except Exception:
@@ -277,9 +358,11 @@ class Rows(tk.Frame):
         self._notify_yview()
 
     def set_on_yview(self, callback: Optional[Callable[[float, float], None]]) -> None:
+        """Register a callback receiving (first, last) yview fractions on each scroll change."""
         self._on_yview = callback
 
     def _apply_theme(self, theme: Dict[str, Any]) -> None:
+        """Apply theme to containers and existing rows, refresh and sync scrollregion."""
         self.t = theme or self.t
         try:
             self.configure(bg=self.t["SURFACE"])
@@ -295,10 +378,13 @@ class Rows(tk.Frame):
         self._refresh_view()
 
     def _on_theme_toggled(self, *_args, **_kwargs) -> None:
+        """DI event: ThemeToggled -> pull fresh tokens and re-apply."""
         fresh = dict(self._theme_service.tokens())
         self._apply_theme(fresh)
 
+    # ---------- Layout / Scroll ----------
     def _refresh_view(self) -> None:
+        """Enforce row heights, spark heights, update scrollregion and wheel policy."""
         try:
             for r in self._rows:
                 r.configure(height=self.row_h)
@@ -311,6 +397,7 @@ class Rows(tk.Frame):
         self._notify_yview()
 
     def _update_scrollregion(self) -> None:
+        """Recompute the canvas scrollregion using content bbox."""
         try:
             self.canvas.update_idletasks()
             self.canvas.configure(scrollregion=self.canvas.bbox("all"))
@@ -318,11 +405,13 @@ class Rows(tk.Frame):
             pass
 
     def _auto_enable_wheel(self) -> None:
+        """Enable/disable wheel scrolling based on content height vs. viewport."""
         ch = self.content_height()
         need = ch > self._viewport_h + 1
         self.set_scroll_enabled(need)
 
     def _remember_hover(self, row: "RateRow") -> None:
+        """Remember last hovered row for copy shortcuts and ensure canvas focus."""
         self._last_hovered_row = row
         try:
             self.canvas.focus_set()
@@ -332,6 +421,7 @@ class Rows(tk.Frame):
             self._bind_wheels()
 
     def set_scroll_enabled(self, enabled: bool) -> None:
+        """Toggle local mouse wheel bindings (no global interference)."""
         self._scroll_enabled = bool(enabled)
         if not self._scroll_enabled:
             self._unbind_wheels()
@@ -426,6 +516,7 @@ class Rows(tk.Frame):
         self._notify_yview()
 
     def _copy_value(self, _event=None) -> None:
+        """Copy only the value of last hovered row to clipboard."""
         if self._last_hovered_row:
             try:
                 self.clipboard_clear()
@@ -434,6 +525,7 @@ class Rows(tk.Frame):
                 pass
 
     def _copy_title_value(self, _event=None) -> None:
+        """Copy 'Title: value' of last hovered row to clipboard."""
         if self._last_hovered_row:
             try:
                 self.clipboard_clear()
@@ -442,6 +534,7 @@ class Rows(tk.Frame):
                 pass
 
     def content_height(self) -> int:
+        """Return content height based on canvas scrollregion bbox."""
         bbox = self.canvas.bbox("all")
         return max(0, (bbox[3] - bbox[1])) if bbox else 0
 
@@ -472,6 +565,7 @@ class Rows(tk.Frame):
                 pass
 
     def _on_toggle_pin_from_row(self, item_id: Optional[str], new_state: bool) -> None:
+        """Bubble pin toggle to parent (window)."""
         if not item_id:
             return
         if callable(self._on_pin_toggle):
@@ -481,6 +575,7 @@ class Rows(tk.Frame):
                 pass
 
     def destroy(self) -> None:
+        """Unsubscribe from theme bus safely on destroy."""
         try:
             if hasattr(self, "_theme_bus_unsub") and self._theme_bus_unsub:
                 self._theme_bus_unsub()
@@ -494,6 +589,12 @@ class RateRow(tk.Frame):
     A single row in the rates list (stateful).
     Visual layout (RTL-ish):
         [PRICE] [SPARK] [DELTA]        ...spacer...        [PIN] [TITLE]
+
+    Tooltip behavior:
+      - Price label uses the shared manager via attach(...) if available.
+      - SparkBar receives the manager at construction; if injected later,
+        call set_tooltip(...) to update SparkBar.tooltip and refresh it so
+        per-bar handlers are (re)bound immediately.
     """
 
     def __init__(
@@ -650,7 +751,31 @@ class RateRow(tk.Frame):
         self.after(1, self._update_spark_width)
 
     # -------- public --------
+    def set_tooltip(self, tooltip: TooltipMgr) -> None:
+        """
+        Inject (or replace) the shared Tooltip manager post-construction.
+        This will:
+          - store the manager
+          - re-attach the price label tooltip via the manager
+          - pass the manager to SparkBar (self._sparkbar.tooltip = tooltip)
+          - refresh the spark so per-bar tag binds are (re)built immediately.
+        """
+        self._tooltip_mgr = tooltip
+        # price label tip (via manager if available)
+        try:
+            if hasattr(self._tooltip_mgr, "attach"):
+                self._tooltip_mgr.attach(self.price_lbl, self._build_tooltip_text())
+        except Exception:
+            pass
+        # sparkbar tooltips
+        try:
+            self._sparkbar.tooltip = tooltip
+            self._sparkbar.refresh()
+        except Exception:
+            pass
+
     def apply_theme(self, theme: Dict[str, Any]) -> None:
+        """Re-apply colors and fonts according to the new theme and redraw spark."""
         self.t = theme or self.t
         self._bg = self._pick_bg(self.t)
 
@@ -880,6 +1005,7 @@ class RateRow(tk.Frame):
 
     # ---- Spark helpers ----
     def _render_spark_initial(self) -> None:
+        """Initial render of spark with current series/times."""
         try:
             series = self._coerce_series(self.item.get("history"))
             times  = self._coerce_times(self.item.get("times"), len(series))
@@ -889,6 +1015,11 @@ class RateRow(tk.Frame):
             pass
 
     def _update_spark_statefully(self, series_new: List[int], times_new: List[str]) -> None:
+        """
+        Update spark with minimal churn:
+          - If sequences indicate a left-shift (rolling window), just append last point
+          - Else reset data entirely
+        """
         try:
             series_old = getattr(self, "_series_old", None)
             times_old  = getattr(self, "_times_old", None)
@@ -927,6 +1058,10 @@ class RateRow(tk.Frame):
         self._spark_resize_after = self.after(16, self._update_spark_width)
 
     def _update_spark_width(self) -> None:
+        """
+        Compute target spark width based on available width in left cluster
+        after subtracting the price and delta labels (plus padding).
+        """
         self._spark_resize_after = None
         try:
             self.update_idletasks()
