@@ -90,7 +90,7 @@ Settings are stored in `minirates_settings.json` and include:
 
 ## 📸 Screenshots
 
-*(You can add screenshots of the app here for better presentation.)*
+![Main Window](app/assets/screenshots/main-window.png)
 
 ---
 
