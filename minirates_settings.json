@@ -4,8 +4,8 @@
   "window_alpha": 1.0,
   "always_on_top": true,
   "window_position": [
-    -1916,
-    790
+    -1914,
+    785
   ],
   "window_size": [
     350,
@@ -15,11 +15,11 @@
   "auto_refresh_ms": 300000,
   "notifications": true,
   "pinned_ids": [
-    "fx:یورو",
     "fx:دلار استرالیا",
     "crypto:بیت کوین",
     "fx:دلار آمریکا",
-    "fx:لیر ترکیه"
+    "fx:لیر ترکیه",
+    "gold:سکه امامی (طرح جدید)"
   ],
   "pinned_limit": 5,
   "news_accounts": [

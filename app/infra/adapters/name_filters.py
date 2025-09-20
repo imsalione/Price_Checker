@@ -37,8 +37,7 @@ class NameFilters:
         # Generic UI/CTA-ish words that should not appear as rate names
         "بیشتر", "ادامه", "مطالعه", "بخوانید", "مشاهده", "کلیک", "انس", "هفته", "ماه", "سال",
         # Common noise phrases that are not actual items
-        "قیمت دلار در بازار آزاد", "قیمت دلار در بازار متشکل",
-        "قیمت سکه در بازار آزاد", "قیمت طلا در بازار آزاد",
+        
     ]
 
     DEFAULT_BLACKLIST_REGEXES: List[str] = [
